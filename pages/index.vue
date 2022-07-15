@@ -1,18 +1,14 @@
 <template>
-<div class="mt-16">
 
-     <v-btn
+    <TestiCard />
+
+  <!--    <v-btn
       depressed
       color="default"
     >
       الرئيسية
-    </v-btn>
+    </v-btn> -->
 
-
-    <TestiCard />
-
-
-</div>
 </template>
 
 <script>

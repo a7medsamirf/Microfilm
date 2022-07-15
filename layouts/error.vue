@@ -72,7 +72,7 @@ export default {
   }
   h1.error_bg
   {
-    background: url(~/static/images/shop/6.webp) no-repeat center center;
+/*     background: url(~/static/images/shop/6.webp) no-repeat center center; */
     background-size: cover;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

@@ -93,13 +93,11 @@
             cols="12"
           >
             <v-divider class="white--text"></v-divider>
-            <u-animate-container>
-              <u-animate name="fadeInDown" delay="1s" duration="1s" :iteration="1" :offset="0" animateClass="animated" :begin="false">
                 <div class="py-4" >
                   {{ new Date().getFullYear() }} — <strong>MedFood</strong>
                 </div>
-              </u-animate>
-            </u-animate-container>
+      
+
 
           </v-col>
   <div class="running-cycle"><div></div></div>

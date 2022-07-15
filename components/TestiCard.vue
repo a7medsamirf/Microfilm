@@ -1,16 +1,16 @@
 <template>
-  <div class="testimonial-wrap">
+  <div class="hero-wrap">
 
       <div class="carousel" v-if="loaded">
         <slick ref="c1" :options="slickOptions">
-          <v-card  height="250" v-for="(burger, index) in burger" :key="index"
-                  class="mx-auto my-12 item"
+          <v-card v-for="(movies, index) in movies" :key="index"
+                  class="item"
           >
             <v-img
-              v-if="burger.image"
-              :src="require(`~/static/images/shop/${burger.image}`)"
-              :alt="burger.alt"
-              height="250"
+              v-if="movies.image"
+              :src="require(`~/static/images/banner/${movies.image}`)"
+              :alt="movies.alt"
+              height="100vh"
             ></v-img>
 
           </v-card>
@@ -18,19 +18,19 @@
         </slick>
       </div>
 
-      <div class="carousel" v-if="loaded">
+      <div class="carousel logo" v-if="loaded">
         <slick ref="c2" :options="Syncing">
-          <v-card v-for="(burger, index) in burger" :key="index"
-                  class="mx-auto my-12 item"
-          >
-            <v-img
-              v-if="burger.image"
-              :src="require(`~/static/images/shop/${burger.image}`)"
-              :alt="burger.alt"
-              height="250"
-            ></v-img>
+        <div  class="item" v-for="(movies, index) in movies" :key="index">
 
-          </v-card>
+        <img
+        class="responsive"
+        :src="require(`~/static/images/logo/${movies.logo}`)"
+         v-if="movies.image"
+        :alt="movies.alt"
+        width="50%" height="50">
+
+        </div>
+
 
         </slick>
       </div>
@@ -38,7 +38,7 @@
   </div>
 </template>
 <script>
-import  burger from '~/api/burger'
+import  movies from '~/api/movies'
 export default {
   name: "about-Us",
   components: {
@@ -48,7 +48,7 @@ export default {
   data() {
     return {
       loaded: false,
-      burger :burger.burger,
+      movies :movies.movies,
     slickOptions: {
         arrows: true,
         slidesToShow: 1,
@@ -61,11 +61,11 @@ export default {
       },
       Syncing: {
         arrows: true,
-        slidesToShow: 4,
+        slidesToShow: 6,
          asNavFor: this.$refs.c1,
         focusOnSelect: true,
         infinite: true,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2000,
         responsive: [
           {
@@ -108,6 +108,14 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+    .hero-wrap{
+  position: relative;
+  }
+.carousel.logo {
+    position: absolute;
+    bottom: 100px;
+    z-index: 9;
+    width: 100%;
+}
 </style>
