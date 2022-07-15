@@ -1,27 +1,49 @@
-import colors from 'vuetify/es5/util/colors'
-
+import { theme } from './config/vuetify.options'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  
   head: {
+    htmlAttrs: {
+      lang: 'ar',
+    },
     titleTemplate: '%s - Microfilm',
     title: 'Microfilm',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
+      // PWA primary color
+      { name : 'theme-color', content: '#07AEAF'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"},
+
     ]
   },
-
+  transition: 'slide-bottom',
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/vuetify-overrides.scss',
+    '~/assets/vendors/slick-carousel/slick-theme.css',
+    '~/assets/vendors/slick-carousel/slick.css',
+    '~/assets/vendors/animate.css',
   ],
+
+  styleResources: {
+    scss: [
+        '~/assets/_transition.scss',
+        '~/assets/_mixins.scss',
+        '~/assets/_functions.scss',
+        '~/assets/_media-queries.scss',
+        '~/assets/_url-img.scss',
+    ]
+},
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    {src: '~/plugins/fontawesome.js', ssr: false},
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -30,7 +52,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
+    ['@nuxtjs/vuetify',{rtl:true}],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -41,7 +63,9 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-  ],
+    // https://resources.com/
+    "@nuxtjs/style-resources",
+],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -62,23 +86,16 @@ export default {
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
-    theme: {
-      dark: true,
-      themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        }
-      }
-    }
+    optionsPath: './config/vuetify.options.js'
+
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    loaders: {
+      vus: { cacheBusting: true },
+      scss: { sourceMap: false }
+    },
+
   }
 }
