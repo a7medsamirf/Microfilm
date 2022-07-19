@@ -4,7 +4,7 @@
       v-show="showFab"
       v-scroll="checkScroll"
       @click="goUp"
-      color="primary"
+      color="default"
       fab
       fixed
       bottom

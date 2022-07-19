@@ -1,94 +1,84 @@
 <template>
   <div class="hero-wrap">
-
-      <div class="carousel" v-if="loaded">
-        <slick ref="c1" :options="slickOptions">
-          <v-card v-for="(movies, index) in movies" :key="index"
-                  class="item"
-          >
+      <div class="carousel" >
+        <slick class="slickOptions"  :options="slickOptions">
+          <div v-for="(movies, index) in movies" :key="index" class="item">
             <v-img
               v-if="movies.image"
               :src="require(`~/static/images/banner/${movies.image}`)"
               :alt="movies.alt"
               height="100vh"
             ></v-img>
-
-          </v-card>
-
+          </div>
         </slick>
       </div>
 
-      <div class="carousel logo" v-if="loaded">
-        <slick ref="c2" :options="Syncing">
-        <div  class="item" v-for="(movies, index) in movies" :key="index">
 
-        <img
-        class="responsive"
-        :src="require(`~/static/images/logo/${movies.logo}`)"
-         v-if="movies.image"
-        :alt="movies.alt"
-        width="50%" height="50">
 
-        </div>
+        <slick class="Syncing justify-space-between" :options="Syncing">
+          <div  class="item" v-for="(movies, index) in movies" :key="index">
+            <img
+              class="gallery-thumbnails"
+              :src="require(`~/static/images/logo/${movies.logo}`)"
+              v-if="movies.image"
+              :alt="movies.alt">
+          </div>
 
 
         </slick>
-      </div>
+
 
   </div>
 </template>
 <script>
-import  movies from '~/api/movies'
+import  movies from '~/api/movies.json'
 export default {
   name: "about-Us",
   components: {
     Slick: () => import('vue-slick'),
-    
   },
   data() {
     return {
-      loaded: false,
-      movies :movies.movies,
+      movies,
     slickOptions: {
-        arrows: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-         asNavFor: this.$refs.c2,
+        asNavFor: '.Syncing',
         focusOnSelect: true,
         infinite: true,
         autoplay: true,
-        autoplaySpeed: 2000,
+        fade: true,
+        autoplaySpeed: 5000,
       },
       Syncing: {
         arrows: true,
-        slidesToShow: 6,
-         asNavFor: this.$refs.c1,
+        slidesToShow: 9,
+        slidesToScroll: 1,
+        asNavFor: '.slickOptions',
         focusOnSelect: true,
         infinite: true,
         autoplay: false,
-        autoplaySpeed: 2000,
+        dots: true,
+        autoplaySpeed: 5000,
+        rtl: true,
         responsive: [
           {
             breakpoint: 800,
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 1
             }
           },
           {
             breakpoint: 600,
             settings: {
               slidesToShow: 1,
-              slidesToScroll: 1
             }
           }
         ]
       }
     }
   },
-  mounted() {
-    this.loaded = true
-  },
+
   methods: {
     next() {
       this.$refs.slick.next()
@@ -112,10 +102,34 @@ export default {
     .hero-wrap{
   position: relative;
   }
-.carousel.logo {
-    position: absolute;
-    bottom: 100px;
-    z-index: 9;
-    width: 100%;
+
+.Syncing{
+  position: relative;
+  align-items: center;
+  top: -16.8vw;
+  padding: 0 5vw;
+  animation: fadein 2s;
+}
+.slick-slide.slick-current.slick-active .item:after
+{
+  width: 3.75vw;
+}
+ .Syncing  .item:after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0.156vw;
+      margin: 0 auto;
+      background-color: #f44336;
+      -webkit-transition: all .5s ease-in-out;
+      -o-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+    }
+.gallery-thumbnails
+{
+  cursor: pointer;
+  max-width: 8.5vw;
+  height: 3.7vw;
+  filter: drop-shadow(2px 4px 6px #00000024);
 }
 </style>

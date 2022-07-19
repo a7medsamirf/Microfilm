@@ -18,7 +18,7 @@
   <!---------- End Navigation Drawer ---------->
 
    <!---------- Start App Bar ---------->
-    <v-app-bar app height="85px" fixed >
+    <v-app-bar app height="85px" fixed  elevation="0">
       <v-container class="pa-0 fill-height">
         <v-app-bar-nav-icon class="hidden-md-and-up"  @click.stop="drawer = !drawer" />
         <NuxtLink to="/">
@@ -96,19 +96,20 @@ export default {
       rightDrawer: false,
       fixed: false,
             items: [
-        {title: 'الرئيسية', to: '/'},
-        {title: 'About Us', to: '/About-Us'},
-        { title: 'Pages',
+          {title: 'الرئيسية', to: '/'},
+          {title: 'الأفلام', to: '/About-Us'},
+          {title: 'المسلسلات', to: '/المسلسلات'},
+          {title: 'البرامج التلفزيونية', to: '/products'},
+          {title: 'المسلسلات', to: '/المسلسلات'},
+          {title: 'رمضان', to: '/TestPage'},
+        { title: 'صفحات',
           subitems: [
             {title: 'gallery', to: '/gallery'},
             {title: 'faq', to: '/faq'},
             {title: 'TestPage', to: '/TestPage'},
           ]
         },
-
-        {title: 'Blog', to: '/blog'},
-        {title: 'Shop', to: '/products'},
-        {title: 'Contact Us', to: '/contact'},
+        {title: 'قريبا', to: '/contact'},
       ],
     }
 

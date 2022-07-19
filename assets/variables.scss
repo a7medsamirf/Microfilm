@@ -4,9 +4,13 @@
 
 /*$material-light: ( 'background': #faf7f2 );
 $material-dark: ( 'background': #001e26 );*/
-@import '~/node_modules/rtl-sass/src/_rtl.scss';
+@import 'node_modules/rtl-sass/src/_rtl.scss';
 
-
+:root {
+  --p-darkcolor: #a9a9a9;
+  --white-color: #fff;
+  --dark-color: #172132;
+}
 // $font-size-root: 20px;
 
 // font-family
@@ -42,21 +46,20 @@ $transition: all 0.5s ease-in-out;
 $palette-link: var(--v-anchor-base);
 
 // Theme color palette LightSeaGreen
-$palette-primary-main: #07AEAF;
-$palette-primary-light: #07AEAF;
-$palette-primary-dark: #07AEAF;
+$palette-primary-main: #e62d2d;
+$palette-primary-light: #e62d2d;
+$palette-primary-dark: #e62d2d;
 
 // Theme color palette secondary
 $palette-secondary-main: #FE9900;
 $palette-secondary-light: #FE9900;
 $palette-secondary-dark: #FE9900;
 
-
 // Common color palette
 $palette-common-white: #FFF !important;
 $palette-text-white: #FFF;
 $palette-common-black: #000;
-$palette-common-primary: #07AEAF;
+$palette-common-primary: #e62d2d;
 $palette-common-secondary: #FE9900;
 
 
@@ -72,8 +75,8 @@ $light-background-paper: #fff;
 $light-background-default: #fafafa;
 
 // Dark Color Palette
-$dark-surface: #1b1d2f;
-$dark-body: #0c0f21;
+$dark-surface: #172132 !important; // card and item
+$dark-body: #0f161d;
 $dark-text-primary: #fff;
 $dark-text-secondary: rgba(255, 255, 255, 0.7);
 $dark-text-disabled: rgba(255, 255, 255, 0.5);

@@ -94,13 +94,22 @@
           >
             <v-divider class="white--text"></v-divider>
                 <div class="py-4" >
-                  {{ new Date().getFullYear() }} — <strong>MedFood</strong>
+                   <strong> جميع الحقوق محفوظة</strong> <strong>© {{ new Date().getFullYear() }} <nuxt-link to="/">ميكروفيلم — MicroFilm</nuxt-link></strong>
                 </div>
-      
+              <div class="social-icons">
+                <a><i class="fa-brands fa-facebook-f"></i></a>
+                <a><i class="fa-brands fa-youtube"></i></a>
+                <a><i class="fa-brands fa-twitter"></i></a>
+                <a><i class="fa-brands fa-instagram"></i></a>
+                <a><i class="fa-solid fa-square-rss"></i></a>
+                <a><i class="fa-brands fa-google-play"></i></a>
+                <a> <i class="fa-brands fa-app-store-ios"></i></a>
+              </div>
+
 
 
           </v-col>
-  <div class="running-cycle"><div></div></div>
+
         </v-row>
       </v-container>
 
@@ -180,52 +189,26 @@ export default {
   }
 }
 
-.running-cycle div {
-    background-image: url(static/images/delivery-boy.png);
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    background-size: 150px;
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    animation: running-anim 20s linear infinite;
-    z-index: 1;
-}
-.running-cycle {
-    overflow: hidden;
-    width: 100%;
-    height: 120px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-}
-@-moz-keyframes running-anim {
-    0% {
-        left: -30%
-    }
-    100% {
-        left: 100%
-    }
-}
 
-@-webkit-keyframes running-anim {
-    0% {
-        left: -30%
+.social-icons:nth-of-type(1)>a::after
+    {
+      content: '';
+      display: inline-block;
+      width: 120%;
+      height: 80%;
+      background: rgba(255,0,0,.2);
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(15px);
+      top: -5px;
+      left: 0;
     }
-    100% {
-        left: 100%
-    }
-}
 
-@keyframes running-anim {
-    0% {
-        left: -30%
-    }
-    100% {
-        left: 100%
-    }
+.social-icons a i
+{
+  font-size: 25px;
+  margin: 10px;
+  box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0.2);
 }
 
 </style>

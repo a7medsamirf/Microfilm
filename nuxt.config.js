@@ -14,7 +14,7 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
       // PWA primary color
-      { name : 'theme-color', content: '#07AEAF'}
+      { name : 'theme-color', content: '#e62d2d'}
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

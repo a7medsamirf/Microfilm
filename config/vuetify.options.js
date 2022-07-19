@@ -1,10 +1,5 @@
 import colors from 'vuetify/lib/util/colors'
 
-let darkMode = false
-if (typeof Storage !== 'undefined') { // eslint-disable-line
-  darkMode = localStorage.getItem('MedHouseDarkMode') || false
-}
-
 const palette = {
   smart: {
     primary: colors.cyan.base, // primary main
@@ -25,6 +20,7 @@ export default {
   rtl: true,
   theme: {
     dark: 'true',
+    defaultTheme: 'dark',
     themes: {
       dark: {
         background: '#fff',
@@ -32,14 +28,14 @@ export default {
         surface: "#1b182b", // card and all box
         footercolor: '#1b182b',
         bggrey: '#001e26',
-        primary: '#07AEAF',
+        primary: '#e62d2d',
         secondary: '#ff8e28',
         accent: '#82B1FF',
         error: '#FF5252',
         info: '#2196F3',
         success: '#4CAF50',
         warning: '#FFC107',
-        default: '#3271E6',
+        default: '#e62d2d',
       },
       light: {
         background: '#fff',
@@ -47,14 +43,14 @@ export default {
         surface: "#ffffff",
         footercolor: '#fff',
         bggrey: '#faf7f2',
-        primary: '#07AEAF',
+        primary: '#e62d2d',
         secondary: '#ff8e28',
         accent: '#82B1FF',
         error: '#FF5252',
         info: '#2196F3',
         success: '#4CAF50',
         warning: '#FFC107',
-        default: '#3271E6',
+        default: '#e62d2d',
       },
 
     },

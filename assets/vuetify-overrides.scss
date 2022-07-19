@@ -22,11 +22,6 @@ Style Index
 /*--------------------------------------------------
   [1. Start Basic Setup ]
 --------------------------------------------------*/
-:root {
-  --p-darkcolor: #a9a9a9;
-  --white-color: #fff;
-  --dark-color: #144273;
-}
 html
 {
   scroll-behavior: smooth;
@@ -38,6 +33,10 @@ html
 ::-webkit-scrollbar-thumb {
   cursor: pointer;
   background: $dark-surface;
+}
+::-moz-selection, -webkit-::-moz-selection{
+  background-color: $dark-surface;
+  color: $palette-text-white !important;
 }
 ::selection,
 -webkit-::selection,
@@ -168,7 +167,23 @@ a {
 }
 a.v-btn--active
 {
-  color: $palette-common-primary !important;
+  border-top: 3px solid #e62d2d;
+  color: #e62d2d !important;
+  &::after{
+    width: 170%;
+    background: #f00;
+    opacity: 1;
+    transform: translate(-50%,-82%);
+    -webkit-filter: blur(15px);
+    filter: blur(15px);
+    content: '';
+    display: inline-block;
+    height: 56%;
+    position: absolute;
+    border-radius: 50%;
+    top: 5px;
+    left: 50%;
+  }
 }
 
 .v-btn {
@@ -177,15 +192,25 @@ a.v-btn--active
 
 .default
 {
-  box-shadow: $box-shadow;
-  background: linear-gradient(180deg,#5690FF 0,#3271E6 100%);
   color: #fff !important;
-
+  background: linear-gradient(#bc114400,#0000003b);
+  &::after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,0,0,.2);
+    position: absolute;
+    border-radius: 50%;
+    -webkit-filter: blur(15px);
+            filter: blur(15px);
+    top: -5px;
+    left: 0;
+  }
 }
 .secondary {
   box-shadow: 5px 2px 18px 0 hsl(28deg 100% 58% / 32%) !important;
 }
-
 /*--------------------------------------------------
   [2. Theme color   ]
 --------------------------------------------------*/
@@ -196,20 +221,21 @@ a.v-btn--active
   .v-sheet.v-card,
   .v-select-list,
   .nav-menu .theme--dark.v-list{
-    background-color: $dark-surface !important;
-    border-color: $dark-surface !important;
+    background-color: $dark-surface;
+    border-color: $dark-surface;
     box-shadow: none !important;
   }
   .Quick-Links{
-    background-color: $dark-surface !important;
+    background-color: $dark-surface;
   }
   .v-footer {
-    background-color: $dark-surface !important;
+    background-color: $dark-surface;
   }
   .v-navigation-drawer {
-    background-color: rgba(0, 30, 38, 0.8) !important;
+    background-color: rgba(var(--dark-color), 0.7);
     box-shadow: none !important;
-    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
   }
 }
 /*========== theme light ==========*/
@@ -250,7 +276,7 @@ a.v-btn--active
         color: transparent !important;
         width: 10px;
         height: 10px;
-        border: 2px solid $palette-common-primary;
+        border: 2px solid $palette-primary-main;
         opacity: 0.5;
         transition: all 0.3s ease;
       }
@@ -261,7 +287,7 @@ a.v-btn--active
           top: 0;
           left: -5px;
           border-radius: 5px;
-          background: $palette-common-primary !important;
+          background: $palette-primary-main;
         }
       }
     }
@@ -319,7 +345,7 @@ a.v-btn--active
     [3. Breadcrumb widget ]
   --------------------------------------------------*/
   .breadcrumb {
-    background: $palette-common-primary;
+    background: $palette-primary-main;
     padding: 120px 0;
     position: relative;
     width: 100%;
@@ -368,10 +394,12 @@ a.v-btn--active
     }
 
     .location.Site-1:before {
-      animation: pulse 4.0s infinite ease-in-out;
+      -webkit-animation: pulse 4.0s infinite ease-in-out;
+              animation: pulse 4.0s infinite ease-in-out;
     }
     .location.Site-2:before{
-      animation: pulse 6.0s infinite ease-in-out;
+      -webkit-animation: pulse 6.0s infinite ease-in-out;
+              animation: pulse 6.0s infinite ease-in-out;
     }
 
     .location:before {
@@ -400,7 +428,6 @@ a.v-btn--active
     }
 
   }
-
   /*====================
     widget
   ====================*/
@@ -418,7 +445,7 @@ a.v-btn--active
       height: 4px;
       width: 30px;
       display: inline-block;
-      background: $palette-common-primary;
+      background: $palette-primary-main;
       position: relative;
       @include left(10px);
       top: -4px;
@@ -429,7 +456,7 @@ a.v-btn--active
         top: 0;
         height: 4px;
         width: 4px;
-        background: $palette-common-primary;
+        background: $palette-primary-main;
       }
     }
 
@@ -450,6 +477,7 @@ a.v-btn--active
   }
   .sidebar-wrap
   {
+    position: -webkit-sticky;
     position: sticky;
     top: 100px;
   }
@@ -545,11 +573,11 @@ a.v-btn--active
   .theme--dark.v-skeleton-loader .v-skeleton-loader__table-thead,
   .theme--dark.v-skeleton-loader .v-skeleton-loader__table-tbody,
   .theme--dark.v-skeleton-loader .v-skeleton-loader__table-tfoot {
-    background: #012a35 !important;
+    background: $dark-surface;
   }
 
   .v-list-item--link:before {
-    background-color: $palette-common-primary !important;
+    background-color: $palette-primary-main;
   }
 
  .ReviewCard .v-text-field--outlined fieldset
@@ -572,7 +600,8 @@ a.v-btn--active
 
 
 .filter-color {
-  filter: invert(99%) sepia(1%) saturate(2644%) hue-rotate(223deg) brightness(120%) contrast(100%);
+  -webkit-filter: invert(99%) sepia(1%) saturate(2644%) hue-rotate(223deg) brightness(120%) contrast(100%);
+          filter: invert(99%) sepia(1%) saturate(2644%) hue-rotate(223deg) brightness(120%) contrast(100%);
 }
 
 img.filter-color{
@@ -603,7 +632,8 @@ header.v-sheet.theme--light.v-toolbar.v-app-bar.v-app-bar--fixed.v-app-bar--is-s
 {
   box-shadow: 0 3px 3px -1px rgb(10 22 70 / 10%), 0 0 1px 0 rgb(10 22 70 / 6%) !important;
   background-color: rgb(255 255 255 / 65%);
-  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
 }
 
 .sub-list-group{
@@ -614,9 +644,6 @@ i.v-icon.notranslate.mdi.mdi-record-circle-outline {
   color:  var(--maincolor);
 }
 
-.theme--dark.v-app-bar.v-toolbar.v-sheet {
-  background-color: #272727;
-}
 .v-sheet.v-app-bar.v-toolbar {
   border-radius: 0;
 }
@@ -689,10 +716,16 @@ header .v-btn:not(.v-btn--round).v-size--default {
     transition: all 0.5s ease-in-out;
   }
 }
-.theme--dark.v-app-bar.v-toolbar.v-sheet
-{
-    background-color: transparent !important;
-    box-shadow: none !important;
+.theme--dark.v-app-bar.v-toolbar.v-sheet {
+  background-color: transparent;
+  box-shadow: none !important;
+}
+.theme--dark .v-toolbar.v-app-bar--is-scrolled {
+  background-color: rgba(0, 30, 38, 0.8) !important;
+  box-shadow: none !important;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  transition: all 0.5s ease-in-out;
 }
 
 .theme--dark
@@ -701,7 +734,8 @@ header .v-btn:not(.v-btn--round).v-size--default {
   {
     background-color: rgba(0, 30, 38, 0.8) !important;
     box-shadow: none !important;
-    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
     transition: $transition;
     .v-btn,
     .v-btn.v-btn--icon
@@ -733,7 +767,7 @@ header .v-btn:not(.v-btn--round).v-size--default {
 }
 
 .theme--dark .nav-menu::before {
-  border-bottom: 13px solid $dark-surface !important;
+  border-bottom: 13px solid $dark-surface;
 }
 
 .v-application.theme--dark .v-sheet.v-card,
@@ -742,7 +776,8 @@ header .v-btn:not(.v-btn--round).v-size--default {
 {
 
   box-shadow: none !important;
-  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
 }
 
 .theme--dark .nav-menu::before {
