@@ -97,7 +97,7 @@ export default {
       fixed: false,
             items: [
           {title: 'الرئيسية', to: '/'},
-          {title: 'الأفلام', to: '/About-Us'},
+          {title: 'الأفلام', to: 'blog'},
           {title: 'المسلسلات', to: '/المسلسلات'},
           {title: 'البرامج التلفزيونية', to: '/products'},
           {title: 'المسلسلات', to: '/المسلسلات'},

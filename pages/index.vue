@@ -8,7 +8,7 @@
       <v-col
         v-for="n in 4"
         :key="n"
-        class="d-flex child-flex"
+        class="d-flex child-flex "
         cols="12"
         lg="3"
         md="6"
@@ -19,7 +19,7 @@
           v-if="!data_loaded"
         >
           <v-img
-            height="250"
+            height="300"
             src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
           ></v-img>
 
@@ -116,5 +116,4 @@ export default {
 .v-card.moving:hover .v-image__image--cover {
   transform: scale(1.15);
 }
-
 </style>

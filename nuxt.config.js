@@ -1,7 +1,7 @@
 import { theme } from './config/vuetify.options'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  
+
   head: {
     htmlAttrs: {
       lang: 'ar',
@@ -28,7 +28,7 @@ export default {
     '~/assets/vuetify-overrides.scss',
     '~/assets/vendors/slick-carousel/slick-theme.css',
     '~/assets/vendors/slick-carousel/slick.css',
-    '~/assets/vendors/animate.css',
+    '~/assets/vendors/animate.css'
   ],
 
   styleResources: {
@@ -37,13 +37,13 @@ export default {
         '~/assets/_mixins.scss',
         '~/assets/_functions.scss',
         '~/assets/_media-queries.scss',
-        '~/assets/_url-img.scss',
+        '~/assets/_url-img.scss'
     ]
 },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    {src: '~/plugins/fontawesome.js', ssr: false},
+    {src: '~/plugins/fontawesome.js', ssr: false}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -64,13 +64,13 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     // https://resources.com/
-    "@nuxtjs/style-resources",
+    "@nuxtjs/style-resources"
 ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+    baseURL: '/'
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -81,7 +81,14 @@ export default {
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
+  content: {
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-material-oceanic.css'
+      }
+    },
+    nestedProperties: ['author.name']
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {

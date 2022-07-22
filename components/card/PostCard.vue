@@ -2,7 +2,6 @@
   <v-card
     :loading="loading"
     class="mx-auto my-12"
-    max-width="374"
   >
     <template slot="progress">
       <v-progress-linear
@@ -13,7 +12,7 @@
     </template>
 
     <v-img
-      height="250"
+      height="300"
       src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
     ></v-img>
 
