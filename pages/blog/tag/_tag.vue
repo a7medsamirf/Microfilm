@@ -40,10 +40,11 @@
                     <div class="blog-img">
                       <v-img
                         v-if="article.img"
-                        :src="require(`~/static/images/blog/${article.img}`)"
+                        :src="require(`~/static/images/poster/${article.img}`)"
                         :alt="article.alt"
                         height="250"
-                      ></v-img>
+                      >
+                      </v-img>
                       <div class="sb-badge">
                         <v-chip
                           class="ma-2 white--text "

@@ -99,10 +99,10 @@ export default {
 </script>
 
 <style lang="scss">
-    .hero-wrap{
-  position: relative;
+.hero-wrap{
+    position: relative;
+    margin: 0 0 -12vw;
   }
-
 .Syncing{
   position: relative;
   align-items: center;

@@ -5,12 +5,6 @@
 /*$material-light: ( 'background': #faf7f2 );
 $material-dark: ( 'background': #001e26 );*/
 @import 'node_modules/rtl-sass/src/_rtl.scss';
-
-:root {
-  --p-darkcolor: #a9a9a9;
-  --white-color: #fff;
-  --dark-color: #172132;
-}
 // $font-size-root: 20px;
 
 // font-family
@@ -75,8 +69,8 @@ $light-background-paper: #fff;
 $light-background-default: #fafafa;
 
 // Dark Color Palette
-$dark-surface: #172132 !important; // card and item
-$dark-body: #0f161d;
+$dark-surface: #071131 !important; // card and item
+$dark-body: #071131;
 $dark-text-primary: #fff;
 $dark-text-secondary: rgba(255, 255, 255, 0.7);
 $dark-text-disabled: rgba(255, 255, 255, 0.5);

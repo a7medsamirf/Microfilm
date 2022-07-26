@@ -34,8 +34,8 @@
            </v-btn>
 
        <v-menu
-          open-on-hover :close-on-content-click="false"
-          transition="slide-y-transition"
+
+          transition="slide-x-transition"
           content-class="nav-menu"
           min-width="200"
           v-else
@@ -97,8 +97,8 @@ export default {
       fixed: false,
             items: [
           {title: 'الرئيسية', to: '/'},
-          {title: 'الأفلام', to: 'blog'},
-          {title: 'المسلسلات', to: '/المسلسلات'},
+          {title: 'الأفلام', to: '/movies'},
+          {title: 'المسلسلات', to: '/blog'},
           {title: 'البرامج التلفزيونية', to: '/products'},
           {title: 'المسلسلات', to: '/المسلسلات'},
           {title: 'رمضان', to: '/TestPage'},

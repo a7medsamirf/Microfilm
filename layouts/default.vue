@@ -72,16 +72,6 @@ export default {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
 header.v-sheet.theme--light.v-toolbar.v-app-bar.v-app-bar--fixed {
   background-color: transparent;
   box-shadow: none !important;
@@ -186,25 +176,6 @@ header .v-btn:not(.v-btn--round).v-size--default {
   box-shadow: none !important;
 }
 
-.theme--dark
-{
-  .v-toolbar.v-app-bar--is-scrolled
-  {
-    background-color: rgb(12 15 33 / 70%) !important;
-    box-shadow: none !important;
-    backdrop-filter: blur(12px);
-    transition: $transition;
-    .v-btn,
-    .v-btn.v-btn--icon
-    {
-      color: #fff;
-      letter-spacing: 0;
-      font-weight: bold;
-      transition: all 0.5s ease-in-out;
-    }
-  }
-
-}
 .nav-menu {
   margin-top: 50px;
   contain: initial;
@@ -213,6 +184,7 @@ header .v-btn:not(.v-btn--round).v-size--default {
     position: absolute;
     content: "";
     top: 0;
+    border-bottom: 13px solid $dark-surface;
     @include left(58px);
     transform: translateY(-100%);
     width: 10px;
@@ -221,10 +193,6 @@ header .v-btn:not(.v-btn--round).v-size--default {
     border-right: 10px solid transparent;
     border-bottom: 13px solid #fff;
   }
-}
-
-.theme--dark .nav-menu::before {
-  border-bottom: 13px solid $dark-surface !important;
 }
 
 .v-application.theme--dark .v-sheet.v-card,

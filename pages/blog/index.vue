@@ -1,137 +1,88 @@
 <template>
   <div class="blog-wrap">
-    <div class="breadcrumb">
-      <div class="col-full">
-        <h1 class="breadcrumb-heading"> {{PageTitle}}</h1>
-        <nav class="woocommerce-breadcrumb">
-          <nuxt-link to="/">Home</nuxt-link>
-          <span class="breadcrumb-separator"> / {{PageTitle}}</span></nav>
-      </div>
-    </div>
-    <div class="inner d-flex align-center justify-center py-20">
+
+    <testi-card />
+
+
+    <div class="inner">
       <v-container fluid>
         <v-row>
-          <v-col cols="12" md="12">
-            <v-row>
 
-              <v-col  v-for="article in articles"
-                      :key="article.slug"
-                      sm="12"
-                      md="2"
-                      class="pa-1"
-              >
-                <v-skeleton-loader
-                  v-if="data_loaded"
-                  type=" card-avatar, article, actions"
-                >
-                </v-skeleton-loader>
-                <v-card
-                   class="moving"
-                   outlined
-                   elevation-0
-                  v-if="!data_loaded"
-                >
-                  <NuxtLink  :to="{ name: 'blog-slug', params: { slug: article.slug } }">
-                    <div class="blog-img">
-                      <v-img
-                        v-if="article.img"
-                        :src="require(`~/static/images/poster/${article.img}`)"
-                        :alt="article.alt"
-                        height="270"
-                      ></v-img>
-                      <div class="sb-badge">
-                        <v-chip
-                          class="ma-2 white--text "
-                          color="primary"
-                          label
-                          small
-                          v-for="tag in article.tags" :key="tag"
-                        >
-                          <v-icon left text-color="white">mdi-label</v-icon>
-                          {{ tag }}
-                        </v-chip>
-                      </div>
+          <v-col  v-for="article in articles"
+                  :key="article.slug"
+                  sm="6"
+                  md="4"
+                  lg="2"
+                  class="pa-1"
+          >
 
+            <v-card
+              class="moving"
+              outlined
+              elevation-0
+            >
+              <NuxtLink  :to="{ name: 'blog-slug', params: { slug: article.slug } }">
+                <div class="blog-img">
+                  <v-img
+                    v-if="article.img"
+                    :src="require(`~/static/images/poster/${article.img}`)"
+                    :alt="article.alt"
+                    height="350"
+                  >
+                    <template slot="placeholder">
+                      <v-row
+                        class="fill-height"
+                        justify="center"
+                        align="center"
+                      >
+                        <v-progress-circular
+                          width="2"
+                          size="100"
+                          color="default"
+                          indeterminate
+                        ></v-progress-circular>
+                      </v-row>
+                    </template>
 
-                    </div>
+                  </v-img>
 
-                  </NuxtLink>
-                  <div class="post-content pa-5">
-                    <v-card-text class="py-1 pa-0">
-<!--                       <span class="blog-Date"> <v-icon small  color="primary">mdi-clock-outline</v-icon> {{ formatDate(article.updatedAt) }}</span>
-                      <span class="blog-user"> <v-icon small  color="primary">mdi-account</v-icon> {{ article.author.name }}</span>
- -->                    </v-card-text>
-                    <NuxtLink  :to="{ name: 'blog-slug', params: { slug: article.slug } }">
-                      <v-card-title class="py-2 pa-0 font-weight-bold">{{ article.title }}</v-card-title>
-                    </NuxtLink>
-             <!--        <v-card-text class="py-1 pa-0 "><p>{{ article.description }}</p></v-card-text> -->
-
-          <!--           <v-card-actions class="d-flex justify-space-between dense py-2 pa-0">
-                      <v-btn :to="{ name: 'blog-slug', params: { slug: article.slug } }"  large color="primary"
-                             class="button figs-btn pa-5 white--text">
-                        Read More
-                        <v-icon right small>mdi-arrow-right-thick</v-icon>
-                      </v-btn>
-
-                    </v-card-actions> -->
-                  </div>
-                </v-card>
-
-              </v-col>
-
-
-            </v-row>
-          </v-col>
-          <v-col cols="12" md="4">
-            <div class="sidebar-wrap mx-3">
-                <app-search-input />
-
-              <div class="sidebar-widget mb-5">
-                <div class="widget-tittle ma-2">
-                  <h2>Categories</h2>
-                  <span></span>
                 </div>
-                <v-chip
-                  class="ma-2 white--text"
-                  color="primary"
-                  label
-                  v-for="tag of tags"
-                  :key="tag.slug"
-                >
-                  <NuxtLink :to="`/blog/tag/${tag.slug}`" class="white--text">
-                  <v-icon left text-color="white">
-                    mdi-label
-                  </v-icon>
-                  {{ tag.name }}
-                  </NuxtLink>
-                </v-chip>
 
+
+              </NuxtLink>
+              <div  class="quality default">
+                {{ article.quality }}
               </div>
+              
+              <nuxt-link to="">
+                {{ article.tags }}
+              </nuxt-link>
 
-              <div class="sidebar-widget mb-5 ">
-                <div class="widget-tittle ma-2">
-                  <h2>Follow Us</h2>
-                  <span></span>
-                </div>
-                  <div>
-
-                    <v-btn class="ma-2" color="primary" dark><v-icon dark left> mdi-facebook</v-icon>Facebook</v-btn>
-                    <v-btn class="ma-2" color="red" dark><v-icon dark left>mdi-twitter</v-icon>twitter</v-btn>
-                    <v-btn class="ma-2" dark><v-icon dark left>mdi-linkedin</v-icon>linkedin</v-btn>
-                    <v-btn class="ma-2" dark><v-icon dark left>mdi-instagram</v-icon>instagram</v-btn>
-                  </div>
-
-              </div>
-
-
-            </div>
+            </v-card>
 
           </v-col>
+
 
         </v-row>
 
+        <h3 class="mb-4 font-bold text-2xl uppercase text-center">Topics</h3>
+        <ul class="flex flex-wrap mb-4 text-center">
+          <li
+            v-for="tag of tags"
+            :key="tag.slug"
+            class="xs:w-full md:w-1/3 lg:flex-1 px-2 text-center"
+          >
+            <NuxtLink :to="`/blog/tag/${tag.slug}`" class="">
+              <p
+                class="font-bold text-gray-600 uppercase tracking-wider font-medium text-ss"
+              >
+                {{ tag.name }}
+              </p>
+            </NuxtLink>
+          </li>
+        </ul>
 
-<pagination :nextPage="nextPage" :pageNo="1" urlPrefix="/blog"  />
+        <pagination :nextPage="nextPage" :pageNo="1" urlPrefix="/blog"  />
 
       </v-container>
     </div>
@@ -139,46 +90,45 @@
   </div>
 </template>
 
+
+
 <script>
 import Pagination from '~/components/blog/Pagination.vue';
-import AppSearchInput from '~/components/widget/AppSearchInput.vue';
+import TestiCard from '~/components/TestiCard.vue';
 export default {
   name: "index.vue",
-   components: {AppSearchInput, Pagination},
+  components: {Pagination,TestiCard},
   async asyncData({ $content, params }) {
     const tenArticles = await $content('articles')
+      .only(['title', 'tags', 'img', 'slug', 'quality'])
       /*.only(['title', 'description', 'img', 'tags', 'slug', 'author'])*/ // لعرض بعض البيانات الخاصه بالمقالة
-      .where({ tags: { $containsAny: ['action'] } })  // استدعاء وعرض مجموعة من المقالات باستخدام التصنيف
+      /*.where({ tags: { $containsAny: ['action'] } })  */// استدعاء وعرض مجموعة من المقالات باستخدام التصنيف
       .sortBy('createdAt', 'desc')
       .limit(10)
       /*.limit(5)*/ // استدعاء اخر 5 مقالات
       .fetch()
-
     const nextPage = tenArticles.length === 10
     const articles = nextPage ? tenArticles.slice(0, -1) : tenArticles
-
-      const tags = await $content('tags')
+    const tags = await $content('tags')
       .only(['name', 'description', 'img', 'slug'])
       .fetch()
     return {
       articles,
       tags,
-      data_loaded : true,
       PageTitle: 'Our Blog',
       page: 1,
       nextPage,
     }
   },
-  mounted(){
-    setTimeout(()=>{
-      this.data_loaded= false;
-    } , 1000);
-  },
   methods: {
     formatDate(date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }
       return new Date(date).toLocaleDateString('en', options)
-    }
+    },
+    reserve () {
+      this.loading = true
+      setTimeout(() => (this.loading = false), 2000)
+    },
   },
   head() {
     return {
@@ -189,20 +139,20 @@ export default {
 </script>
 
 <style lang="scss">
-  .v-card {
+.v-card {
+  overflow: hidden;
+  .blog-description {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #636465;
     overflow: hidden;
-    .blog-description {
-      margin-top: 0;
-      margin-bottom: 0;
-      color: #636465;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
-      -webkit-box-orient: vertical;
-    }
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
+}
 
 
 .blog-link {
@@ -212,14 +162,12 @@ export default {
 .blog-img
 {
   overflow: hidden;
-cursor: pointer;
+  cursor: pointer;
 }
 .v-card .blog-img .v-image
 {
   transition: .3s ease-in-out;
 }
-
-
 
 .theme--light.v-application {
   .blog-wrap{
@@ -228,7 +176,29 @@ cursor: pointer;
   }
   .v-card {
     overflow: hidden;
+  }
 }
+
+.v-card:hover .product-links {
+  bottom: 10px;
+}
+
+.quality {
+  position: absolute;
+  width: 14.42vw;
+  top: 1.6vw;
+  left: -4.5vw;
+  z-index: 10;
+  line-height: 2vw;
+  text-align: center;
+  color: #fff;
+  background:$palette-primary-main;
+  -webkit-transform: rotate(-40deg);
+  -ms-transform: rotate(-40deg);
+  transform: rotate(-40deg);
+}
+.moving:hover{
+  background: #000;
 }
 
 </style>

@@ -1,15 +1,16 @@
 ---
 title: حامل اللقب
-description: Lorem ipsum dolor sit amet, consecrated advising elite. Sed incident, erat in malady aliquot, est erat faucets purus egret vivre null sem vitae deque.
+description: تدور الأحداث حول حياة (يحيى) لاعب كرة القدم وزوجته (مسك) التي تعمل طبيبة أمراض النساء، ويسعى الزوجين لسنين عديدة لإنجاب طفل، ولكنهما يفاجئا بعد حدوث الأمر بشيء غير طبيعي، ويتعرضا للكثير من المواقف الكوميدية.
 slug: post-1
 img: 1.jpg
 alt: nice image
+quality: HD 1080
 author:
   name: ahmed samir
   bio: All about Ahmed and what he does and where he works
   img: user-img-1.png
-tags:
-  - أكشن
+tags: كوميدى
+Categories: عربى
 ---
 
 # Pizza Festival – Reopen

@@ -25,6 +25,11 @@ Style Index
 /*--------------------------------------------------
   [1. Start Basic Setup ]
 --------------------------------------------------*/
+:root {
+  --p-darkcolor: #a9a9a9;
+  --white-color: #fff;
+  --dark-color: #172132;
+}
 html
 {
   scroll-behavior: smooth;
@@ -319,7 +324,6 @@ a.v-btn--active
   font-family: $body-font-family;
   .v-main,
   .headline{
-    font-family: $body-font-family;
     padding: 0 !important
   }
 }
@@ -348,21 +352,21 @@ a.v-btn--active
     [3. Breadcrumb widget ]
   --------------------------------------------------*/
   .breadcrumb {
-    background: $palette-primary-main;
-    padding: 120px 0;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
     position: relative;
     width: 100%;
-    .breadcrumb-bg
+     .breadcrumb-img
     {
-      position:absolute;
-      bottom: 0;
+/*      bottom: 0;
       top: 20%;
       opacity: 0.6;
       left:0;
       right:0;
       background-position: left;
       background-repeat: repeat;
- /*      background-image: url(#{$breadcrumbPath}/city-bg.png); */
+       background-size: contain;
+     background-image: url(#{$breadcrumbPath}/city-bg.png);*/
     }
     .breadcrumb-heading {
       color: #1E1D23;
@@ -374,50 +378,6 @@ a.v-btn--active
     .breadcrumb-separator {
       color: #fff;
     }
-    .col-full
-    {
-      position: relative;
-      z-index: 2;
-    }
-    .location {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      border-radius: 100%;
-      background: #fff;
-      z-index: 3;
-    }
-    .location.Site-1 {
-      @include left(80%);
-      top: 270px;
-    }
-    .location.Site-2 {
-      @include left(45%);
-      top: 210px;
-    }
-
-    .location.Site-1:before {
-      -webkit-animation: pulse 4.0s infinite ease-in-out;
-              animation: pulse 4.0s infinite ease-in-out;
-    }
-    .location.Site-2:before{
-      -webkit-animation: pulse 6.0s infinite ease-in-out;
-              animation: pulse 6.0s infinite ease-in-out;
-    }
-
-    .location:before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 6px;
-      height: 6px;
-      background: #fff;
-      border-radius: 50%;
-      opacity: 0.4;
-      transform: scale(10.0);
-    }
-
 
     &::before {
       content: "";
@@ -427,7 +387,7 @@ a.v-btn--active
       bottom: 0;
       right: 0;
       z-index: 1;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.5) 90%);
+      background: linear-gradient(#040a1dcc,#040a1df2,#080f25);
     }
 
   }
@@ -723,19 +683,12 @@ header .v-btn:not(.v-btn--round).v-size--default {
   background-color: transparent;
   box-shadow: none !important;
 }
-.theme--dark .v-toolbar.v-app-bar--is-scrolled {
-  background-color: rgba(0, 30, 38, 0.8) !important;
-  box-shadow: none !important;
-  -webkit-backdrop-filter: blur(12px);
-          backdrop-filter: blur(12px);
-  transition: all 0.5s ease-in-out;
-}
 
 .theme--dark
 {
   .v-toolbar.v-app-bar--is-scrolled
   {
-    background-color: rgba(0, 30, 38, 0.8) !important;
+    background-color: rgb(12 15 33 / 70%) !important;
     box-shadow: none !important;
     -webkit-backdrop-filter: blur(12px);
             backdrop-filter: blur(12px);
@@ -759,6 +712,7 @@ header .v-btn:not(.v-btn--round).v-size--default {
     position: absolute;
     content: "";
     top: 0;
+    border-bottom: 13px solid $dark-surface;
     @include left(58px);
     transform: translateY(-100%);
     width: 10px;
@@ -767,10 +721,6 @@ header .v-btn:not(.v-btn--round).v-size--default {
     border-right: 10px solid transparent;
     border-bottom: 13px solid #fff;
   }
-}
-
-.theme--dark .nav-menu::before {
-  border-bottom: 13px solid $dark-surface;
 }
 
 .v-application.theme--dark .v-sheet.v-card,
@@ -794,4 +744,67 @@ header .v-btn:not(.v-btn--round).v-size--default {
 header.v-sheet.v-app-bar.v-toolbar.v-app-bar--is-scrolled {
   -webkit-animation: 1000ms ease-in-out 0s normal none 1 running fadeInDown;
   animation: 1000ms ease-in-out 0s normal none 1 running fadeInDown;
+}
+
+
+.v-card {
+  overflow: hidden;
+  .blog-description {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #636465;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+}
+
+
+.blog-link {
+  text-decoration: none;
+  color: #41641e;
+}
+.blog-img
+{
+  overflow: hidden;
+  cursor: pointer;
+}
+.v-card .blog-img .v-image
+{
+  transition: .3s ease-in-out;
+}
+
+.theme--light.v-application {
+  .blog-wrap{
+    background: #faf7f2;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  .v-card {
+    overflow: hidden;
+  }
+}
+
+.v-card:hover .product-links {
+  bottom: 10px;
+}
+
+.quality {
+  position: absolute;
+  width: 14.42vw;
+  top: 1.6vw;
+  left: -4.5vw;
+  z-index: 10;
+  line-height: 2vw;
+  text-align: center;
+  color: #fff;
+  background:$palette-primary-main;
+  -webkit-transform: rotate(-40deg);
+  -ms-transform: rotate(-40deg);
+  transform: rotate(-40deg);
+}
+.moving:hover{
+  background: #000;
 }
