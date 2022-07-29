@@ -1,12 +1,15 @@
 <template>
   <article class="slug-wrap">
     <div class="breadcrumb">
-        <v-img class="breadcrumb-img"
-          height="400"
+        <v-img class="breadcrumb-img ml-auto"
+          max-height="400px" 
+          max-width="100%"
           alt=""
-          :src="require(`~/static/images/poster/${article.img}`)"
+          :src="require(`~/static/images/banner/${article.img}`)"
         ></v-img>
     </div>
+
+
     <div class="inner d-flex align-center justify-center">
     <v-container>
       <v-row>
@@ -24,8 +27,6 @@
      <!-- content from markdown -->
       <nuxt-content :document="article" />
 
-
-
           </div>
         </v-col>
 
@@ -37,18 +38,30 @@
 </template>
 
 <script>
-
+import BlogComment from "~/components/blog/blog-comment";
+import PrevNext from "~/components/blog/PrevNext";
+import AppSearchInput from '~/components/widget/AppSearchInput.vue';
 export default {
+  components: {PrevNext, BlogComment, AppSearchInput},
   async asyncData({ $content, params }) {
     const article = await $content('articles', params.slug).fetch()
+
     const tagsList = await $content('tags')
       .only(['name', 'slug'])
       .where({ name: { $containsAny: article.tags } })
       .fetch()
+    const tags = Object.assign({}, ...tagsList.map((s) => ({ [s.name]: s })))
 
+    const [prev, next] = await $content('articles')
+      .only(['title', 'slug'])
+      .sortBy('createdAt', 'asc')
+      .surround(params.slug)
+      .fetch()
    return {
       article,
-
+      tags,
+      prev,
+      next
     }
   },
     methods: {

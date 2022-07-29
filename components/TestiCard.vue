@@ -9,6 +9,7 @@
               :alt="movies.alt"
               height="100vh"
             ></v-img>
+            
           </div>
         </slick>
       </div>

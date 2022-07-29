@@ -5,7 +5,7 @@
    <v-main class="pt-0">
         <Nuxt  />
     </v-main>
-  <tab-bar />
+<mobile-bar />
     <the-footer />
     <on-scroll />
   </v-app>
@@ -14,10 +14,10 @@
 <script>
 import TheFooter from "~/components/Footer/TheFooter";
 import TheHeader from "~/components//Header/TheHeader";
-import TabBar from "~/components/Tab-bar";
 import OnScroll from "~/components/onScroll";
+import MobileBar from '~/components/Header/MobileBar.vue';
 export default {
-  components: { OnScroll, TheHeader, TabBar, TheFooter},
+  components: { OnScroll, TheHeader, TheFooter,MobileBar},
   transition: 'slide-bottom'
 }
 </script>

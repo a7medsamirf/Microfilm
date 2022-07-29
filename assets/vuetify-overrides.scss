@@ -352,8 +352,8 @@ a.v-btn--active
     [3. Breadcrumb widget ]
   --------------------------------------------------*/
   .breadcrumb {
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
     position: relative;
     width: 100%;
      .breadcrumb-img
@@ -387,7 +387,9 @@ a.v-btn--active
       bottom: 0;
       right: 0;
       z-index: 1;
-      background: linear-gradient(#040a1dcc,#040a1df2,#080f25);
+/*       background: linear-gradient(rgb(4 10 29 / 50%), rgb(4 10 29 / 50%), rgb(8 15 37 / 50%));
+ */      background-image: linear-gradient(180deg, rgb(19 4 56/65%), rgb(24 29 37/0%) 10%, rgb(24 17 58/0%) 70%, #130438), linear-gradient(90deg, rgba(24, 29, 37, 0), rgb(24 17 58/0%) 50%, rgb(19 4 56/88%))
+
     }
 
   }
@@ -807,4 +809,52 @@ header.v-sheet.v-app-bar.v-toolbar.v-app-bar--is-scrolled {
 }
 .moving:hover{
   background: #000;
+}
+
+
+
+.carousel  .item:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: -o-linear-gradient(top, rgb(19 4 56/65%), rgb(24 29 37/0%) 10%, rgb(24 17 58/0%) 70%, #130438), -o-linear-gradient(left, rgba(24, 29, 37, 0), rgb(24 17 58/0%) 50%, rgb(19 4 56/88%));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(19 4 56/65%)), color-stop(10%, rgb(24 29 37/0%)), color-stop(70%, rgb(24 17 58/0%)), to(#130438)), -webkit-gradient(linear, left top, right top, from(rgba(24, 29, 37, 0)), color-stop(50%, rgb(24 17 58/0%)), to(rgb(19 4 56/88%)));
+  background-image: linear-gradient(180deg, rgb(19 4 56/65%), rgb(24 29 37/0%) 10%, rgb(24 17 58/0%) 70%, #130438), linear-gradient(90deg, rgba(24, 29, 37, 0), rgb(24 17 58/0%) 50%, rgb(19 4 56/88%))
+}
+.carousel   .item article ul img {
+  position: unset;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: 11.719vw;
+  margin: 0 0 1vw
+}
+.carousel{
+  .item article ul li
+  {
+    display: inline-block
+  }
+  .item article ul li p {
+    font-size: .938vw;
+    text-align: justify;
+    color: #d5caff;
+    padding: 1.5vw 0;
+}
+}
+
+
+.carousel .item article {
+  width: 32vw;
+  padding: 7.422vw 2.344vw;
+  font-size: .99vw;
+  position: absolute;
+  top: 100px;
+}
+
+.carousel .item {
+  position: relative;
+  height: 55.781vw;
+  direction: rtl;
 }

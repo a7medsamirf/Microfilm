@@ -6,18 +6,11 @@
   <v-container fluid>
 
     <app-search-input />
-      <v-row>
-          <v-col cols="12" lg="2" md="6" v-for="article of articles" :key="article.slug">
+<client-only>
+  <homecard  :movies="movies"/>
+</client-only>
+              
 
-                <homecard 
-                    :title="article.title"
-                    :img="article.img"
-                    :quality="article.quality"
-                    :tags="article.tags"
-                    
-                    />
-          </v-col>
- </v-row>
 
 
 
@@ -28,23 +21,13 @@
 </template>
 
 <script>
+import fetchPostsMixin from '@/utils/fetchPostsMixin';
 import Homecard from '~/components/card/homecard.vue';
 import AppSearchInput from '~/components/widget/AppSearchInput.vue';
 export default {
     name: "IndexPage",
     components: { AppSearchInput, Homecard },
-    async asyncData({ $content, params }) {
-      const articles = await $content('articles', params.slug)
-        .only(['title', 'description', 'img', 'slug', 'author'])
-        .sortBy('createdAt', 'asc')
-        .fetch()
-
-     return {
-        articles
-      }
-    }
-
-
+    mixins: [fetchPostsMixin]
 }
 </script>
 
