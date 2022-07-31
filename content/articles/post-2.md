@@ -8,8 +8,8 @@ author:
   name: ahmed samir
   bio: All about Ahmed and what he does and where he works
   img: user-img-1.png
-tags:
-  - action
+tags: action
+
 ---
 
 # Pizza Festival – Reopen

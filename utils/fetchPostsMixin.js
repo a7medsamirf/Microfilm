@@ -1,7 +1,7 @@
 export default {
 
 async asyncData({ $content, params }) {
-    const movies = await $content('movies', params.slug)
+    const articles = await $content('articles', params.slug)
       .only(['title', 'description', 'img', 'slug', 'quality'])
       .sortBy('createdAt', 'asc')
       .fetch()
@@ -9,7 +9,7 @@ async asyncData({ $content, params }) {
     .only(['name','slug'])
     .fetch()
    return {
-      movies
+      articles
     }
   }
 }

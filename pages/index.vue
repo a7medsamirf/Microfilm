@@ -1,20 +1,15 @@
 <template>
 <div>
-    <TestiCard />
-
-
-  <v-container fluid>
-
-    <app-search-input />
-<client-only>
-  <homecard  :movies="movies"/>
-</client-only>
-              
 
 
 
 
-  </v-container>
+<home-carousel :articles="articles" />
+
+  <app-search-input />
+
+
+  <home-card :articles="articles" />
 
 
 </div>
@@ -22,11 +17,12 @@
 
 <script>
 import fetchPostsMixin from '@/utils/fetchPostsMixin';
-import Homecard from '~/components/card/homecard.vue';
 import AppSearchInput from '~/components/widget/AppSearchInput.vue';
+import HomeCarousel from "~/components/card/HomeCarousel";
+import HomeCard from "~/components/card/HomeCard";
 export default {
     name: "IndexPage",
-    components: { AppSearchInput, Homecard },
+    components: {HomeCard, HomeCarousel, AppSearchInput },
     mixins: [fetchPostsMixin]
 }
 </script>

@@ -5,14 +5,14 @@
           <div v-for="(movies, index) in movies" :key="index" class="item">
 
 
-          
+
             <v-img
               v-if="movies.image"
               :src="require(`~/static/images/banner/${movies.image}`)"
               :alt="movies.alt"
               height="100vh"
             ></v-img>
-            
+
           </div>
         </slick>
       </div>
@@ -31,7 +31,7 @@ export default {
     return {
       movies,
       slickOptions: {
-        slidesToShow: 3,
+        slidesToShow: 5,
         centerMode: true,
         arrows: true,
         dots: true,

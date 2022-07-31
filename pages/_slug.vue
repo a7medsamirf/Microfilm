@@ -2,33 +2,45 @@
   <article class="slug-wrap">
     <div class="breadcrumb">
         <v-img class="breadcrumb-img ml-auto"
-          max-height="400px" 
+          max-height="400px"
           max-width="100%"
           alt=""
-          :src="require(`~/static/images/banner/${article.img}`)"
+          :src="require(`~/static/images/poster/${article.img}`)"
         ></v-img>
     </div>
 
 
-    <div class="inner d-flex align-center justify-center">
+    <div class="inner-content ">
     <v-container>
       <v-row>
+        <v-col cols="12" md="4">
+          <div class="blog-img">
+            <v-img
+              height="500"
+              width="350"
+              alt="article.img"
+              :src="require(`~/static/images/poster/${article.img}`)"
+            ></v-img>
+          </div>
+
+        </v-col>
         <v-col cols="12" md="8">
-          <div class="post-content pa-3">
-          <v-img
-            height="500"
-            width="300"
-            alt=""
-            :src="require(`~/static/images/poster/${article.img}`)"
-          ></v-img>
-          <p class="mr-3">
+        <div class="post-content pa-3">
+
+          <p class="">
             {{ formatDate(article.updatedAt) }}
           </p>
-     <!-- content from markdown -->
-      <nuxt-content :document="article" />
-
-          </div>
+          <h3>قصة الفيلم</h3>
+          <p class="">
+            {{ article.description }}
+          </p>
+        </div>
         </v-col>
+        <v-col cols="12" md="12">
+          <!-- content from markdown -->
+          <nuxt-content :document="article" />
+        </v-col>
+
 
       </v-row>
 
@@ -91,5 +103,9 @@ export default {
     background-color: #fff;
   }
 }
-
+.inner-content
+{
+  position: relative;
+  margin-top: -200px;
+}
 </style>
