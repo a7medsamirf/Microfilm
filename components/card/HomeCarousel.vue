@@ -10,6 +10,7 @@
       :controls-visible="true"
        :controls-width="10"
       :controls-height="50"
+      
       :clickable="true"
     >
        <slide v-for="(article, i) in articles" :index="i"
