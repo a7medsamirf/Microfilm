@@ -1,8 +1,9 @@
 ---
-title: Pizza Festival
-description: Lorem ipsum dolor sit amet, consecrated advising elite. Sed incident, erat in malady aliquot, est erat faucets purus egret vivre null sem vitae deque.
+title: مسلسل Man vs. Bee مترجم
+description: في هذا المسلسل الكوميدي، يحاول الأب المُتخبّط "تريفور" التغلّب على نحلة ماكرة أثناء اعتنائه بمنزل فخم... لكنّه يطلق العنان لمزيد من الفوضى.
 slug: post-3
 img: 3.jpg
+banner: Man-Vs-Bee.webp
 quality: HD 1080
 author:
   name: ahmed samir
@@ -11,29 +12,3 @@ author:
 tags:
   - action
 ---
-
-# Pizza Festival – Reopen
-
-Lorem ipsum dolor sit amet, consecrated advising elite. Sed incident, erat in malady aliquot,
-est erat faucets purus, egret vivre null sem vitae deque. Risque id saddles libero. In nec enum nisei,
-in ostriches qualm. Sed lacing fugit veldt, curses molest lectures.
-
-Lorem ipsum dolor sit amet, consecrated advising elite. Sed incident, erat in malady aliquot,
-est erat faucets purus, egret vivre null sem vitae deque. Risque id saddles libero. In nec enum nisei,
-in ostriches qualm. Sed lacing fugit veldt, curses molest lectures.
-
-Lorem ipsum dolor sit amet, consecrated advising elite. Sed incident, erat in malady aliquot,
-est erat faucets purus, egret vivre null sem vitae deque. Risque id saddles libero. In nec enum nisei,
-in ostriches qualm. Sed lacing fugit veldt, curses molest lectures.
-
-Lorem ipsum dolor sit amet, consecrated advising elite. Sed incident, erat in malady aliquot,
-est erat faucets purus, egret vivre null sem vitae deque. Risque id saddles libero. In nec enum nisei,
-in ostriches qualm. Sed lacing fugit veldt, curses molest lectures.
-Lorem ipsum dolor sit amet, consecrated advising elite. Sed incident, erat in malady aliquot,
-est erat faucets purus, egret vivre null sem vitae deque. Risque id saddles libero. In nec enum nisei,
-in ostriches qualm. Sed lacing fugit veldt, curses molest lectures.
-Lorem ipsum dolor sit amet, consecrated advising elite. Sed incident, erat in malady aliquot,
-est erat faucets purus, egret vivre null sem vitae deque. Risque id saddles libero. In nec enum nisei,
-in ostriches qualm. Sed lacing fugit veldt, curses molest lectures.
-
-

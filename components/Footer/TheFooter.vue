@@ -1,33 +1,65 @@
 <template>
   <div id="footer">
     <v-footer
-      color="footercolor"
+      dark
+      padless
     >
-      <v-container>
-        <v-row>
+      <v-row>
+        <v-col class="pb-0" lg="12">
+          <v-card
+            class="flex"
+            flat
+            tile
+          >
+            <v-card-title class="footercolor use-text-subtitle">
 
 
-          <v-col
-            class="lighten-2 text-center white--text"
-            cols="12">
+              <nuxt-link class="py-2 white--text" to="">شرح استخدام الموقع</nuxt-link>
+              <nuxt-link class="py-2 white--text" to="">سياسة الخصوصية</nuxt-link>
+              <nuxt-link class="py-2 white--text" to="">شروط الاستخدام</nuxt-link>
+              <v-spacer></v-spacer>
 
-                <div class="py-4" >
-                   <strong> جميع الحقوق محفوظة</strong> <strong>© {{ new Date().getFullYear() }} <nuxt-link to="/">ميكروفيلم — MicroFilm</nuxt-link></strong>
-                </div>
-              <div class="social-icons">
-                <a><i class="fa-brands fa-facebook-f"></i></a>
-                <a><i class="fa-brands fa-youtube"></i></a>
-                <a><i class="fa-brands fa-twitter"></i></a>
-                <a><i class="fa-brands fa-instagram"></i></a>
-                <a><i class="fa-solid fa-square-rss"></i></a>
-                <a><i class="fa-brands fa-google-play"></i></a>
-                <a> <i class="fa-brands fa-app-store-ios"></i></a>
-              </div>
-          </v-col>
+              <v-btn
+                v-for="(social, index) in SocialIcon"
+                :key="index"
+                :to="social.to"
+                class="mx-1"
+                router
+                icon
+                exact
+              >
+                <img
+                  :src="social.Icon"
+                  :alt="social.title"
+                  height="35"
+                  width="35"
+                >
+              </v-btn>
+            </v-card-title>
+          </v-card>
+          <v-card
+            class="flex"
+            flat
+            tile
+          >
+            <v-card-title class="copyright use-text-subtitle">
 
-        </v-row>
-      </v-container>
+              <strong> جميع الحقوق محفوظة</strong> <strong>© {{ new Date().getFullYear() }} <nuxt-link to="/">ميكروفيلم — MicroFilm</nuxt-link></strong>
+              <v-spacer></v-spacer>
+              <strong> جميع الحقوق محفوظة</strong> <strong>© {{ new Date().getFullYear() }} <nuxt-link to="/">ميكروفيلم — MicroFilm</nuxt-link></strong>
+
+            </v-card-title>
+
+          </v-card>
+        </v-col>
+      </v-row>
+
+
+
+
     </v-footer>
+
+
 
   </div>
 
@@ -35,32 +67,45 @@
 
 
 <script>
+import imgAPI from '~/static/images/imgAPI'
 export default {
   name: "The-Footer",
+  data(){
+    return {
+      imgAPI: imgAPI,
+      SocialIcon: [
+        { Icon: imgAPI.social[0], title: 'Facebook', to: '#'},
+        { Icon: imgAPI.social[1], title: 'Twitter', to: '#'},
+        { Icon: imgAPI.social[2], title: 'Instagram', to: '#'},
+        { Icon: imgAPI.social[3], title: 'Whatsapp', to: '#'},
+        { Icon: imgAPI.social[4], title: 'Google Plus', to: '#'},
+        ]
+    };
+  },
 }
 
 </script>
 
 <style lang="scss">
-.social-icons:nth-of-type(1)>a::after
-    {
-      content: '';
-      display: inline-block;
-      width: 120%;
-      height: 80%;
-      background: rgba(255,0,0,.2);
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(15px);
-      top: -5px;
-      left: 0;
-    }
-
-.social-icons a i
-{
-  font-size: 25px;
-  margin: 10px;
-  box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0.2);
+.footercolor{
+  background: linear-gradient(90deg,#303984 0,#ef3f3b 100%);
+}
+.copyright{
+  background: linear-gradient(90deg,#4F00BC 0,#29ABE2 100%);
 }
 
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

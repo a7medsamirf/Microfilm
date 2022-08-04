@@ -30,6 +30,10 @@ Style Index
   --white-color: #fff;
   --dark-color: #172132;
 }
+.v-main{
+  background-image: url(#{$breadcrumbPath}/background.png);
+  background-size: cover;
+}
 html
 {
   scroll-behavior: smooth;
@@ -209,6 +213,7 @@ a.v-btn--active
     height: 100%;
     background: rgba(255,0,0,.2);
     position: absolute;
+    z-index: -1;
     border-radius: 50%;
     -webkit-filter: blur(15px);
             filter: blur(15px);
@@ -352,32 +357,9 @@ a.v-btn--active
     [3. Breadcrumb widget ]
   --------------------------------------------------*/
   .breadcrumb {
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
+    padding: 125px 0px;
     position: relative;
     width: 100%;
-     .breadcrumb-img
-    {
-/*      bottom: 0;
-      top: 20%;
-      opacity: 0.6;
-      left:0;
-      right:0;
-      background-position: left;
-      background-repeat: repeat;
-       background-size: contain;
-     background-image: url(#{$breadcrumbPath}/city-bg.png);*/
-    }
-    .breadcrumb-heading {
-      color: #1E1D23;
-      max-width: 850px;
-      font-size: 52px;
-      margin-bottom: 10px;
-      text-transform: capitalize;
-    }
-    .breadcrumb-separator {
-      color: #fff;
-    }
 
     &::before {
       content: "";
@@ -387,12 +369,41 @@ a.v-btn--active
       bottom: 0;
       right: 0;
       z-index: 1;
-/*       background: linear-gradient(rgb(4 10 29 / 50%), rgb(4 10 29 / 50%), rgb(8 15 37 / 50%));
- */      background-image: linear-gradient(180deg, rgb(19 4 56/65%), rgb(24 29 37/0%) 10%, rgb(24 17 58/0%) 70%, #130438), linear-gradient(90deg, rgba(24, 29, 37, 0), rgb(24 17 58/0%) 50%, rgb(19 4 56/88%))
+      height: 400px;
+      background-image: url(#{$breadcrumbPath}/breadcrumb-banner.png);
+      background-size: cover;
+      background-position: center center;
+    }
+    .breadcrumb-bg {
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      opacity: 0.6;
+      left: 0;
+      right: 0;
+      background-size: cover;
+      background-position: center center;
+    }
 
+    .breadcrumb-heading {
+      color: #1E1D23;
+      font-size: 40px;
+      margin-bottom: 10px;
+      text-transform: capitalize;
+      text-align: center;
+    }
+
+    .breadcrumb-separator {
+      color: #fff;
+    }
+
+    .col-full {
+      position: relative;
+      z-index: 2;
     }
 
   }
+
   /*====================
     widget
   ====================*/

@@ -18,8 +18,7 @@
               class="item">
         <nuxt-link :to="`/${article.slug}`">
         <v-card
-              outlined
-              elevation-0
+
             >
                  <div class="blog-img">
                   <v-img
@@ -68,6 +67,13 @@ export default {
 </script>
 
 <style lang="scss">
+.carousel-3d-slide.item {
+  background: transparent;
+}
+.carousel-3d-slide.item.current .v-image
+{
+  border: 9px solid #fff;
+}
 .HomeCarousel
 {
   height: 100vh;

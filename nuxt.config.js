@@ -54,7 +54,7 @@ target: 'static', */
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    ['@nuxtjs/vuetify',{rtl:true}],
+    ['@nuxtjs/vuetify',{rtl:true}]
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

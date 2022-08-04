@@ -6,8 +6,8 @@
     <v-list-item class="pa-3">
       <div class="logo">
         <NuxtLink to="/">
-    <!--       <v-img max-height="50" max-width="160" :src="require('static/images/logo.png')" ></v-img> -->
-    Microfilm
+          <v-img max-height="50" max-width="150" :src="require('static/images/logo.png')" ></v-img>
+
         </NuxtLink>
       </div>
       <v-spacer></v-spacer>
@@ -22,8 +22,8 @@
       <v-container class="pa-0 fill-height">
         <v-app-bar-nav-icon class="hidden-md-and-up"  @click.stop="drawer = !drawer" />
         <NuxtLink to="/">
-         <!--  <v-img max-height="50" max-width="200" :src="require('static/images/logo.png')" ></v-img> -->
-         <h3>Microfilm <i class="fa-duotone fa-airplay"></i></h3>
+         <v-img max-height="50" max-width="180" :src="require('static/images/logo.png')" ></v-img>
+
         </NuxtLink>
         <v-spacer />
            <v-toolbar-items
@@ -97,18 +97,19 @@ export default {
       fixed: false,
             items: [
           {title: 'الرئيسية', to: '/'},
-          {title: 'الأفلام', to: '/movies'},
+           {title: 'الأفلام', to: '/movies'},
+          { title: 'الأفلام',
+            subitems: [
+              {title: 'أفلام عربى', to: '/gallery'},
+              {title: 'أفلام اجنبى', to: '/faq'},
+              {title: 'أفلام هندي', to: '/TestPage'},
+            ]
+          },
           {title: 'المسلسلات', to: '/blog'},
           {title: 'البرامج التلفزيونية', to: '/products'},
           {title: 'المسلسلات', to: '/المسلسلات'},
           {title: 'رمضان', to: '/TestPage'},
-        { title: 'صفحات',
-          subitems: [
-            {title: 'gallery', to: '/gallery'},
-            {title: 'faq', to: '/faq'},
-            {title: 'TestPage', to: '/TestPage'},
-          ]
-        },
+
         {title: 'قريبا', to: '/contact'},
       ],
     }

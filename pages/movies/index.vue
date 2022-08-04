@@ -3,7 +3,6 @@
     <div class="inner">
       <v-container fluid>
         <v-row>
-
           <v-col  v-for="Movie in movies"
                   :key="Movie.slug"
                   sm="6"
@@ -50,13 +49,8 @@
               <div  class="quality default">
                 {{ Movie.quality }}
               </div>
-              
-   <div v-for="(tag, idx) of Movie.tags" :key="idx">
-            <!-- The Tag component -->
-            <UITag :tag="tag"></UITag>
-          </div>
-              
-       
+
+
 
             </v-card>
 
