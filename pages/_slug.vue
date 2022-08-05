@@ -3,7 +3,55 @@
     <div class="breadcrumb">
       <v-container>
         <div class="col-full">
-          <h1 class="breadcrumb-heading white--text">  <i class="fa-regular fa-circle-play default--text"></i> {{ article.title }} </h1>
+          <div
+
+            class="d-flex justify-center mb-6"
+
+          >
+            <div class="text-center">
+              <h1 class="breadcrumb-heading white--text">  <i class="fa-regular fa-circle-play default--text"></i> {{ article.title }} </h1>
+
+                <v-chip
+                  class="ma-2"
+                >
+                  Default
+                </v-chip>
+
+                <v-chip
+                  class="ma-2"
+                  color="primary"
+                >
+                  Primary
+                </v-chip>
+
+                <v-chip
+                  class="ma-2"
+                  color="secondary"
+                >
+                  Secondary
+                </v-chip>
+
+                <v-chip
+                  class="ma-2"
+                  color="red"
+                  text-color="white"
+                >
+                  Red Chip
+                </v-chip>
+
+                <v-chip
+                  class="ma-2"
+                  color="green"
+                  text-color="white"
+                >
+                  Green Chip
+                </v-chip>
+
+
+            </div>
+
+          </div>
+
         </div>
       </v-container>
       <div class="breadcrumb-bg">
@@ -11,11 +59,12 @@
                max-height="400px"
                max-width="100%"
                alt=""
-               :src="require(`~/static/images/banner/${article.banner}`)"
+               :src="require(`~/static/images/poster/${article.img}`)"
         ></v-img>
       </div>
 
-      <div class="inner-content ">
+      <div class="inner-content">
+        <div class="line"></div>
         <v-container >
           <div class="post-content">
             <v-row>
@@ -34,7 +83,7 @@
 
                     <v-img
                       :src="require(`~/static/images/poster/${article.img}`)"
-                      height="350"
+                      height="400"
                       alt="article.img"
                     >
                       <template>
@@ -73,7 +122,7 @@
                       </template>
                     </v-img>
 
-                    <v-btn class="moving-btn" block  x-large><i class="fa-regular fa-circle-play fa-xl ml-2"></i> مشاهدة وتحميل </v-btn>
+                    <v-btn class="microfilm-color" block  x-large><i class="fa-regular fa-circle-play fa-xl ml-2"></i> مشاهدة وتحميل </v-btn>
 
                   </v-card>
 
@@ -82,11 +131,57 @@
               </v-col>
               <v-col class="layout align-center" cols="12" md="6">
                 <div class="post-content pa-3">
+                          <div>
+                            <h3>قصة الفيلم</h3>
+                            <p class="">
+                              {{ article.description }}
+                            </p>
+                          </div>
 
-                  <h3>قصة الفيلم</h3>
-                  <p class="">
-                    {{ article.description }}
-                  </p>
+                  <div class="">
+                    <v-chip
+                      class="ma-2"
+                      label
+                    >
+                      Label
+                    </v-chip>
+
+                    <v-chip
+                      class="ma-2"
+                      color="pink"
+                      label
+                      text-color="white"
+                    >
+                      <v-icon left>
+                        mdi-label
+                      </v-icon>
+                      Tags
+                    </v-chip>
+
+                    <v-chip
+                      class="ma-2"
+                      color="primary"
+                      label
+                    >
+                      <v-icon left>
+                        mdi-account-circle-outline
+                      </v-icon>
+                      John Leider
+                    </v-chip>
+
+                    <v-chip
+                      class="ma-2"
+                      close
+                      color="cyan"
+                      label
+                      text-color="white"
+                    >
+                      <v-icon left>
+                        mdi-twitter
+                      </v-icon>
+                      New Tweets
+                    </v-chip>
+                  </div>
                 </div>
               </v-col>
               <v-col cols="12" md="3">
@@ -107,34 +202,29 @@
                       width="35"
                     >
                   </v-btn>
-                </div>
-                <div class="details">
+                  <div class="details microfilm-color  mt-5">
                     <p> <i class="fa-light fa-tv ml-5"></i>الجودة 1080HD</p>
+                  </div>
+                  <div class="details microfilm-color mt-5">
+                    <p> <i class="fa-light fa-eye ml-5"></i>المشاهدات 200</p>
+                  </div>
+                  <div class="details microfilm-color  mt-5">
+                    <p> <i class="fa-light fa-calendar ml-5"></i>سنة الإصدار 2022</p>
+                  </div>
+                  <div class="details microfilm-color  mt-5">
+                    <p> <i class="fa-light fa-clock ml-5"></i>مدة العرض 180min</p>
+                  </div>
                 </div>
-                <div class="details mt-5">
-                  <p> <i class="fa-light fa-eye ml-5"></i>المشاهدات 200</p>
-                </div>
-                <div class="details mt-5">
-                  <p> <i class="fa-light fa-calendar ml-5"></i>سنة الإصدار 2022</p>
-                </div>
-                <div class="details mt-5">
-                  <p> <i class="fa-light fa-clock ml-5"></i>مدة العرض 180min</p>
-                </div>
+
+
 
               </v-col>
-
-              <v-col cols="12" md="12">
-                <!-- content from markdown -->
-                <nuxt-content :document="article" />
-              </v-col>
-
 
             </v-row>
 
           </div>
-
-
         </v-container>
+
       </div>
 
     </div>
@@ -278,9 +368,6 @@ export default {
     box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0);
   }
 }
-.moving-btn{
-  background: linear-gradient(90deg, #F00B51 0, #730062 100%);
-}
 
 .inner-content {
   position: relative;
@@ -288,7 +375,7 @@ export default {
 }
 .social-box {
   position: absolute;
-  top: 151px;
+  top: 0;
   left: 9px;
 }
 
@@ -306,11 +393,35 @@ export default {
     top: 0;
     bottom: 0;
     right: 0;
-    background: linear-gradient(90deg, #F00B51 0, #730062 100%);
     padding: 18px;
     clip-path: polygon(10px 0px, 100% 0px, 90% 100%, 13% 70%);
+    background: linear-gradient(270deg, #F00B51 0, #730062 100%);
   }
 }
+.inner-content{
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(90deg, #1C164C 0, #2E358E 100%);
+    padding: 18px;
+    clip-path: polygon(0 0, 100% 30%, 100% 100%, 0% 100%);
 
-
+  }
+}
+.line{
+  background: #1C164C;
+  width: 100%;
+  height: 30px;
+  border: 30px solid #1C164C;
+  transform: rotate(4deg) skew(10deg) translate(0px, 51px);
+  padding: 0;
+  margin: 0;
+  z-index: -2;
+  position: absolute;
+}
 </style>

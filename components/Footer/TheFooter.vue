@@ -11,7 +11,7 @@
             flat
             tile
           >
-            <v-card-title class="footercolor use-text-subtitle">
+            <v-card-title class="microfilm-color use-text-subtitle">
 
 
               <nuxt-link class="py-2 white--text" to="">شرح استخدام الموقع</nuxt-link>
@@ -87,9 +87,7 @@ export default {
 </script>
 
 <style lang="scss">
-.footercolor{
-  background: linear-gradient(90deg,#303984 0,#ef3f3b 100%);
-}
+
 .copyright{
   background: linear-gradient(90deg,#4F00BC 0,#29ABE2 100%);
 }
