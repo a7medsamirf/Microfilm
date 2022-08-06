@@ -94,20 +94,9 @@
                         >
 
                           <div class="icon-abs">
-                            <CoolLightBox
-                              :items="items"
-                              :index="index"
-                              @close="index = null">
-                            </CoolLightBox>
 
                             <div class="images-wrapper">
-                              <div
-                                class="image"
-                                v-for="(image, imageIndex) in items"
-                                :key="imageIndex"
-                                @click="index = imageIndex"
-                                :style="{ backgroundImage: 'url(' + image.thumb + ')' }"
-                              ></div>
+
                             </div>
 
                             <a href="https://youtu.be/oMqiS_H14Y0" data-fancybox="video" class="icon pulse expand popup-youtube">
@@ -236,8 +225,6 @@
 </template>
 
 <script>
-import CoolLightBox from "vue-cool-lightbox";
-import "vue-cool-lightbox/dist/vue-cool-lightbox.min.css";
 import imgAPI from '~/static/images/imgAPI'
 export default {
   data(){
@@ -252,16 +239,13 @@ export default {
       ]
     };
   },
-    components: {CoolLightBox},
   async asyncData({ $content, params }) {
     const article = await $content('articles', params.slug).fetch()
-
     const tagsList = await $content('tags')
       .only(['name', 'slug'])
       .where({ name: { $containsAny: article.tags } })
       .fetch()
     const tags = Object.assign({}, ...tagsList.map((s) => ({ [s.name]: s })))
-
     const [prev, next] = await $content('articles')
       .only(['title', 'slug'])
       .sortBy('createdAt', 'asc')
