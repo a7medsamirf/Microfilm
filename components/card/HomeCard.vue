@@ -9,38 +9,74 @@
                 lg="2"
                 class="pa-1 "
         >
-          <nuxt-link :to="`/${article.slug}`">
-            <v-card
-              outlined
-              elevation-0
-              class="moving"
-            >
-              <div class="blog-img">
-                <v-img
-                  :src="require(`~/static/images/poster/${article.img}`)"
-                  height="350"
-                  :alt="article.alt"
-                >
-                  <template slot="placeholder">
-                    <v-row
-                      class="fill-height"
-                      justify="center"
-                      align="center"
-                    >
-                      <v-progress-circular
-                        width="2"
-                        size="100"
-                        color="default"
-                        indeterminate
-                      ></v-progress-circular>
-                    </v-row>
-                  </template>
-                </v-img>
-              </div>
-              <h5>{{ article.title }}</h5>
-              <div  class="quality default">{{article.quality}}</div>
-            </v-card>
-          </nuxt-link>
+          <div class="BlockItem">
+            <nuxt-link :to="`/${article.slug}`">
+              <v-card
+                outlined
+                elevation-0
+              >
+                <div class="blog-img BlockImageItem">
+
+                  <v-img
+                    :src="require(`~/static/images/poster/${article.img}`)"
+                    height="350"
+                    :alt="article.alt"
+                  >
+                    <template slot="placeholder">
+                      <v-row
+                        class="fill-height"
+                        justify="center"
+                        align="center"
+                      >
+                        <v-progress-circular
+                          width="2"
+                          size="100"
+                          color="default"
+                          indeterminate
+                        ></v-progress-circular>
+                      </v-row>
+                    </template>
+                  </v-img>
+
+                  <div class="StarsIMDB warning">
+                    <span>IMDB</span>
+                    <strong>8.3</strong>
+                  </div>
+                  <a href="" class="fa-light fa-circle-play play-btn"></a>
+                  <ul class="RestInformation">
+                    <li>
+                      <span>اثارة</span>
+                      <span>جريمة</span>
+                      <span>غموض</span>
+                    </li>
+                    <li>
+
+                      1080p WEB DL
+                    </li>
+                  </ul>
+
+                  <ul class="InfoEndBlock">
+                    <li>
+                      <span>الإشراف العائلي : </span>
+                      PG-13
+                    </li>
+                    <li>
+                      <span>سنة الإنتاج : </span>
+                      2022
+                    </li>
+                  </ul>
+                  <h5 class="BlockTitle">{{ article.title }}</h5>
+                  <div  class="quality default">{{article.quality}}</div>
+
+                </div>
+
+              </v-card>
+            </nuxt-link>
+
+          </div>
+
+
+
         </v-col>
       </v-row>
     </v-container>

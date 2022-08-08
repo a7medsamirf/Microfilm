@@ -6,48 +6,78 @@
       :display="7"
       :autoplay="false"
       :height="500"
-      :autoplay-timeout="5000"
+      :autoplay-timeout="3000"
       :controls-visible="true"
        :controls-width="10"
       :controls-height="50"
 
       :clickable="true"
     >
-       <slide v-for="(article, i) in articles" :index="i"
-              :key="article.slug"
-              class="item">
+      <slide v-for="(article, i) in articles" :index="i"
+             :key="article.slug"
+             class="item BlockItem">
         <nuxt-link :to="`/${article.slug}`">
-        <v-card
+          <v-card
+            outlined
+            elevation-0
+          >
+            <div class="blog-img BlockImageItem">
 
-            >
-                 <div class="blog-img">
-                  <v-img
-                    :src="require(`~/static/images/poster/${article.img}`)"
-                    height="500"
-                    :alt="article.alt"
+              <v-img
+                :src="require(`~/static/images/poster/${article.img}`)"
+                height="500"
+                :alt="article.alt"
+              >
+                <template slot="placeholder">
+                  <v-row
+                    class="fill-height"
+                    justify="center"
+                    align="center"
                   >
-                    <template slot="placeholder">
-                      <v-row
-                        class="fill-height"
-                        justify="center"
-                        align="center"
-                      >
-                        <v-progress-circular
-                          width="2"
-                          size="100"
-                          color="default"
-                          indeterminate
-                        ></v-progress-circular>
-                      </v-row>
-                    </template>
-                  </v-img>
-                </div>
-              <h5>{{ article.title }}</h5>
-              <span class="title">You know</span>
-              <p>You know, being a test pilot isn't always the healthiest business in the world.</p>
+                    <v-progress-circular
+                      width="2"
+                      size="100"
+                      color="default"
+                      indeterminate
+                    ></v-progress-circular>
+                  </v-row>
+                </template>
+              </v-img>
+
+              <div class="StarsIMDB warning">
+                <span>IMDB</span>
+                <strong>8.3</strong>
+              </div>
+              <a href="" class="fa-light fa-circle-play play-btn"></a>
+              <ul class="RestInformation">
+                <li>
+                  <span>اثارة</span>
+                  <span>جريمة</span>
+                  <span>غموض</span>
+                </li>
+                <li>
+
+                  1080p WEB DL
+                </li>
+              </ul>
+
+              <ul class="InfoEndBlock">
+                <li>
+                  <span>الإشراف العائلي : </span>
+                  PG-13
+                </li>
+                <li>
+                  <span>سنة الإنتاج : </span>
+                  2022
+                </li>
+              </ul>
+              <h5 class="BlockTitle">{{ article.title }}</h5>
               <div  class="quality default">{{article.quality}}</div>
-            </v-card>
-            </nuxt-link>
+
+            </div>
+
+          </v-card>
+        </nuxt-link>
 
       </slide>
   </carousel-3d>
@@ -70,10 +100,7 @@ export default {
 .carousel-3d-slide.item {
   background: transparent;
 }
-.carousel-3d-slide.item.current .v-image
-{
-  border: 9px solid #fff;
-}
+
 .HomeCarousel
 {
   height: 100vh;

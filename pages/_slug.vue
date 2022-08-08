@@ -64,7 +64,6 @@
       </div>
 
       <div class="inner-content">
-        <div class="line"></div>
         <v-container >
           <div class="post-content">
             <v-row>
@@ -121,10 +120,8 @@
               <v-col class="layout align-center" cols="12" md="6">
                 <div class="post-content pa-3">
                           <div>
-                            <h3>قصة الفيلم</h3>
-                            <p class="">
-                              {{ article.description }}
-                            </p>
+                            <h3 class="warning--text"><i class="fa-solid fa-quote-right"></i> قصة الفيلم</h3>
+                            <p class="">{{ article.description }}</p>
                           </div>
 
                   <div class="">
@@ -278,31 +275,37 @@ export default {
 </script>
 
 <style lang="scss">
-
-.blog-poster{
-  cursor: pointer;
+.inner-content {
   position: relative;
-  .imdb {
-    position: absolute;
-    top: -20px;
-    width: 65px;
-    height: 75px;
-    font-size: 20px;
-    z-index: 4;
-    background: linear-gradient(180deg, #D8AE15 0, #FFE27A 100%);
-    left: 35px;
-    text-align: center;
-    border-radius: 5px 0px 5px 5px;
-    &::before {
+  z-index: 2;
+  background-image: url(#{$GroupPath}/Group.png);
+  background-size: cover;
+  .blog-poster{
+    cursor: pointer;
+    position: relative;
+    .imdb {
       position: absolute;
-      content: "";
-      top: 0px;
-      right: -10px;
-      border-right: 10px solid transparent;
-      border-bottom: 20px solid #a88300;
+      top: -20px;
+      width: 65px;
+      height: 75px;
+      font-size: 20px;
+      z-index: 4;
+      background: linear-gradient(180deg, #D8AE15 0, #FFE27A 100%);
+      left: 35px;
+      text-align: center;
+      border-radius: 5px 0px 5px 5px;
+      &::before {
+        position: absolute;
+        content: "";
+        top: 0px;
+        right: -10px;
+        border-right: 10px solid transparent;
+        border-bottom: 20px solid #a88300;
+      }
     }
   }
 }
+
 
 .theme--light.v-application .slug-wrap
 {
@@ -311,11 +314,6 @@ export default {
     background-color: #fff;
   }
 }
-/* .inner-content
-{
-  position: relative;
-  margin-top: -350px;
-} */
 .icon-abs .icon {
   background: rgba(0, 0, 0, 0.41);
   display: inline;
@@ -329,34 +327,8 @@ export default {
   animation: pulse 1s linear infinite;
 }
 
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1);
-  }
 
-  100% {
-    -webkit-box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0);
-    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0);
-  }
-}
 
-@keyframes pulse {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1);
-  }
-
-  100% {
-    -webkit-box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0);
-    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0);
-  }
-}
-
-.inner-content {
-  position: relative;
-  z-index: 2;
-}
 .social-box {
   position: absolute;
   top: 0;
@@ -381,31 +353,5 @@ export default {
     clip-path: polygon(10px 0px, 100% 0px, 90% 100%, 13% 70%);
     background: linear-gradient(270deg, #F00B51 0, #730062 100%);
   }
-}
-.inner-content{
-  &::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background: linear-gradient(90deg, #1C164C 0, #2E358E 100%);
-    padding: 18px;
-    clip-path: polygon(0 0, 100% 30%, 100% 100%, 0% 100%);
-
-  }
-}
-.line{
-  background: #1C164C;
-  width: 100%;
-  height: 30px;
-  border: 30px solid #1C164C;
-  transform: rotate(4deg) skew(10deg) translate(0px, 51px);
-  padding: 0;
-  margin: 0;
-  z-index: -2;
-  position: absolute;
 }
 </style>

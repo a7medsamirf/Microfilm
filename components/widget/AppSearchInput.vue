@@ -1,7 +1,5 @@
 <template>
   <div class="sidebar-widget mb-5">
-
-
      <v-text-field
         v-model="searchQuery"
         autocomplete="on"
@@ -22,16 +20,13 @@
      </v-text-field>
 
 
-
-
-
    <v-list dense v-if="articles.length">
         <v-list-item-group    v-model="selectedItem"
         color="primary">
           <v-list-item v-for="article of articles" :key="article.slug">
             <v-list-item-content  >
                       <NuxtLink
-          :to="{ name: 'blog-slug', params: { slug: article.slug } }"
+                        :to="`/${article.slug}`"
           class="flex px-4 py-2 items-center leading-5 transition ease-in-out duration-150 text-green-500 hover:text-black"
         >
               <v-list-item-title>{{ article.title }}</v-list-item-title>
