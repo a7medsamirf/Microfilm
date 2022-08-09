@@ -4,10 +4,8 @@ description: حيث حياة أيقونة الموسيقى الأمريكية إ
 slug: elvis
 img: 9.jpg
 quality: BluRay
-author:
-  name: ahmed samir
-  bio: All about Ahmed and what he does and where he works
-  img: user-img-1.png
 tags:
-- movie
+    - أكشن
+categories:
+    - أفلام اجنبى
 ---
