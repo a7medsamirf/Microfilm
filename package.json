@@ -2,6 +2,7 @@
   "name": "Microfilm",
   "version": "1.0.0",
   "private": true,
+  "debug": false,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

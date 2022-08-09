@@ -10,43 +10,48 @@
           >
             <div class="text-center">
               <h1 class="breadcrumb-heading white--text">  <i class="fa-regular fa-circle-play default--text"></i> {{ article.title }} </h1>
+              <p>Article last updated: {{ formatDate(article.updatedAt) }}</p>
+              <v-chip
+                class="ma-2"
+                color="primary"
+                label
+              >
 
-                <v-chip
-                  class="ma-2"
-                >
-                  Default
-                </v-chip>
+                <v-icon left small>
+                  fa-light fa-bug
+                </v-icon>
+                تبليغ عن رابط لا يعمل
+              </v-chip>
 
-                <v-chip
-                  class="ma-2"
-                  color="primary"
-                >
-                  Primary
-                </v-chip>
+              <v-chip
+                class="ma-2 white--text"
+                color="primary"
+                label
+                v-for="tag of tags"
+                :key="tag.slug"
+              >
+                <NuxtLink :to="`/tag/${tag.slug}`" class="white--text">
+                  <v-icon left text-color="white">
+                    mdi-label
+                  </v-icon>
+                  {{ tag.name }}
+                </NuxtLink>
+              </v-chip>
 
-                <v-chip
-                  class="ma-2"
-                  color="secondary"
-                >
-                  Secondary
-                </v-chip>
-
-                <v-chip
-                  class="ma-2"
-                  color="red"
-                  text-color="white"
-                >
-                  Red Chip
-                </v-chip>
-
-                <v-chip
-                  class="ma-2"
-                  color="green"
-                  text-color="white"
-                >
-                  Green Chip
-                </v-chip>
-
+              <v-chip
+                class="ma-2 white--text"
+                color="primary"
+                label
+                v-for="category of categories"
+                :key="category.slug"
+              >
+                <NuxtLink :to="`/category/${category.slug}`" class="white--text">
+                  <v-icon left text-color="white">
+                    mdi-label
+                  </v-icon>
+                  {{ category.name }}
+                </NuxtLink>
+              </v-chip>
 
             </div>
 
@@ -189,16 +194,16 @@
                     >
                   </v-btn>
                   <div class="details microfilm-color  mt-5">
-                    <p> <i class="fa-light fa-tv ml-5"></i>الجودة 1080HD</p>
+                    <p class="mb-0"> <i class="fa-light fa-tv"></i><span> الجودة {{ article.quality }}</span></p>
                   </div>
                   <div class="details microfilm-color mt-5">
-                    <p> <i class="fa-light fa-eye ml-5"></i>المشاهدات 200</p>
+                    <p class="mb-0"> <i class="fa-light fa-eye"></i>المشاهدات 200</p>
                   </div>
                   <div class="details microfilm-color  mt-5">
-                    <p> <i class="fa-light fa-calendar ml-5"></i>سنة الإصدار 2022</p>
+                    <p class="mb-0"> <i class="fa-light fa-calendar"></i><span> سنة الإصدار {{ article.year }}</span></p>
                   </div>
                   <div class="details microfilm-color  mt-5">
-                    <p> <i class="fa-light fa-clock ml-5"></i>مدة العرض 180min</p>
+                    <p class="mb-0"> <i class="fa-light fa-clock"></i><span> مدة العرض {{ article.time }} دقيقة</span></p>
                   </div>
                 </div>
 
@@ -238,21 +243,19 @@ export default {
   },
   async asyncData({ $content, params }) {
     const article = await $content('articles', params.slug).fetch()
-    const tagsList = await $content('tags')
+    const tags = await $content('tags')
       .only(['name', 'slug'])
       .where({ name: { $containsAny: article.tags } })
       .fetch()
-    const tags = Object.assign({}, ...tagsList.map((s) => ({ [s.name]: s })))
-    const [prev, next] = await $content('articles')
-      .only(['title', 'slug'])
-      .sortBy('createdAt', 'asc')
-      .surround(params.slug)
+    const categories = await $content('categories')
+      .only(['name', 'slug'])
+      .where({ name: { $containsAny: article.categories } })
       .fetch()
-   return {
+    return {
       article,
       tags,
-      prev,
-      next
+      categories,
+
     }
   },
     methods: {

@@ -40,9 +40,9 @@
 
                   <div class="StarsIMDB warning">
                     <span>IMDB</span>
-                    <strong>8.3</strong>
+                    <strong>{{ article.imdb }}</strong>
                   </div>
-                  <a href="" class="fa-light fa-circle-play play-btn"></a>
+                  <a href="" class="fa-solid fa-play play-btn white--text"></a>
                   <ul class="RestInformation">
                     <li>
                       <span>اثارة</span>
@@ -55,16 +55,6 @@
                     </li>
                   </ul>
 
-                  <ul class="InfoEndBlock">
-                    <li>
-                      <span>الإشراف العائلي : </span>
-                      PG-13
-                    </li>
-                    <li>
-                      <span>سنة الإنتاج : </span>
-                      2022
-                    </li>
-                  </ul>
                   <h5 class="BlockTitle">{{ article.title }}</h5>
                   <div  class="quality default">{{article.quality}}</div>
 

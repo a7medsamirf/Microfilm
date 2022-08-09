@@ -1,9 +1,15 @@
 export default {
-async asyncData({ $content, params }) {
+async asyncData({ $content, params, error }) {
     const articles = await $content('articles', params.slug)
-      .only(['title', 'description', 'img', 'slug', 'quality'])
+      .only(['title', 'description', 'img', 'slug', 'quality','imdb'])
+      /*.only(['title', 'description', 'img', 'tags', 'slug', 'author'])*/ // لعرض بعض البيانات الخاصه بالمقالة
+      /* .where({ tags: { $containsAny: ['burger'] } }) */ // استدعاء وعرض مجموعة من المقالات باستخدام التصنيف
       .sortBy('createdAt', 'asc')
+      /*.limit(5)*/ // استدعاء اخر 5 مقالات
       .fetch()
+      .catch(() => {
+        error({ statusCode: 404, message: 'Page not found' })
+      })
  const tags = await $content('tags')
     .only(['name','slug'])
     .sortBy('createdAt', 'asc')

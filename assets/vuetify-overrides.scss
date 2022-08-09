@@ -1302,46 +1302,6 @@ ul.RestInformation>li:last-child {
   text-align: center;
 }
 
-ul.InfoEndBlock {
-  position: absolute;
-  top: 73px;
-  right: 0;
-  opacity: 0;
-  transition: .3s all ease;
-  z-index: 10;
-  width: 100%;
-  padding: 12px;
-  transform: scale(.5)
-}
-
-ul.InfoEndBlock>li {
-  font-size: 11px;
-  font-weight: 700;
-  color: #ffffffcc;
-  padding: 5px 0;
-  line-height: 17px;
-  text-align: right;
-  border-top: 1px solid #ffffff21
-}
-
-ul.InfoEndBlock>li i {
-  float: right;
-  font-size: 14px;
-  margin-left: 4px;
-  margin-top: 1px
-}
-
-ul.InfoEndBlock>li>span {
-  color: #fff
-}
-
-.BlockItem:hover ul.InfoEndBlock {
-  opacity: 1;
-  transform: scale(1)
-}
-
-
-
 .v-card.moving .v-image{
   background-size: cover;
   border-radius: 20px !important;
@@ -1372,14 +1332,15 @@ ul.InfoEndBlock>li>span {
    opacity: 0;
   left: 50%;
   bottom: auto;
-  transform: translate(-50%,-50%);
   font-size: 50px;
   color: #fff;
   margin-bottom: 15px;
-   transition: $transition;
+  transition: $transition;
+  transform: translate(-50%,-50%) scale(2.5);
 }
 
  .BlockItem:hover .play-btn {
    opacity: 1;
    transition: $transition;
+   transform: translate(-50%,-50%) scale(1);
  }
