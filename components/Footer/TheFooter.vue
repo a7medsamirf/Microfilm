@@ -14,9 +14,9 @@
             <v-card-title class="microfilm-color use-text-subtitle">
 
 
-              <nuxt-link class="py-2 white--text" to="">شرح استخدام الموقع</nuxt-link>
-              <nuxt-link class="py-2 white--text" to="">سياسة الخصوصية</nuxt-link>
-              <nuxt-link class="py-2 white--text" to="">شروط الاستخدام</nuxt-link>
+              <nuxt-link class="py-2 ml-3 white--text" to="">شرح استخدام الموقع</nuxt-link>
+              <nuxt-link class="py-2 ml-3 white--text" to="">سياسة الخصوصية</nuxt-link>
+              <nuxt-link class="py-2 ml-3 white--text" to="">شروط الاستخدام</nuxt-link>
               <v-spacer></v-spacer>
 
               <v-btn

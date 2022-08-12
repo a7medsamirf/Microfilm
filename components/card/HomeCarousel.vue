@@ -4,6 +4,7 @@
     <carousel-3d
       :perspective="20"
       :display="7"
+      :space="300"
       :autoplay="false"
       :height="500"
       :autoplay-timeout="3000"
@@ -48,7 +49,7 @@
                 <span>IMDB</span>
                 <strong>8.3</strong>
               </div>
-              <a href="" class="fa-light fa-circle-play play-btn"></a>
+              <a href="" class="fa-solid fa-play play-btn white--text"></a>
               <ul class="RestInformation">
                 <li>
                   <span>اثارة</span>

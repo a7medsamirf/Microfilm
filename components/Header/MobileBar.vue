@@ -1,40 +1,48 @@
 <template>
-  <v-bottom-navigation
-    class="hidden-lg-and-up"
-     shift
-     fixed
-    :background-color="color"
-  >
+  <div>
+    <v-bottom-navigation class="hidden-lg-and-up" shift fixed :background-color="color" >
+      <v-btn v-for="(item, i) in items"
+      :key="i" :to="item.to" router>
 
-    <v-btn to="/">
-      <span>Home</span>
-      <v-icon>mdi-home-circle-outline</v-icon>
-    </v-btn>
+       <span>{{ item.title }}</span>
+        <v-icon dense>{{ item.icon }}</v-icon>
+      </v-btn>
 
-    <v-btn to="/blog">
-      <span>Blog</span>
+    </v-bottom-navigation>
+  </div>
 
-      <v-icon>mdi-music-note</v-icon>
-    </v-btn>
-
-    <v-btn to="/products">
-      <span>Shop</span>
-
-      <v-icon>mdi-store-outline</v-icon>
-    </v-btn>
-
-    <v-btn to="/contact">
-      <span>Contact</span>
-
-      <v-icon>mdi-phone-in-talk</v-icon>
-    </v-btn>
-  </v-bottom-navigation>
 </template>
 
 <script>
   export default {
     name: "Tab-bar",
-    computed: {
+    data() {
+      return {
+        items: [{
+            icon: 'fa-thin fa-house',
+            title: 'الرئيسية',
+            to: '/'
+          },
+          {
+            icon: 'fa-thin fa-camcorder',
+            title: 'الأفلام',
+            to: '/movies'
+          },
+      {
+            icon: 'fa-light fa-tv-retro',
+            title: 'مسلسلات',
+            to: '/ghjghj'
+          },
+                {
+            icon: 'fa-thin fa-camcorder',
+            title: 'الأفلام',
+            to: '/gjgh'
+          },
+        ],
+      }
+
+    },
+        computed: {
       color () {
         switch (this.value) {
           default: return 'default'
@@ -46,37 +54,28 @@
 </script>
 
 <style lang="scss">
+  .v-bottom-navigation {
+    color: #fff !important;
+    border-radius: 50px;
+    transform: translate(25px, -20px) !important;
+    width: 90% !important;
+    padding: 10px !important;
 
-.v-bottom-navigation {
-  color: #fff !important;
-  border-radius: 50px;
-  transform: translate(25px, -20px) !important;
-  width: 90% !important;
-  padding: 10px !important;
-
-  span.v-btn__content{
-    color: #fff;
+    span.v-btn__content {
+      color: #fff;
+    }
   }
-}
-.container .bottombar #t1:checked ~ #back::after {
-  transform: translate(75px, 0);
-}
+
+  .container .bottombar #t1:checked~#back::after {
+    transform: translate(75px, 0);
+  }
 
 
-.v-item-group.v-bottom-navigation--fixed
-{
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 20px 15px;
-  box-shadow: 0px 20px 40px rgb(18 34 64 / 10%);
-}
-
+  .v-item-group.v-bottom-navigation--fixed {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px 15px;
+    box-shadow: 0px 20px 40px rgb(18 34 64 / 10%);
+  }
 
 </style>
-
-
-
-
-
-
-

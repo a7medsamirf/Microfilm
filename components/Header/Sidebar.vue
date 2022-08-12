@@ -11,7 +11,7 @@
           
         >
           <v-list-item-icon>
-            <v-icon>{{ link.icon }}</v-icon>
+            <v-icon dense>{{ link.icon }}</v-icon>
           </v-list-item-icon>
 
           <v-list-item-title v-text="link.title" />
@@ -19,11 +19,12 @@
 
         <v-list-group
           v-else
+          
           :key="link.title"
           :prepend-icon="link.icon"
           active-class="default--text"
         >
-          <template v-slot:activator>
+          <template v-slot:activator >
             <v-list-item-title>{{ link.title }}</v-list-item-title>
           </template>
 
@@ -33,7 +34,7 @@
             :key="sublink.title"
           >
             <v-list-item-icon>
-              <v-icon>{{ sublink.icon }}</v-icon>
+              <v-icon dense>{{ sublink.icon }}</v-icon>
             </v-list-item-icon>
             <v-list-item-title>{{ sublink.title }}</v-list-item-title>
 
@@ -53,27 +54,24 @@ export default {
   name: "Sidebar",
   data () {
     return {
-      links: [
-        {icon: 'mdi-home-circle-outline', title: 'Home', to: '/'},
-        {icon: 'mdi-chart-bubble', title: 'About Us', to: '/About-Us'},
-        {icon: 'mdi-folder', title: 'Pages',
-          subLinks: [
-            {title: 'gallery', to: '/gallery', icon: 'mdi-note-multiple-outline'},
-            {title: 'faq', to: '/faq', icon: 'mdi-chart-bubble'},
+        links: [
+          {icon: 'fa-thin fa-house', title: 'الرئيسية', to: '/'},
+           { icon: 'fa-regular fa-camera-movie', title: 'الأفلام', to: '/movies'},
+          { icon: 'fa-regular fa-camera-movie', title: 'الأفلام',
+            subLinks: [
+              {icon: 'fa-regular fa-camera-movie', title: 'أفلام عربى', to: '/gallery'},
+              {title: 'أفلام اجنبى', to: '/faq'},
+              {title: 'أفلام هندي', to: '/TestPage'},
+            ]
+          },
+          {title: 'المسلسلات', to: '/blog'},
+          {title: 'البرامج التلفزيونية', to: '/cars'},
+          {title: 'المسلسلات', to: '/المسلسلات'},
+          {title: 'رمضان', to: '/TestPage'},
 
-          ]
-        },
-        {icon: 'mdi-chart-bubble', title: 'TestPage', to: '/TestPage'},
-        {icon: 'mdi-note-multiple-outline', title: 'Blog', to: '/blog'},
-        {icon: 'mdi-note-multiple-outline', title: 'Shop', to: '/products'},
-        {icon: 'mdi-phone-in-talk', title: 'Contact Us', to: '/contact'},
-        {icon: 'mdi-folder', title: 'Service',
-          subLinks: [
-            {title: 'gallery', to: '/gallery', icon: 'mdi-note-multiple-outline'},
-            {title: 'Service', to: '/Service', icon: 'mdi-chart-bubble'},
-          ]
-        },
+        {title: 'قريبا', to: '/coming-soon'},
       ],
+ 
 
     }
 

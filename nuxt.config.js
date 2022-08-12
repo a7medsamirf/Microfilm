@@ -24,6 +24,15 @@ target: 'static', */
     ]
   },
   transition: 'slide-bottom',
+  loading: {
+    height: '10px',
+    duration: 1000,
+    rtl: true,
+    continuous: true,
+    color: 'blue',
+    name: 'circle',
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/vuetify-overrides.scss',

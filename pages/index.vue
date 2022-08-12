@@ -1,8 +1,9 @@
 <template>
 <div>
 
-
 <home-carousel :articles="articles" />
+
+
 
   <app-search-input />
 

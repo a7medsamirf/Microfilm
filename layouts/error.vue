@@ -54,8 +54,6 @@ export default {
 <style lang="scss">
 .error-area
 {
-  background: url(~/static/images/hero-pattern-1.webp) no-repeat;
-  background-size: cover ;
   a {
     display: inline-block;
     color: #fff;
@@ -72,10 +70,6 @@ export default {
   }
   h1.error_bg
   {
-/*     background: url(~/static/images/shop/6.webp) no-repeat center center; */
-    background-size: cover;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     display: inline-block;
     font-weight: 700;
     font-size: 200px;

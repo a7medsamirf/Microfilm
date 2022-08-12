@@ -4,9 +4,12 @@
       <v-row>
         <v-col  v-for="article in articles"
                 :key="article.slug"
-                sm="6"
-                md="4"
+                cols="12"
                 lg="2"
+                md="3"
+                sm="3"
+                col="5"
+               
                 class="pa-1 "
         >
           <div class="BlockItem">

@@ -4,7 +4,7 @@
         v-model="searchQuery"
         autocomplete="on"
         :loading="loading"
-        placeholder="Search Articles"
+        placeholder="إبحث فى ميكروفيلم"
         solo-inverted
         flat
         clearable
