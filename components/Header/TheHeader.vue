@@ -104,8 +104,8 @@ export default {
            {icon: 'fa-thin fa-house', title: 'الرئيسية', to: '/'},
            { icon: 'fa-thin fa-camcorder', title: 'الأفلام', to: '/movies',
             subitems: [
-              {title: 'أفلام عربى', to: '/movies'},
-              {title: 'أفلام اجنبى', to: '/faq'},
+              {title: 'أفلام عربى', to: '/category/أفلام عربى'},
+              {title: 'أفلام اجنبى', to: '/category/أفلام اجنبى'},
               {title: 'أفلام هندي', to: '/TestPage'},
             ]
           },

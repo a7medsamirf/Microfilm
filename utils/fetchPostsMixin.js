@@ -13,10 +13,15 @@ async asyncData({ $content, params }) {
     .only(['name','slug'])
     .sortBy('createdAt', 'asc')
     .fetch()
+    const categories = await $content('categories')
+    .only(['name','slug'])
+    .sortBy('createdAt', 'asc')
+    .fetch()
 
    return {
       articles,
-     tags
+     tags,
+     categories
     }
   },
   methods: {

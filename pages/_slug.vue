@@ -89,7 +89,8 @@
                     <p class="">{{ article.description }}</p>
                   </div>
 
-                  <tag-box :tags="tags" :categories="categories" />
+                  <tag-box :tags="tags"  />
+                  <category-box :categories="categories"/>
 
                 </div>
               </v-col>
@@ -139,11 +140,13 @@
   </article>
 </template>
 <script>
+import CategoryBox from '~/components/widget/Category-box.vue';
   import TagBox from '~/components/widget/Tag-box.vue';
   import imgAPI from '~/static/images/imgAPI'
   export default {
     components: {
-      TagBox
+      TagBox,
+        CategoryBox
     },
     data() {
       return {
@@ -176,25 +179,15 @@
         ]
       };
     },
-    async asyncData({
-      $content,
-      params
-    }) {
+    async asyncData({$content, params}) {
       const article = await $content('articles', params.slug).fetch()
       const tags = await $content('tags')
         .only(['name', 'slug'])
-        .where({
-          name: {
-            $containsAny: article.tags
-          }
-        })
+        .where({ name: {$containsAny: article.tags}})
         .fetch()
       const categories = await $content('categories')
         .only(['name', 'slug'])
-        .where({
-          name: {
-            $containsAny: article.categories
-          }
+        .where({name: {$containsAny: article.categories}
         })
         .fetch()
       return {
