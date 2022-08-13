@@ -1,8 +1,7 @@
 export default {
 async asyncData({ $content, params }) {
     const articles = await $content('articles', params.slug)
-      /*.only(['title', 'description', 'img', 'slug', 'quality','imdb'])*/
-      /*.only(['title', 'description', 'img', 'tags', 'slug', 'author'])*/ // لعرض بعض البيانات الخاصه بالمقالة
+      /*.only(['title', 'description', 'img', 'slug', 'quality', 'imdb'])*/ // لعرض بعض البيانات الخاصه بالمقالة
       /* .where({ tags: { $containsAny: ['burger'] } }) */ // استدعاء وعرض مجموعة من المقالات باستخدام التصنيف
       /* .sortBy('createdAt', 'asc') */ // ترتيب المقالات من الاقدم للاحدث
       .sortBy('createdAt', 'desc') // ترتيب المقالات من الاحدث للاقدم
@@ -13,6 +12,7 @@ async asyncData({ $content, params }) {
     .only(['name','slug'])
     .sortBy('createdAt', 'asc')
     .fetch()
+    
     const categories = await $content('categories')
     .only(['name','slug'])
     .sortBy('createdAt', 'asc')

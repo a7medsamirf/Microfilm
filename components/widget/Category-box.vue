@@ -21,7 +21,7 @@
     props: {
       categories: {
         type: Array,
-        required: true
+        required: false
       },
     },
   }

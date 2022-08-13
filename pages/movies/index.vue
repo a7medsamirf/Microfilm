@@ -1,26 +1,8 @@
 <template>
 <div>
 
-<home-carousel :articles="articles" />
-
-
-
-  <app-search-input />
-
-
-  <div class="titleSection LeftA">
-    <div class="rightTitleSection">
-      <i class="fas fa-camera-movie default"></i>
-      <span>جديد الافلام </span>
-    </div>
-    <div class="leftTitleSection">
-      <a href="https://m.arabseed.sbs/movies" class="MoreFromSection HoverAfter"><span>المزيد</span><div class="loader10"></div></a>
-    </div>
-  </div>
 
   <home-card :articles="articles" />
-
-
 
 
   <v-container>
@@ -30,13 +12,6 @@
       </v-col>
     </v-row>
   </v-container>
-
-
-
-
-
-
-
 
   <ul>
     <li

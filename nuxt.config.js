@@ -54,7 +54,8 @@ target: 'static', */
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     {src: '~/plugins/fontawesome.js', ssr: false},
-    {src: '~/plugins/vue-carousel-3d.js', ssr: false}
+    {src: '~/plugins/vue-carousel-3d.js', ssr: false},
+    {src: '~/plugins/lightbox.js', ssr: false}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

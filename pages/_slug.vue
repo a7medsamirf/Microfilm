@@ -48,7 +48,7 @@
 
 
                   </div> -->
-      
+      {{ article.youtube }}
                   <v-card>
 
                     <v-img :src="require(`~/static/images/poster/${article.img}`)" height="400" alt="article.img">
@@ -61,7 +61,11 @@
 
                             </div>
 
-                            <a href="https://youtu.be/oMqiS_H14Y0" data-fancybox="video"
+                     <nuxt-link class="icon pulse expand popup-youtube" :src"{{ article.youtube }}">
+                               <i class="fa-solid fa-play white--text"></i>
+                          </nuxt-link>
+
+                            <a href="article.youtube" data-fancybox="video"
                               class="icon pulse expand popup-youtube">
 
                               <i class="fa-solid fa-play white--text"></i>
