@@ -1,15 +1,16 @@
 <template>
-  <div class="sidebar-widget mb-5">
+  <div class="">
      <v-text-field
+        class="pa-0 ma-0"
         v-model="searchQuery"
         autocomplete="on"
         :loading="loading"
-        placeholder="إبحث فى ميكروفيلم"
+        placeholder=" ابحث بأسم الفيلم او المسلسل"
         solo-inverted
         flat
         clearable
         color="primary"
-
+        hide-details
       >
        <v-icon
          slot="append"
@@ -20,8 +21,9 @@
      </v-text-field>
 
 
-   <v-list dense v-if="articles.length">
-        <v-list-item-group    v-model="selectedItem"
+   <v-list  v-if="articles.length">
+        <v-list-item-group
+          v-model="selectedItem"
         color="primary">
           <v-list-item v-for="article of articles" :key="article.slug">
             <v-list-item-content  >

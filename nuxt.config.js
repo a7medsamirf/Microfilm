@@ -25,11 +25,11 @@ target: 'static', */
   },
   transition: 'slide-bottom',
   loading: {
-    height: '10px',
+    height: '5px',
     duration: 1000,
     rtl: true,
     continuous: true,
-    color: 'blue',
+    color: '#e62d2d',
     name: 'circle',
   },
 
@@ -55,7 +55,7 @@ target: 'static', */
   plugins: [
     {src: '~/plugins/fontawesome.js', ssr: false},
     {src: '~/plugins/vue-carousel-3d.js', ssr: false},
-    {src: '~/plugins/lightbox.js', ssr: false}
+
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

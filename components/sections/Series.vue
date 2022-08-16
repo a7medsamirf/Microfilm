@@ -1,19 +1,29 @@
 <template>
-  <div class="HomeCard">
+  <div class="my-5">
+      <div dense class="title-Section">
+        <v-toolbar-title class="right-Title-Section">
+                  <i class="fas fa-camera-movie default title-icon">  </i>
+                    <span>جديد المسلسلات </span>
+            </v-toolbar-title>
+        <v-spacer></v-spacer>
+     <div class="left-Title-Section">
+      <a href="" class="MoreFromSection HoverAfter"><span>المزيد</span><div class="title-loader"></div></a>
+    </div>
+      </div>
     <v-container fluid>
       <v-row>
-        <v-col  v-for="article in articles"
-                :key="article.slug"
+        <v-col  v-for="Serie in Series"
+                :key="Serie.slug"
                 cols="12"
                 lg="2"
                 md="3"
                 sm="3"
                 col="5"
-
+               
                 class="pa-1 "
         >
           <div class="BlockItem">
-            <nuxt-link :to="`/${article.slug}`">
+            <nuxt-link :to="`/${Serie.slug}`">
               <v-card
                 outlined
                 elevation-0
@@ -21,9 +31,9 @@
                 <div class="blog-img BlockImageItem">
 
                   <v-img
-                    :src="require(`~/static/images/poster/${article.img}`)"
+                    :src="require(`~/static/images/poster/${Serie.img}`)"
                     height="350"
-                    :alt="article.alt"
+                    :alt="Serie.alt"
                   >
                     <template slot="placeholder">
                       <v-row
@@ -43,19 +53,23 @@
 
                   <div class="StarsIMDB warning">
                     <span>IMDB</span>
-                    <strong>{{ article.imdb }}</strong>
+                    <strong>{{ Serie.imdb }}</strong>
                   </div>
                   <a href="" class="fa-solid fa-play play-btn white--text"></a>
                   <ul class="RestInformation">
-
+                    <li>
+                      <span>اثارة</span>
+                      <span>جريمة</span>
+                      <span>غموض</span>
+                    </li>
                     <li>
 
                       1080p WEB DL
                     </li>
                   </ul>
 
-                  <h5 class="BlockTitle">{{ article.title }}</h5>
-                  <div  class="quality default">{{article.quality}}</div>
+                  <h5 class="BlockTitle">{{ Serie.title }}</h5>
+                  <div  class="quality default">{{Serie.quality}}</div>
 
                 </div>
 
@@ -70,18 +84,21 @@
       </v-row>
     </v-container>
 
-
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeCard",
-  props: ['articles']
-
+  name: "Series",
+  props: {
+    Series: {
+      type: Array,
+      required: true
+    },
+  },
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>

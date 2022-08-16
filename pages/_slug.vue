@@ -7,8 +7,26 @@
             <div class="text-center">
               <h1 class="breadcrumb-heading white--text"> <i class="fa-regular fa-circle-play default--text"></i>
                 {{ article.title }}  ( {{ article.year }})
-                
+
                 </h1>
+      <nav class="woocommerce-breadcrumb">
+             <nuxt-link class="white--text ml-3" to="/">الرئيسية</nuxt-link>
+
+        <span class="breadcrumb-separator ml-3" v-for="category of categories"
+        :key="category.slug"> /
+         <NuxtLink :to="`/category/${category.slug}`" class="white--text">
+
+          {{ category.name }}
+        </NuxtLink>
+
+        </span>
+
+             <span class="breadcrumb-separator ml-3"> / {{article.title }}</span>
+          </nav>
+
+
+
+
 
               <v-chip class="ma-2" color="primary" label>
 
@@ -34,7 +52,7 @@
     </div>
 
       <div class="inner-content">
-        <v-container>
+        <v-container fluid>
           <div class="post-content">
             <v-row>
               <v-col cols="12" lg="3" md="4" sm="6">
@@ -48,7 +66,7 @@
 
 
                   </div> -->
-      {{ article.youtube }}
+
                   <v-card>
 
                     <v-img :src="require(`~/static/images/poster/${article.img}`)" height="400" alt="article.img">
@@ -61,9 +79,9 @@
 
                             </div>
 
-                     <nuxt-link class="icon pulse expand popup-youtube" :src"{{ article.youtube }}">
+        <!--              <nuxt-link class="icon pulse expand popup-youtube" :src"{{ article.youtube }}">
                                <i class="fa-solid fa-play white--text"></i>
-                          </nuxt-link>
+                          </nuxt-link> -->
 
                             <a href="article.youtube" data-fancybox="video"
                               class="icon pulse expand popup-youtube">
@@ -94,7 +112,13 @@
                   </div>
 
                   <tag-box :tags="tags"  />
-                  <category-box :categories="categories"/>
+
+                 <div class="post-description rounded-lg mt-3">
+                    <h3 class="warning--text"><i class="fa-solid fa-users"></i> فريق العمل</h3>
+
+
+<!--               <v-img :src="require(`~/static/images/avatars/${article.team}`)" height="400" alt="article.img"></v-img>-->
+                  </div>
 
                 </div>
               </v-col>
@@ -132,7 +156,25 @@
 
 
               </v-col>
+            </v-row>
 
+            <v-row>
+              <v-col cols="12">
+     <div dense class="title-Section">
+        <v-toolbar-title class="right-Title-Section">
+                  <i class="fas fa-camera-movie default title-icon">  </i>
+                    <span>  عروض ذات صلة </span>
+            </v-toolbar-title>
+        <v-spacer></v-spacer>
+     <div class="left-Title-Section">
+      <a href="" class="MoreFromSection HoverAfter"><span>المزيد</span><div class="title-loader"></div></a>
+    </div>
+      </div>
+
+              </v-col>
+              <v-col cols="12">
+                <home-card :articles="articles" />
+              </v-col>
             </v-row>
 
           </div>
@@ -144,13 +186,15 @@
   </article>
 </template>
 <script>
-import CategoryBox from '~/components/widget/Category-box.vue';
+  import fetchPostsMixin from '@/utils/fetchPostsMixin';
   import TagBox from '~/components/widget/Tag-box.vue';
   import imgAPI from '~/static/images/imgAPI'
+  import HomeCard from "~/components/card/HomeCard";
   export default {
     components: {
+      HomeCard,
       TagBox,
-        CategoryBox
+      fetchPostsMixin
     },
     data() {
       return {
@@ -333,13 +377,11 @@ import CategoryBox from '~/components/widget/Category-box.vue';
 
   .imdb-box {
     text-align: center;
-    background: #fdcd20 !important;
     color: #000 !important;
     box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
-    font-size: 20px;
-    font-weight: 500;
-    border-radius: 10px 10px 0px 0px;
     width: 100%;
+    background: linear-gradient(#f5c518, #d08906) !important;
+    -webkit-box-reflect: below 3px linear-gradient(transparent, #ff000029);
 
     span.imdb-ra {
       background: #fdcd20;

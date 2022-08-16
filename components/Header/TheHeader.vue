@@ -23,9 +23,11 @@
         <v-app-bar-nav-icon class="hidden-md-and-up"  @click.stop="drawer = !drawer" />
         <NuxtLink to="/">
          <v-img max-height="50" max-width="180" :src="require('static/images/logo.png')" ></v-img>
-
         </NuxtLink>
+
         <v-spacer />
+<!--              <AppSearchInput />-->
+
            <v-toolbar-items
          class="hidden-md-and-down DesktopNav"
         v-for="(item, i) in items" :key="i">
@@ -33,11 +35,11 @@
                      <v-icon dense class="ml-3">{{ item.icon }}</v-icon>
 
            {{ item.title }}
-           
+
            </v-btn>
-       
-           
-     
+
+
+
 
        <v-menu
           transition="slide-x-transition"
@@ -92,8 +94,9 @@
 <script>
 import NavSearch from "~/components/Header/NavSearch";
 import Sidebar from "~/components/Header/Sidebar";
+import AppSearchInput from "../widget/AppSearchInput.vue";
 export default {
-  components: {Sidebar, NavSearch},
+  components: { Sidebar, NavSearch, AppSearchInput },
   data () {
     return {
       drawer: false,
@@ -102,17 +105,15 @@ export default {
       fixed: false,
             items: [
            {icon: 'fa-thin fa-house', title: 'الرئيسية', to: '/'},
-           { icon: 'fa-thin fa-camcorder', title: 'الأفلام', to: '/movies',
+           { icon: 'fa-thin fa-camcorder', title: 'الأفلام', to: '/Movies',
             subitems: [
-              {title: 'أفلام عربى', to: '/category/أفلام عربى'},
-              {title: 'أفلام اجنبى', to: '/category/أفلام اجنبى'},
+              {title: 'أفلام عربى', to: '/category/Arabic-Movies'},
+              {title: 'أفلام اجنبى', to: '/category/English-Movies'},
               {title: 'أفلام هندي', to: '/TestPage'},
             ]
           },
           {title: 'أفلام', to: '/movies'},
-          {title: 'المسلسلات', to: '/blog'},
-          {title: 'البرامج التلفزيونية', to: '/cars'},
-          {title: 'المسلسلات', to: '/المسلسلات'},
+          {title: 'المسلسلات', to: '/Series'},
 
         {title: 'قريبا', to: '/coming-soon'},
       ],

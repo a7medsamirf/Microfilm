@@ -1,18 +1,14 @@
 <template>
 <div class="HomeCarousel">
-  <v-container fill-height fluid >
-    <carousel-3d
-      :perspective="20"
-      :display="7"
-      :space="300"
-      :autoplay="false"
-      :height="500"
-      :autoplay-timeout="3000"
-      :controls-visible="true"
-       :controls-width="10"
-      :controls-height="50"
 
-      :clickable="true"
+    <carousel-3d
+      :display="8"
+      :autoplay="true"
+      :height="500"
+      :autoplay-timeout="5000"
+      :disable3d="true"
+       :space="365"
+
     >
       <slide v-for="(article, i) in articles" :index="i"
              :key="article.slug"
@@ -47,31 +43,18 @@
 
               <div class="StarsIMDB warning">
                 <span>IMDB</span>
-                <strong>8.3</strong>
+                <strong>{{ article.imdb }}</strong>
               </div>
               <a href="" class="fa-solid fa-play play-btn white--text"></a>
               <ul class="RestInformation">
-                <li>
-                  <span>اثارة</span>
-                  <span>جريمة</span>
-                  <span>غموض</span>
-                </li>
+
+
                 <li>
 
                   1080p WEB DL
                 </li>
               </ul>
 
-              <ul class="InfoEndBlock">
-                <li>
-                  <span>الإشراف العائلي : </span>
-                  PG-13
-                </li>
-                <li>
-                  <span>سنة الإنتاج : </span>
-                  2022
-                </li>
-              </ul>
               <h5 class="BlockTitle">{{ article.title }}</h5>
               <div  class="quality default">{{article.quality}}</div>
 
@@ -82,11 +65,12 @@
 
       </slide>
   </carousel-3d>
-  </v-container>
+
 </div>
 </template>
 
 <script>
+
 export default {
     props: {
     articles: {
@@ -98,29 +82,17 @@ export default {
 </script>
 
 <style lang="scss">
+.carousel-3d-slide.item.BlockItem.current
+{
+
+}
 .carousel-3d-slide.item {
   background: transparent;
 }
 
 .HomeCarousel
 {
-  height: 100vh;
+  padding-top: 65px;
 }
-.v-image:after,
-.v-image:before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: inherit;
-  height: 50%;
-  bottom: -52%;
-}
-.v-image:after {
-  background: inherit;
-  transform: scaleY(-1);
-}
-.v-image:before {
-  z-index: 1;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), #fff);
-}
+
 </style>
