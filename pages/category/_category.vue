@@ -19,7 +19,7 @@
       class="relative"
     >
 
-      <h3 class="mb-4 font-bold text-4xl">Articles tagged {{ category.name }}:</h3>
+
       <ul>
         <li
           v-for="article in articles"
