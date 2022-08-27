@@ -8,10 +8,7 @@ year: 2021
 imdb: 7.4
 Votes: 42147
 time: 92
-tags: 
-  - أكشن
-  - جريمة
-  - تشويق وإثارة
+tags: [أكشن, جريمة,تشويق وإثارة ]
 categories: أفلام أجنبى
 sections: Movies
 ---
