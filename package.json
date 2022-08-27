@@ -11,6 +11,8 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "@fancyapps/ui": "^4.0.31",
     "@nuxt/content": "^1.15.1",
     "@nuxt/types": "^2.15.8",
     "@nuxtjs/axios": "^5.13.6",

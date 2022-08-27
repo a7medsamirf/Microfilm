@@ -22,6 +22,7 @@
 
               <v-img
                 :src="require(`~/static/images/poster/${article.img}`)"
+
                 height="500"
                 :alt="article.alt"
               >

@@ -5,7 +5,7 @@ img: 17.jpg
 quality: 1080p WEB-DL
 youtube: https://www.youtube.com/watch?v=DotnJ7tTA34
 year: 2022
-imdb: 9.1
+imdb: rating 9.1
 Votes: 42147
 time: 60
 tags: 

@@ -4,8 +4,9 @@ description: في إطار من الحركة والتشويق، يمد رجل م
 img: 13.jpg
 quality: BluRay - 1080p
 youtube: https://www.youtube.com/watch?v=wZti8QKBWPo
-year: 2022
+year: 2021
 imdb: 7.4
+Votes: 42147
 time: 92
 tags: 
   - أكشن

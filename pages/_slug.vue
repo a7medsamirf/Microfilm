@@ -83,14 +83,17 @@
                                <i class="fa-solid fa-play white--text"></i>
                           </nuxt-link> -->
 
-                                 
+
 
                                       <a target="_blank" class="icon pulse expand popup-youtube"
-                                       :href="article.youtube">
+                                       :href="article.youtube"
+                                         data-fancybox
+                                         data-type="iframe"
+                                         data-preload="true">
                                         <i class="fa-solid fa-play white--text"></i>
                                         </a>
-                         
-          
+
+
 
                           </div>
                         </v-row>
@@ -187,13 +190,18 @@
   </article>
 </template>
 <script>
+import { Fancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox.css";
+
   import TagBox from '~/components/widget/Tag-box.vue';
   import imgAPI from '~/static/images/imgAPI'
   import HomeCard from "~/components/card/HomeCard";
   export default {
+
     components: {
       HomeCard,
       TagBox,
+      Fancybox
     },
     data() {
       return {
@@ -245,6 +253,7 @@
       }
     },
     methods: {
+
       formatDate(date) {
         const options = {
           year: 'numeric',
@@ -252,7 +261,8 @@
           day: 'numeric'
         }
         return new Date(date).toLocaleDateString('en', options)
-      }
+      },
+
     },
     head() {
       return {
