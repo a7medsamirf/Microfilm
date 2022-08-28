@@ -4,7 +4,9 @@
 <home-carousel :articles="articles" />
 
 <search-box />
-  <SectionTitle />
+
+<title-section :link="link" :head="head" />
+
 
   <home-card :articles="articles" />
 
@@ -56,11 +58,17 @@ import HomeCard from "~/components/card/HomeCard";
 import Movies from '~/components/sections/Movies.vue';
 import Series from '~/components/sections/Series';
 import SearchBox from '~/components/widget/Search-Box';
-import SectionTitle from '~/components/widget/SectionTitle';
+import TitleSection from '~/components/widget/Title-Section.vue';
 export default {
     name: "IndexPage",
-    components: { HomeCard, HomeCarousel, Movies, Series, SearchBox, SectionTitle },
+    components: { HomeCard, HomeCarousel, Movies, Series, SearchBox, TitleSection },
     mixins: [fetchPostsMixin],
+  data () {
+    return {
+      head: ' جديد ميكروفيلم',
+      link: '/movies',
+    }
+  }
 }
 </script>
 

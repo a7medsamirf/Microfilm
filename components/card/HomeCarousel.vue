@@ -44,16 +44,19 @@
 
               <div class="StarsIMDB warning">
                 <span>IMDB</span>
-                <strong>{{ article.imdb }}</strong>
+                <strong>{{article.imdb.rating}}</strong>
               </div>
               <a href="" class="fa-solid fa-play play-btn white--text"></a>
               <ul class="RestInformation">
+                <li  v-for="tag in article.tags" :key="tag">
+                      <span>
+                        <NuxtLink :to="`/tag/${tag.slug}`" class="white--text">
+                        {{ tag }}
+                      </NuxtLink>
+                      </span>
 
-
-                <li>
-
-                  1080p WEB DL
                 </li>
+                <li>{{ article.quality }}</li>
               </ul>
 
               <h5 class="BlockTitle">{{ article.title }}</h5>

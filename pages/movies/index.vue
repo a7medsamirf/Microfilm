@@ -1,6 +1,8 @@
 <template>
 <div>
+<home-carousel :articles="articles" />
 
+  <title-section :link="link" :head="head"/>
 
   <home-card :articles="articles" />
 
@@ -37,9 +39,10 @@
 import AppSearchInput from '~/components/widget/AppSearchInput.vue';
 import HomeCarousel from "~/components/card/HomeCarousel";
 import HomeCard from "~/components/card/HomeCard";
+import TitleSection from "~/components/widget/Title-Section";
 export default {
     name: "IndexPage",
-    components: {HomeCard, HomeCarousel, AppSearchInput },
+    components: {TitleSection, HomeCard, HomeCarousel, AppSearchInput },
   async asyncData({ $content, params }) {
     const articles = await $content('articles', params.slug)
       /*.only(['title', 'description', 'img', 'slug', 'quality','imdb'])*/
@@ -64,6 +67,12 @@ export default {
     formatDate(date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }
       return new Date(date).toLocaleDateString('ar', options)
+    }
+  },
+  data () {
+    return {
+      head: 'أفلام',
+      link: '/movies',
     }
   }
 }

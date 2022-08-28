@@ -6,7 +6,7 @@
           <div class="d-flex justify-center mb-6">
             <div class="text-center">
               <h1 class="breadcrumb-heading white--text"> <i class="fa-regular fa-circle-play default--text"></i>
-                {{ article.title }}  ( {{ article.year }})
+                {{ article.title }}   {{ article.year }}
 
                 </h1>
       <nav class="woocommerce-breadcrumb">
@@ -120,6 +120,29 @@
                  <div class="post-description rounded-lg mt-3">
                     <h3 class="warning--text"><i class="fa-solid fa-users"></i> فريق العمل</h3>
 
+                     <v-slide-group
+                       class="pa-4"
+                       active-class="success"
+                       center-active
+                     >
+                       <v-slide-item
+                         v-for="n in 15"
+                         :key="n"
+                         v-slot="{ active, toggle }"
+                       >
+
+                         <v-card
+                           :color="active ? undefined : 'grey lighten-1'"
+                           class="ma-4"
+                           height="100"
+                           width="100"
+                         >
+                           <img width="100" src="~/static/images/avatars/1.jpg">
+                         </v-card>
+                       </v-slide-item>
+                     </v-slide-group>
+
+
 
 <!--               <v-img :src="require(`~/static/images/avatars/${article.team}`)" height="400" alt="article.img"></v-img>-->
                   </div>
@@ -141,9 +164,15 @@
                         دقيقة</span></li>
 
             <li class="pa-1 mt-5 imdb-box">
-                    <span class="imdb-text">imdb</span>
-                    <span class="imdb-ra"> {{ article.imdb }}</span>
-                    <span class="imdb-text">{{ article.Votes }}</span>
+              <a class="imdb-link" target="_blank"  :href="article.imdb.link">
+                   <span class="imdb-text">imdb</span>
+                    <span class="imdb-ra"> {{ article.imdb.rating }}</span>
+                    <span class="imdb-text">{{ article.imdb.Votes }}</span>
+                                        </a>
+
+
+
+
 
                   </li>
 
@@ -204,6 +233,7 @@ import "@fancyapps/ui/dist/fancybox.css";
       Fancybox
     },
     data() {
+
       return {
         imgAPI: imgAPI,
         SocialIcon: [{
@@ -366,7 +396,7 @@ import "@fancyapps/ui/dist/fancybox.css";
         font-weight: bold;
       }
 
-      ;
+
     }
 
   }
@@ -389,7 +419,9 @@ import "@fancyapps/ui/dist/fancybox.css";
     width: 100%;
     background: linear-gradient(#f5c518, #d08906) !important;
     -webkit-box-reflect: below 3px linear-gradient(transparent, #ff000029);
-
+    .imdb-link{
+      color: #251f36;
+    }
     span.imdb-ra {
       background: #fdcd20;
       padding: 18px;
@@ -407,5 +439,15 @@ import "@fancyapps/ui/dist/fancybox.css";
 }
 
   }
+
+  .box-te{
+    .item{
+      padding: 10px 15px;
+      background: #5a3a5b;
+      border-radius: 10px;
+    }
+  }
+
+
 
 </style>

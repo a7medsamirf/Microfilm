@@ -16,7 +16,7 @@ target: 'static', */
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
       // PWA primary color
-      { name : 'theme-color', content: '#e62d2d'}
+      { name : 'theme-color', content: '#071434'}
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -24,9 +24,9 @@ target: 'static', */
 
     ]
   },
-  router: {
+/*   router: {
     base: '/Microfilm/'
-  },
+  }, */
 
   transition: 'slide-bottom',
   loading: {
@@ -119,12 +119,6 @@ target: 'static', */
     loaders: {
       vus: { cacheBusting: true },
       scss: { sourceMap: false },
-      sass: {
-        implementation: require('sass'),
-      },
-      scss: {
-        implementation: require('sass'),
-      },
     },
 
   }

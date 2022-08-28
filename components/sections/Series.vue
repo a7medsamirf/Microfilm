@@ -1,15 +1,7 @@
 <template>
   <div class="my-5">
-      <div dense class="title-Section">
-        <v-toolbar-title class="right-Title-Section">
-                  <i class="fas fa-camera-movie default title-icon">  </i>
-                    <span>جديد المسلسلات </span>
-            </v-toolbar-title>
-        <v-spacer></v-spacer>
-     <div class="left-Title-Section">
-      <a href="" class="MoreFromSection HoverAfter"><span>المزيد</span><div class="title-loader"></div></a>
-    </div>
-      </div>
+    <title-section  :link="link" :head="head" />
+
     <v-container fluid>
       <v-row>
         <v-col  v-for="Serie in Series"
@@ -19,7 +11,7 @@
                 md="3"
                 sm="3"
                 col="5"
-               
+
                 class="pa-1 "
         >
           <div class="BlockItem">
@@ -53,20 +45,21 @@
 
                   <div class="StarsIMDB warning">
                     <span>IMDB</span>
-                    <strong>{{ Serie.imdb }}</strong>
+                    <strong>{{Serie.imdb.rating}}</strong>
                   </div>
                   <a href="" class="fa-solid fa-play play-btn white--text"></a>
                   <ul class="RestInformation">
                     <li>
-                      <span>اثارة</span>
-                      <span>جريمة</span>
-                      <span>غموض</span>
-                    </li>
-                    <li>
+                      <span v-for="tag in Serie.tags" :key="tag">
+                        <NuxtLink :to="`/tag/${tag.slug}`" class="white--text">
+                        {{ tag }}
+                      </NuxtLink>
+                      </span>
 
-                      1080p WEB DL
                     </li>
+                    <li>{{ Serie.quality }}</li>
                   </ul>
+
 
                   <h5 class="BlockTitle">{{ Serie.title }}</h5>
                   <div  class="quality default">{{Serie.quality}}</div>
@@ -88,13 +81,21 @@
 </template>
 
 <script>
+import TitleSection from "~/components/widget/Title-Section";
 export default {
   name: "Series",
+  components: {TitleSection},
   props: {
     Series: {
       type: Array,
       required: true
     },
+  },
+  data () {
+    return {
+      head: ' جديد المسلسلات',
+      link: '/Series',
+    }
   },
 }
 </script>

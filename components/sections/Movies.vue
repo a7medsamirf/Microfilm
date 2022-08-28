@@ -1,18 +1,8 @@
 <template>
   <div class="my-5">
-    <div dense class="title-Section">
-      <v-toolbar-title class="right-Title-Section">
-        <i class="fas fa-camera-movie default title-icon">  </i>
-        <span>جديد الأفلام </span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <div class="left-Title-Section">
-        <nuxt-link to="/Movies" class="MoreFromSection HoverAfter">
-          <span>المزيد</span><div class="title-loader"></div>
-        </nuxt-link>
 
-      </div>
-    </div>
+    <title-section :link="link" :head="head" />
+
     <v-container fluid>
       <v-row>
         <v-col  v-for="Movie in Movies"
@@ -20,7 +10,8 @@
                 cols="12"
                 lg="2"
                 md="3"
-                sm="3"
+                sm="4"
+                xs="6"
                 col="5"
 
                 class="pa-1 "
@@ -56,19 +47,19 @@
 
                   <div class="StarsIMDB warning">
                     <span>IMDB</span>
-                    <strong>{{ Movie.imdb }}</strong>
+                    <strong>{{ Movie.imdb.rating }}</strong>
                   </div>
                   <a href="" class="fa-solid fa-play play-btn white--text"></a>
                   <ul class="RestInformation">
-                    <li>
-                      <span>اثارة</span>
-                      <span>جريمة</span>
-                      <span>غموض</span>
-                    </li>
-                    <li>
+                    <li v-for="tag in Movie.tags" :key="tag">
+                      <span >
+                        <NuxtLink :to="`/tag/${tag.slug}`" class="white--text">
+                        {{ tag }}
+                      </NuxtLink>
+                      </span>
 
-                      1080p WEB DL
                     </li>
+                    <li>{{ Movie.quality }}</li>
                   </ul>
 
                   <h5 class="BlockTitle">{{ Movie.title }}</h5>
@@ -91,13 +82,21 @@
 </template>
 
 <script>
+import TitleSection from "~/components/widget/Title-Section";
 export default {
   name: "Movies",
+  components: {TitleSection},
   props: {
     Movies: {
       type: Array,
       required: true
     },
+  },
+  data () {
+    return {
+      head: ' جديد الأفلام',
+      link: '/movies',
+    }
   },
 }
 </script>

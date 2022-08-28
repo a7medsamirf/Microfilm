@@ -1,8 +1,8 @@
 export default {
   async asyncData({$content,params}) {
     const Movies = await $content('articles', params.slug)
-      .where({sections: {$containsAny: ['Movies']}})
       .sortBy('createdAt', 'desc')
+      .limit(6)
       .fetch();
     const Series = await $content('articles', params.slug)
       .where({sections: {$containsAny: ['Series']}})
@@ -46,3 +46,5 @@ export default {
     }
   }
 }
+
+
