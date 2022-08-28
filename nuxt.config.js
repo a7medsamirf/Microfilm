@@ -3,7 +3,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
 /* ssr: false,
 target: 'static', */
-
+target: 'static',
   head: {
     htmlAttrs: {
       lang: 'ar',
@@ -24,9 +24,9 @@ target: 'static', */
 
     ]
   },
-/*   router: {
+  router: {
     base: '/Microfilm/'
-  }, */
+  }, 
 
   transition: 'slide-bottom',
   loading: {
