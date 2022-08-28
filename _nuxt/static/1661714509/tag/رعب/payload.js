@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/tag/%D8%B1%D8%B9%D8%A8", (function(a,b){return {data:[{articles:[],tag:{slug:a,name:a,toc:[],body:{type:"root",children:[]},dir:"\u002Ftags",path:"\u002Ftags\u002Fرعب",extension:".md",createdAt:b,updatedAt:b}}],fetch:{},mutations:void 0}}("رعب","2022-08-28T18:43:23.973Z")));
