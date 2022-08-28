@@ -4,11 +4,11 @@ const imgAPI = {
     '/images/questions.png',
   ],
   social:[
-    '/images/social/1.png',
-    '/images/social/2.png',
-    '/images/social/3.png',
-    '/images/social/4.png',
-    '/images/social/5.png',
+    '1.png',
+    '2.png',
+    '3.png',
+    '4.png',
+    '5.png',
   ]
 }
 

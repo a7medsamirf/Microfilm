@@ -28,12 +28,7 @@
                 icon
                 exact
               >
-                <img
-                  :src="social.Icon"
-                  :alt="social.title"
-                  height="35"
-                  width="35"
-                >
+              <v-img :src="require(`~/static/images/social/${social.Icon}`)" height="35"  width="35" alt="social.title"></v-img>
               </v-btn>
             </v-card-title>
           </v-card>
