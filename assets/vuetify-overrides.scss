@@ -1347,18 +1347,6 @@ header.v-sheet.v-app-bar.v-toolbar.v-app-bar--is-scrolled {
   opacity: 1
 }
 
-.BlockItem:hover .BlockImageItem .StarsIMDB {
-  transition: .3s .2s all ease;
-  top: 8px;
-  opacity: 1
-}
-
-.StarsIMDB strong {
-  font-size: 23px;
-  line-height: 100%;
-  padding: 10px 0;
-}
-
 .BlockTitle {
   position: absolute;
   opacity: 0;
@@ -1451,6 +1439,11 @@ ul.RestInformation>li:last-child {
   opacity: 1;
   transform: translate(0)
 }
+.StarsIMDB strong {
+  font-size: 23px;
+  line-height: 100%;
+  padding: 10px 0;
+}
 
 .StarsIMDB+ul.RestInformation {
   max-width: 103px
@@ -1478,11 +1471,15 @@ ul.RestInformation>li:last-child {
   right: 7px;
   transition: .2s all ease;
   padding: 0;
-  width: 55px;
+  width: 60px;
   height: 55px;
   border-radius: 3px;
   text-align: center;
 }
+
+
+
+
 
 .v-card.moving .v-image{
   background-size: cover;

@@ -3,12 +3,12 @@
 
     <carousel-3d
       :display="12"
-      :autoplay="true"
+      :autoplay="false"
       :height="500"
       :autoplay-timeout="5000"
       :disable3d="true"
        :space="365"
-
+      :controls-visible="true"
     >
       <slide v-for="(article, i) in articles" :index="i"
              :key="article.slug"
@@ -45,6 +45,9 @@
               <div class="StarsIMDB warning">
                 <span>IMDB</span>
                 <strong>{{article.imdb.rating}}</strong>
+              </div>
+              <div class="categories success">
+                <span>{{ article.categories }}</span>
               </div>
               <a href="" class="fa-solid fa-play play-btn white--text"></a>
               <ul class="RestInformation">
@@ -98,5 +101,59 @@ export default {
 {
   padding-top: 65px;
 }
+.carousel-3d-controls{
+  .prev:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    z-index: 99;
+    height: 100vh;
+    top: 50px;
+    background: linear-gradient(to right, #071131 8%, rgba(32, 38, 47, 0));
+    padding: 0 145px 0px 20px;
+    transition: 0.4s all ease;
+  }
+  .prev:before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    z-index: 99;
+    height: 100vh;
+    background: linear-gradient(to right, #071131 8%, rgba(32, 38, 47, 0));
+    padding: 0 145px 0px 20px;
+    transition: 0.4s all ease;
+  }
+.next:after{
+  content: "";
+  position: absolute;
+  right: -10px;
+  z-index: 99;
+  height: 100vh;
+  top: 50px;
+  background: linear-gradient(to left, #071131 0%, rgba(31,37,46,0));
+  padding: 0 145px 0px 20px;
+  cursor: pointer;
+  font-size: 60px;
+  transition: 0.4s all ease;
+}
+  .next:before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    z-index: 99;
+    height: 100vh;
+    background: linear-gradient(to left, #071131 0%, rgba(31,37,46,0));
+    padding: 0 145px 0px 20px;
+    cursor: pointer;
+    font-size: 60px;
+    transition: 0.4s all ease;
+  }
+}
+
+
+
 
 </style>

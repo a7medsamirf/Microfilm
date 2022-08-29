@@ -10,12 +10,24 @@
        tile
      >
        <v-card
-         v-for="n in 2"
-         :key="n"
          class=""
          outlined
          tile
        >
+
+             <v-select
+               label="Outlined style"
+               outlined
+               v-for="tag of tags"
+               :key="tag.slug"
+             >
+
+                 <NuxtLink :to="`/tag/${tag.slug}`" class="white--text">
+                   <span class="ml-3">#</span>{{ tag.name }}
+                 </NuxtLink>
+
+
+             </v-select>
 
 
 
@@ -35,7 +47,10 @@
 <script>
 import AppSearchInput from './AppSearchInput.vue';
 export default {
-    components: { AppSearchInput }
+    components: { AppSearchInput },
+  data: () => ({
+    items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
+  }),
 }
 </script>
 

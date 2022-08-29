@@ -47,6 +47,10 @@
                     <span>IMDB</span>
                     <strong>{{Serie.imdb.rating}}</strong>
                   </div>
+
+                  <div class="categories success">
+                    <span>{{ Serie.categories }}</span>
+                  </div>
                   <a href="" class="fa-solid fa-play play-btn white--text"></a>
                   <ul class="RestInformation">
                     <li>

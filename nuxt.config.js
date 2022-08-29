@@ -19,14 +19,14 @@ target: 'static',
       { name : 'theme-color', content: '#071434'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/Microfilm/favicon.ico' },
       {rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"},
 
     ]
   },
   router: {
     base: '/Microfilm/'
-  }, 
+  },
 
   transition: 'slide-bottom',
   loading: {
@@ -35,7 +35,7 @@ target: 'static',
     rtl: true,
     continuous: true,
     color: '#e62d2d',
-    name: 'circle',
+    name: 'circle'
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

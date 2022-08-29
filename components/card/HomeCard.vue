@@ -46,10 +46,13 @@
                     <span>IMDB</span>
                     <strong>{{article.imdb.rating}}</strong>
                   </div>
+                  <div class="categories success">
+                    <span>{{ article.categories }}</span>
+                  </div>
                   <a href="" class="fa-solid fa-play play-btn white--text"></a>
                   <ul class="RestInformation">
-                    <li>
-                      <span v-for="tag in article.tags" :key="tag">
+                    <li v-for="tag in article.tags" :key="tag">
+                      <span >
                         <NuxtLink :to="`/tag/${tag.slug}`" class="white--text">
                         {{ tag }}
                       </NuxtLink>

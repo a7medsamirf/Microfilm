@@ -49,6 +49,11 @@
                     <span>IMDB</span>
                     <strong>{{ Movie.imdb.rating }}</strong>
                   </div>
+
+                  <div class="categories success">
+                    <span>{{ Movie.categories }}</span>
+                  </div>
+
                   <a href="" class="fa-solid fa-play play-btn white--text"></a>
                   <ul class="RestInformation">
                     <li v-for="tag in Movie.tags" :key="tag">
@@ -102,5 +107,37 @@ export default {
 </script>
 
 <style>
+.categories+ul.RestInformation {
+  max-width: 103px
+}
+.BlockItem:hover .BlockImageItem .categories {
+  top: 12px
+}
+
+.BlockItem:hover .categories {
+  right: 7px;
+}
+.BlockItem .categories {
+  right: 73px;
+}
+.BlockItem:hover .BlockImageItem .categories {
+  transition: .3s .2s all ease;
+  top: 65px;
+  opacity: 1;
+}
+.categories{
+  position: absolute;
+  top: -56px;
+  opacity: 0;
+  z-index: 10;
+  right: 7px;
+  transition: .2s all ease;
+  padding: 3px 0;
+  width: 60px;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+}
 
 </style>
