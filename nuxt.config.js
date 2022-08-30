@@ -8,7 +8,6 @@ target: 'static',
     htmlAttrs: {
       lang: 'ar',
     },
-    titleTemplate: '%s - Microfilm',
     title: 'Microfilm',
     meta: [
       { charset: 'utf-8' },

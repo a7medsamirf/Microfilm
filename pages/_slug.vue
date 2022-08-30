@@ -5,7 +5,7 @@
         <div class="col-full">
           <div class="d-flex justify-center mb-6">
             <div class="text-center">
-              <h1 class="breadcrumb-heading white--text"> <i class="fa-regular fa-circle-play default--text"></i>
+              <h1 class="breadcrumb-heading white--text"> <i class="fa-regular fa-circle-play fa-xl default--text"></i>
                 {{ article.title }}   {{ article.year }}
 
                 </h1>
@@ -117,36 +117,6 @@
 
                   <tag-box :tags="tags"  />
 
-                 <div class="post-description rounded-lg mt-3">
-                    <h3 class="warning--text"><i class="fa-solid fa-users"></i> فريق العمل</h3>
-
-                     <v-slide-group
-                       class="pa-4"
-                       active-class="success"
-                       center-active
-                     >
-                       <v-slide-item
-                         v-for="n in 15"
-                         :key="n"
-                         v-slot="{ active, toggle }"
-                       >
-
-                         <v-card
-                           :color="active ? undefined : 'grey lighten-1'"
-                           class="ma-4"
-                           height="100"
-                           width="100"
-                         >
-                           <img width="100" src="~/static/images/avatars/1.jpg">
-                         </v-card>
-                       </v-slide-item>
-                     </v-slide-group>
-
-
-
-<!--               <v-img :src="require(`~/static/images/avatars/${article.team}`)" height="400" alt="article.img"></v-img>-->
-                  </div>
-
                 </div>
               </v-col>
               <v-col cols="12" md="3" sm="12" class="">
@@ -156,12 +126,10 @@
                     التفاصيل </h3>
 
                   <ul class="details-list pa-0">
-                    <li class="pa-3"><i class="fa-light fa-tv ml-3"></i><span> الجودة : {{ article.quality }}</span>
-                    </li>
-                    <li class="pa-3"><i class="fa-light fa-calendar ml-3"></i><span> سنة الإصدار :
-                        {{ article.year }}</span></li>
-                    <li class="pa-3"><i class="fa-light fa-clock ml-3"></i><span> مدة العرض : {{ article.time }}
-                        دقيقة</span></li>
+                    <li class="pa-3"><i class="fa-light fa-tv ml-3"></i><span> الجودة : {{ article.quality }}</span></li>
+                    <li class="pa-3"><i class="fa-light fa-calendar ml-3"></i><span> سنة الإصدار :{{ article.year }}</span></li>
+                    <li class="pa-3"><i class="fa-light fa-clock ml-3"></i><span> مدة العرض : {{ article.time }}دقيقة</span></li>
+                    <li class="pa-3"><i class="fa-light fa-clock ml-3"></i><span> انتاج : الولايات المتحدة الأمريكية</span></li>
 
             <li class="pa-1 mt-5 imdb-box">
               <a class="imdb-link" target="_blank"  :href="article.imdb.link">

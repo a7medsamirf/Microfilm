@@ -2,6 +2,46 @@
 <div>
 
 <home-carousel :articles="articles" />
+<v-container>
+  <v-row>
+
+  <v-col lg="4">
+          <v-autocomplete
+        v-model="model"
+        :items="tags"
+        :loading="isLoading"
+        :search-input.sync="search"
+        clearable
+        hide-details
+        hide-selected
+        item-text="name"
+        item-value="symbol"
+        placeholder="Search"
+        flat
+        solo
+        dense
+      >
+      <template v-slot:item="{ item }">
+    <v-list-item >
+      <v-chip
+        v-for="tag in tags"
+      :key="tag.slug"
+      class="ma-2 default">
+    <NuxtLink :to="`/tag/${tag.slug}`" class="white--text">
+           <span class="ml-3">#</span>{{ item.name }}
+      </NuxtLink>
+    </v-chip>
+    
+    </v-list-item>
+  </template>
+      </v-autocomplete>
+  </v-col>
+
+
+</v-row>
+</v-container>
+
+
 
 <search-box />
 

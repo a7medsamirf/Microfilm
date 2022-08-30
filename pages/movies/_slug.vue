@@ -5,7 +5,7 @@
         <div class="col-full">
           <div class="d-flex justify-center mb-6">
             <div class="text-center">
-              <h1 class="breadcrumb-heading white--text"> <i class="fa-regular fa-circle-play default--text"></i>
+              <h1 class="breadcrumb-heading white--text"> <i class="fa-regular fa-circle-play fa-xl default--text"></i>
                 {{ article.title }} </h1>
 
               <v-chip class="ma-2" color="primary" label>
