@@ -55,11 +55,11 @@
 
 <style lang="scss">
   .v-bottom-navigation {
-    color: #fff !important;
+/*     color: #fff !important;
     border-radius: 50px;
     transform: translate(25px, -20px) !important;
     width: 90% !important;
-    padding: 10px !important;
+    padding: 10px !important; */
 
     span.v-btn__content {
       color: #fff;
