@@ -17,11 +17,13 @@ export default {
       .limit(12)  // استدعاء اخر 5 مقالات
       .fetch()
 
+      ///// get all tags
     const tags = await $content('tags')
       .only(['name', 'slug'])
       .sortBy('createdAt', 'asc')
       .fetch()
 
+      ///// get all categories
     const categories = await $content('categories')
       .only(['name', 'slug'])
       .sortBy('createdAt', 'asc')

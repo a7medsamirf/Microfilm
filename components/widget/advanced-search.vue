@@ -4,24 +4,23 @@
       <v-row>
         <v-col lg="4">
           <v-autocomplete
+            v-model="friends"
+            :disabled="isUpdating"
             :items="tags"
             label="Select"
             item-value="name"
-          >
-            <template v-slot:item="{ item }">
-
-              <v-list-item  v-for="tag in tags" :key="tag.slug">
-
-                <NuxtLink :to="`/tag/${tag.slug}`" class="white--text">
+            :item-text="item => `${item.slug}`"
+  >
+ <template v-slot:item="{ item }">
+  <NuxtLink :to="`/tag/${item.slug}`" class="white--text">
                   <span class="ml-3">#</span>{{ item.name }}
                 </NuxtLink>
 
 
-              </v-list-item>
+ </template>
+</v-autocomplete>
 
-            </template>
-
-          </v-autocomplete>
+       
         </v-col>
       </v-row>
     </v-container>

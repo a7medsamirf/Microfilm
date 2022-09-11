@@ -2,34 +2,10 @@
 <div>
 
 <home-carousel :articles="articles" />
-<category-search />
-  <v-container>
-    <v-row>
-      <v-col lg="4">
-        <v-autocomplete
-          :items="tags"
-          label="Select"
-          item-value="name"
-        >
-          <template v-slot:item="{ item }">
-
-            <v-list-item link :to="'/tag/' + tag.slug>{{item.name}}</v-list-item>
-
-            <v-list-item  v-for="tag in tags" :key="tag.slug">
-              <NuxtLink :to="`/tag/${tag.slug}`" class="white--text">
-                <span class="ml-3">#</span>{{ item.name }}
-              </NuxtLink>
 
 
-            </v-list-item>
-
-          </template>
-
-        </v-autocomplete>
-      </v-col>
-    </v-row>
-
-  </v-container>
+<TagSearch :tags="tags" />
+<CategorySearch :categories="categories" />
 
 <search-box />
 
@@ -45,10 +21,6 @@
     <movies :Movies="Movies"/>
 
     <series :Series="Series"/>
-
-
-
-
 
 
 
@@ -74,7 +46,16 @@
       </NuxtLink>
     </v-chip>
   </div>
-
+  <div class="text-center">
+    <v-chip
+        v-for="category of categories"
+      :key="category.slug"
+      class="ma-2 default">
+    <NuxtLink :to="`/category/${category.slug}`" class="white--text">
+           <span class="ml-3">#</span>{{ category.name }}
+      </NuxtLink>
+    </v-chip>
+  </div>
 
 </div>
 </template>
@@ -88,10 +69,11 @@ import Series from '~/components/sections/Series';
 import SearchBox from '~/components/widget/Search-Box';
 import TitleSection from '~/components/widget/Title-Section.vue';
 import AdvancedSearch from "~/components/widget/advanced-search";
-import CategorySearch from "~/components/widget/CategorySearch";
+import TagSearch from '~/components/widget/TagSearch.vue';
+import CategorySearch from '~/components/widget/CategorySearch.vue';
 export default {
     name: "IndexPage",
-    components: {CategorySearch, AdvancedSearch, HomeCard, HomeCarousel, Movies, Series, SearchBox, TitleSection },
+    components: { AdvancedSearch, HomeCard, HomeCarousel, Movies, Series, SearchBox, TitleSection, TagSearch, CategorySearch },
     mixins: [fetchPostsMixin],
   data () {
     return {
