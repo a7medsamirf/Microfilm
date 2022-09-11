@@ -109,7 +109,7 @@ export default {
             subitems: [
               {title: 'أفلام عربى', to: '/category/Arabic-Movies'},
               {title: 'أفلام اجنبى', to: '/category/English-Movies'},
-              {title: 'أفلام هندي', to: '/TestPage'},
+              {title: 'أفلام هندي', to: '/category/Indian-Movies'},
             ]
           },
           {title: 'أفلام', to: '/movies'},

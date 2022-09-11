@@ -138,10 +138,6 @@
                     <span class="imdb-text">{{ article.imdb.Votes }}</span>
                                         </a>
 
-
-
-
-
                   </li>
 
 
@@ -159,29 +155,29 @@
               </v-col>
             </v-row>
 
-            <v-row>
-              <v-col cols="12">
-     <div dense class="title-Section">
-        <v-toolbar-title class="right-Title-Section">
-                  <i class="fas fa-camera-movie default title-icon">  </i>
-                    <span>  عروض ذات صلة </span>
-            </v-toolbar-title>
-        <v-spacer></v-spacer>
-     <div class="left-Title-Section">
-      <a href="" class="MoreFromSection HoverAfter"><span>المزيد</span><div class="title-loader"></div></a>
-    </div>
-      </div>
-
-              </v-col>
-              <v-col cols="12">
-                <home-card :articles="articles" />
-              </v-col>
-            </v-row>
-
           </div>
         </v-container>
 
       </div>
+
+    <v-container fluid>
+      <v-row>
+        <v-col cols="12">
+          <div dense class="title-Section">
+            <v-toolbar-title class="right-Title-Section">
+              <i class="fas fa-camera-movie default title-icon">  </i>
+              <span>  عروض ذات صلة </span>
+            </v-toolbar-title>
+            <v-spacer></v-spacer>
+            <div class="left-Title-Section">
+              <a href="" class="MoreFromSection HoverAfter"><span>المزيد</span><div class="title-loader"></div></a>
+            </div>
+          </div>
+
+        </v-col>
+      </v-row>
+    </v-container>
+
 
 
   </article>

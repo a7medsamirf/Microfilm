@@ -56,16 +56,13 @@ export default {
     return {
         links: [
           {icon: 'fa-thin fa-house', title: 'الرئيسية', to: '/'},
-           { icon: 'fa-regular fa-camera-movie', title: 'الأفلام', to: '/movies'},
           { icon: 'fa-regular fa-camera-movie', title: 'الأفلام',
             subLinks: [
-              {icon: 'fa-regular fa-camera-movie', title: 'أفلام عربى', to: '/'},
-              {title: 'أفلام اجنبى', to: '/faq'},
-              {title: 'أفلام هندي', to: '/TestPage'},
+              {icon: 'fa-regular fa-camera-movie', title: 'أفلام عربى', to: '/category/Arabic-Movies'},
+              {title: 'أفلام اجنبى', to: '/category/English-Movies'},
+              {title: 'أفلام هندي', to: '/category/Indian-Movies'},
             ]
           },
-          {title: 'المسلسلات', to: '/'},
-          {title: 'البرامج التلفزيونية', to: '/'},
           {title: 'المسلسلات', to: '/Series'},
           {title: 'رمضان', to: '/TestPage'},
 

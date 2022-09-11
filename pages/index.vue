@@ -2,43 +2,34 @@
 <div>
 
 <home-carousel :articles="articles" />
-<v-container>
-  <v-row>
+<category-search />
+  <v-container>
+    <v-row>
+      <v-col lg="4">
+        <v-autocomplete
+          :items="tags"
+          label="Select"
+          item-value="name"
+        >
+          <template v-slot:item="{ item }">
 
-  <v-col lg="4">
-          <v-autocomplete
-              v-model="model"
-              :items="tags"
-              :loading="isLoading"
-              :search-input.sync="search"
-              clearable
-              hide-details
-              hide-selected
-              item-text="name"
-              item-value="symbol"
-              placeholder="Search"
-              flat
-              solo
-              dense
-      >
-      <template v-slot:item="{ item }">
-    <v-list-item  v-for="tag in tags" :key="tag.slug">
+            <v-list-item link :to="'/tag/' + tag.slug>{{item.name}}</v-list-item>
 
-    <NuxtLink :to="`/tag/${tag.slug}`" class="white--text">
-           <span class="ml-3">#</span>{{ item.name }}
-      </NuxtLink>
-
-    
-    </v-list-item>
-  </template>
-      </v-autocomplete>
-  </v-col>
+            <v-list-item  v-for="tag in tags" :key="tag.slug">
+              <NuxtLink :to="`/tag/${tag.slug}`" class="white--text">
+                <span class="ml-3">#</span>{{ item.name }}
+              </NuxtLink>
 
 
-</v-row>
-</v-container>
+            </v-list-item>
 
+          </template>
 
+        </v-autocomplete>
+      </v-col>
+    </v-row>
+
+  </v-container>
 
 <search-box />
 
@@ -96,9 +87,11 @@ import Movies from '~/components/sections/Movies.vue';
 import Series from '~/components/sections/Series';
 import SearchBox from '~/components/widget/Search-Box';
 import TitleSection from '~/components/widget/Title-Section.vue';
+import AdvancedSearch from "~/components/widget/advanced-search";
+import CategorySearch from "~/components/widget/CategorySearch";
 export default {
     name: "IndexPage",
-    components: { HomeCard, HomeCarousel, Movies, Series, SearchBox, TitleSection },
+    components: {CategorySearch, AdvancedSearch, HomeCard, HomeCarousel, Movies, Series, SearchBox, TitleSection },
     mixins: [fetchPostsMixin],
   data () {
     return {
