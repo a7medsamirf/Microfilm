@@ -5,9 +5,12 @@ img: 13.jpg
 quality: BluRay - 1080p
 youtube: https://www.youtube.com/watch?v=wZti8QKBWPo
 year: 2021
-imdb: 7.4
-Votes: 42147
 time: 92
+Produce: الولايات المتحدة الأمريكية
+imdb:
+  rating: 7.4
+  Votes: 241,347
+  link: https://www.imdb.com/title/tt7888964/
 tags: [أكشن, جريمة,تشويق وإثارة ]
 categories: أفلام أجنبى
 sections: Movies

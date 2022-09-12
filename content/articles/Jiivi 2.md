@@ -5,11 +5,12 @@ img: 22.jpg
 quality: WEB-DL - 1080p
 youtube: https://www.youtube.com/watch?v=zhN0QmeBJn0&t=1s
 year: 2022
+time: 122
+Produce: الهند
 imdb:
   rating: 7.1
   Votes: 228
-  link: https://www.imdb.com/title/tt15353762/?ref_=nv_sr_srsg_0
-time: 122
+  link: https://www.imdb.com/title/tt15353762/
 tags: [دراما ]
 categories: أفلام هندي
 sections: Movies

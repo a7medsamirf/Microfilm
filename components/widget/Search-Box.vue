@@ -15,6 +15,8 @@
          tile
        >
 
+       <TagSearch :tags="tags"/>
+       <CategorySearch :categories="categories" />
 
 
        </v-card>
@@ -26,10 +28,11 @@
 </template>
 
 <script>
+import TagSearch from './TagSearch.vue';
+import CategorySearch from './CategorySearch.vue';
 
 export default {
-
-
+    components: { TagSearch, CategorySearch }
 }
 </script>
 

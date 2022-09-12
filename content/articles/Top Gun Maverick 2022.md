@@ -5,11 +5,12 @@ img: 15.jpg
 quality: WEB-DL - 1080p
 youtube: https://www.youtube.com/watch?v=giXco2jaZ_4
 year: 2022
+time: 130
+Produce: الولايات المتحدة الأمريكية
 imdb:
   rating: 8.5
   Votes: 310,621
   link: https://www.imdb.com/title/tt1745960/?ref_=fn_al_tt_1
-time: 130
 tags: [أكشن, دراما]
 categories: أفلام أجنبى
 sections: Movies

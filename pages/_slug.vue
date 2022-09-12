@@ -52,39 +52,18 @@
     </div>
 
       <div class="inner-content">
-        <v-container fluid>
+        <v-container>
           <div class="post-content">
             <v-row>
               <v-col cols="12" lg="3" md="4" sm="6">
                 <div class="blog-poster">
-                  <!--          <div class="imdb">
-                    <v-list-item-title class="text-h5 mb-1">
-                      IMDB
-                    </v-list-item-title>
-                    <v-list-item-subtitle>8.6</v-list-item-subtitle>
-
-
-
-                  </div> -->
-
                   <v-card>
-
                     <v-img :src="require(`~/static/images/poster/${article.img}`)" height="400" alt="article.img">
                       <template>
                         <v-row class="fill-height" justify="center" align="center">
-
                           <div class="icon-abs">
-
                             <div class="images-wrapper">
-
                             </div>
-
-        <!--              <nuxt-link class="icon pulse expand popup-youtube" :src"{{ article.youtube }}">
-                               <i class="fa-solid fa-play white--text"></i>
-                          </nuxt-link> -->
-
-
-
                                       <a target="_blank" class="icon pulse expand popup-youtube"
                                        :href="article.youtube"
                                          data-fancybox
@@ -93,8 +72,6 @@
                                         <i class="fa-solid fa-play white--text"></i>
                                         </a>
 
-
-
                           </div>
                         </v-row>
                       </template>
@@ -102,7 +79,6 @@
 
                     <v-btn class="microfilm-color" block x-large><i class="fa-regular fa-circle-play fa-xl ml-2"></i>
                       مشاهدة وتحميل </v-btn>
-
                   </v-card>
 
                 </div>
@@ -117,6 +93,7 @@
 
                   <tag-box :tags="tags"  />
 
+        
                 </div>
               </v-col>
               <v-col cols="12" md="3" sm="12" class="">
@@ -129,7 +106,7 @@
                     <li class="pa-3"><i class="fa-light fa-tv ml-3"></i><span> الجودة : {{ article.quality }}</span></li>
                     <li class="pa-3"><i class="fa-light fa-calendar ml-3"></i><span> سنة الإصدار :{{ article.year }}</span></li>
                     <li class="pa-3"><i class="fa-light fa-clock ml-3"></i><span> مدة العرض : {{ article.time }}دقيقة</span></li>
-                    <li class="pa-3"><i class="fa-light fa-clock ml-3"></i><span> انتاج : الولايات المتحدة الأمريكية</span></li>
+                    <li class="pa-3"><i class="fa-solid fa-earth-americas ml-3"></i><span> انتاج : {{ article.Produce }}</span></li>
 
             <li class="pa-1 mt-5 imdb-box">
               <a class="imdb-link" target="_blank"  :href="article.imdb.link">

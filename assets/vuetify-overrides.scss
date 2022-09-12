@@ -1545,6 +1545,8 @@ ul.RestInformation>li:last-child {
 
 .BlockItem .StarsIMDB {
   right: 73px;
+  color: #171717;
+  font-weight: 700;
 }
 
 .BlockItem:hover .BlockImageItem .StarsIMDB {
@@ -1624,4 +1626,9 @@ ul.RestInformation>li:last-child {
   border-radius: 50%;
   border: 3px solid #c3bfbc;
   border-style: dashed;
+}
+
+
+.carousel-3d-slide{
+  border-style: none !important;
 }

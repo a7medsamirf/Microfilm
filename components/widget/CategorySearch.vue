@@ -1,12 +1,15 @@
 <template>
   <div>
-    <v-autocomplete
-            solo-inverted
-            flat
-            clearable
-            color="primary"
+    <v-combobox
+    outlined
             :items="categories"
-            label="Select"
+            :search-input.sync="search"
+          color="white"
+          hide-no-data
+          hide-selected
+          label="Public APIs"
+          placeholder="Start typing to Search"
+          prepend-inner-icon="mdi-database-search"
              item-value="name"
             :item-text="item => `${item.slug}` - `${item.name}`"
   >
@@ -17,7 +20,7 @@
 
 
  </template>
-</v-autocomplete>
+</v-combobox>
   </div>
 </template>
 

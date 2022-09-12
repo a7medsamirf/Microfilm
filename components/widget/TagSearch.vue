@@ -1,23 +1,23 @@
 <template>
   <div>
-    <v-autocomplete
-            solo-inverted
-            flat
-            clearable
+
+
+    <v-combobox
+    outlined
             color="primary"
             :items="tags"
-            label="Select"
+            label="التصنيف"
              item-value="name"
-            :item-text="item => `${item.slug}` - `${item.name}`"
+            :item-text="item => `${item.slug}` "
   >
  <template v-slot:item="{ item }">
   <NuxtLink :to="`/tag/${item.slug}`" class="white--text">
                  {{ item.name }}
-                </NuxtLink>
+        </NuxtLink>
 
 
  </template>
-</v-autocomplete>
+</v-combobox>
   </div>
 </template>
 
@@ -25,12 +25,14 @@
 export default {
     name: "TagSearch",
     props: {
-    tags: {
+      tags: {
         type: Array,
-      required: true
-    }
- 
-  },
+        required: true
+      },
+
+    },
+
+
 }
 </script>
 

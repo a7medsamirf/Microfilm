@@ -1,9 +1,8 @@
 <template>
 <div class="HomeCarousel">
-
     <carousel-3d
       :display="12"
-      :autoplay="false"
+      :autoplay="true"
       :height="500"
       :autoplay-timeout="5000"
       :disable3d="true"
@@ -22,7 +21,6 @@
 
               <v-img
                 :src="require(`~/static/images/poster/${article.img}`)"
-
                 height="500"
                 :alt="article.alt"
               >

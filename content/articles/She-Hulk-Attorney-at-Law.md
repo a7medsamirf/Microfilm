@@ -5,11 +5,12 @@ img: 16.jpg
 quality: 1080p WEB-DL
 youtube: https://www.youtube.com/watch?v=u7JsKhI2An0
 year: 2022
+time: 45
+Produce: الولايات المتحدة الأمريكية
 imdb: 
   rating: 5.2
   Votes: 56,772
   link: https://www.imdb.com/title/tt10857160/
-time: 45
 tags: [أكشن, كوميدي, مغامرات ]
 categories: مسلسلات أجنبى
 sections: Series

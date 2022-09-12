@@ -5,11 +5,12 @@ img: 17.jpg
 quality: 1080p WEB-DL
 youtube: https://www.youtube.com/watch?v=DotnJ7tTA34
 year: 2022
+time: 60
+Produce: الولايات المتحدة الأمريكية
 imdb: 
   rating: 9.1
   Votes: 42147
   link: https://www.imdb.com/title/tt11198330/
-time: 60
 tags: [أكشن, دراما, مغامرات ]
 categories: مسلسلات أجنبى
 sections: Series
