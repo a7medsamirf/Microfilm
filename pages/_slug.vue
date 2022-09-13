@@ -142,7 +142,8 @@
         <v-col cols="12">
           <div dense class="title-Section">
             <v-toolbar-title class="right-Title-Section">
-              <i class="fas fa-camera-movie default title-icon">  </i>
+              <i class="fa-solid fa-tv  default title-icon"></i>
+         
               <span>  عروض ذات صلة </span>
             </v-toolbar-title>
             <v-spacer></v-spacer>

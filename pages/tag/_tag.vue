@@ -19,54 +19,36 @@
     >
 
 
-      <ul>
-        <li
-          v-for="article in articles"
-          :key="article.slug"
-          class="w-full px-2 xs:mb-6 md:mb-12 article-card"
-        >
-          <NuxtLink
-            :to="`/${article.slug}`"
-            class="flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md xxlmax:flex-col"
-          >
+    <HomeCard :articles="articles"/>
 
-
-            <div
-              class="p-6 flex flex-col justify-between xxlmin:w-1/2 xxlmax:w-full"
-            >
-              <h2 class="font-bold">{{ article.title }}</h2>
-              <p>{{ article.description }}</p>
-
-            </div>
-          </NuxtLink>
-        </li>
-      </ul>
     </div>
   </div>
 </template>
 
 <script>
+import HomeCard from '~/components/card/HomeCard.vue'
 export default {
-  async asyncData({ $content, params }) {
-    const tags = await $content('tags')
-      .where({ slug: { $contains: params.tag } })
-      .limit(1)
-      .fetch()
-    const tag = tags.length > 0 ? tags[0] : {}
-    const articles = await $content('articles')
-      .where({ tags: { $contains: tag.name } })
-      .sortBy('createdAt', 'asc')
-      .fetch()
-    return {
-      articles,
-      tag
-    }
-  },
-  methods: {
-    formatDate(date) {
-      const options = { year: 'numeric', month: 'long', day: 'numeric' }
-      return new Date(date).toLocaleDateString('en', options)
-    }
-  }
+    async asyncData({ $content, params }) {
+        const tags = await $content("tags")
+            .where({ slug: { $contains: params.tag } })
+            .limit(1)
+            .fetch();
+        const tag = tags.length > 0 ? tags[0] : {};
+        const articles = await $content("articles")
+            .where({ tags: { $contains: tag.name } })
+            .sortBy("createdAt", "asc")
+            .fetch();
+        return {
+            articles,
+            tag
+        };
+    },
+    methods: {
+        formatDate(date) {
+            const options = { year: "numeric", month: "long", day: "numeric" };
+            return new Date(date).toLocaleDateString("en", options);
+        }
+    },
+    components: { HomeCard }
 }
 </script>

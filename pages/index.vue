@@ -6,27 +6,32 @@
 
 <div class="Search-box">
 
-<v-container fluid>
-  <v-card
 
-    class="d-flex justify-center mb-6 title-Section rounded-lg"
-    :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-    flat
-    tile
-  >
-    <v-card
-      class=""
-      outlined
+  <v-card
+      class="d-flex justify-center mb-6"
+      :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
+      flat
       tile
     >
-
-    <TagSearch :tags="tags"/>
-    <CategorySearch :categories="categories" />
-
-
+      <v-card
+        class="pa-2"
+        outlined
+        tile
+      >
+      <v-row>
+      <v-col cols="12" lg="4" md="4" sm="4" xs="6" col="5">
+          <TagSearch :tags="tags"/>
+      </v-col>
+ 
+    <v-col cols="12" lg="4" md="4" sm="4" xs="6" col="5">
+      <CategorySearch :categories="categories" />
+    </v-col>
+    <v-col cols="12" lg="4" md="4" sm="4" xs="6" col="5">
+        <AppSearchInput />
+    </v-col>
+  </v-row>
+      </v-card>
     </v-card>
-  </v-card>
-</v-container>
 
 
 </div>
@@ -56,28 +61,11 @@
 
 
 
+<Tags :tags="tags"/>
 
 
-  <div class="text-center">
-    <v-chip
-        v-for="tag of tags"
-      :key="tag.slug"
-      class="ma-2 default">
-    <NuxtLink :to="`/tag/${tag.slug}`" class="white--text">
-           <span class="ml-3">#</span>{{ tag.name }}
-      </NuxtLink>
-    </v-chip>
-  </div>
-  <div class="text-center">
-    <v-chip
-        v-for="category of categories"
-      :key="category.slug"
-      class="ma-2 default">
-    <NuxtLink :to="`/category/${category.slug}`" class="white--text">
-           <span class="ml-3">#</span>{{ category.name }}
-      </NuxtLink>
-    </v-chip>
-  </div>
+<Categories :categories="categories"/>
+
 
 </div>
 </template>
@@ -93,9 +81,12 @@ import TitleSection from '~/components/widget/Title-Section.vue';
 import AdvancedSearch from "~/components/widget/advanced-search";
 import TagSearch from '~/components/widget/TagSearch.vue';
 import CategorySearch from '~/components/widget/CategorySearch.vue';
+import AppSearchInput from '~/components/widget/AppSearchInput.vue';
+import Tags from '~/components/sections/tags.vue';
+import Categories from '~/components/sections/categories.vue';
 export default {
     name: "IndexPage",
-    components: { AdvancedSearch, HomeCard, HomeCarousel, Movies, Series, SearchBox, TitleSection, TagSearch, CategorySearch },
+    components: { AdvancedSearch, HomeCard, HomeCarousel, Movies, Series, SearchBox, TitleSection, TagSearch, CategorySearch, AppSearchInput, Tags, Categories },
     mixins: [fetchPostsMixin],
   data () {
     return {

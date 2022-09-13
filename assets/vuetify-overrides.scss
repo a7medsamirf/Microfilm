@@ -572,8 +572,6 @@ header .v-btn:not(.v-btn--round).v-size--default {
   }
 }
 
-
-
 .theme--dark .nav-menu::before {
   border-bottom: 13px solid rgb(0 30 38 / 72%) !important;
 }
@@ -581,6 +579,7 @@ header .v-btn:not(.v-btn--round).v-size--default {
 .v-overlay:hover {
   cursor: url(../static/images/cross.png), auto;
 }
+
 
 /*--------------------------------------------------
   [2. Title Section]
@@ -593,19 +592,18 @@ header .v-btn:not(.v-btn--round).v-size--default {
   padding: 10px 10px 10px;
   border-radius: 11px;
   background: #57769212;
-}
 
-.title-Section .right-Title-Section {
-  float: right;
-}
+  .right-Title-Section {
+    float: right;
+  }
+  i.title-icon {
+    width: 44px;
+    border-radius: 30%;
+    text-align: center;
+    line-height: 44px;
+  }
 
-.title-Section i.title-icon {
-  width: 44px;
-  border-radius: 30%;
-  text-align: center;
-  line-height: 44px;
 }
-
 .left-Title-Section {
   float: left;
   border-radius: 50%;
@@ -668,33 +666,31 @@ a.MoreFromSection span {
   -o-transition: .3s all ease;
   transition: .3s all ease;
   display: block;
-  z-index: 99;
+  z-index: 9;
   top: 18px;
   left: -103px;
-}
-
-.title-loader:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -16px;
-  height: 10px;
-  width: 10px;
-  border-radius: 12px;
-  -webkit-animation: title-loaderg 2s ease-in-out infinite;
-  animation: title-loaderg 2s ease-in-out infinite;
-}
-
-.title-loader:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 15px;
-  height: 10px;
-  width: 10px;
-  border-radius: 10px;
-  -webkit-animation: title-loaderd 3s ease-in-out infinite;
-  animation: title-loaderd 2s ease-in-out infinite;
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -16px;
+    height: 10px;
+    width: 10px;
+    border-radius: 12px;
+    -webkit-animation: title-loaderg 2s ease-in-out infinite;
+    animation: title-loaderg 2s ease-in-out infinite;
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 15px;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    -webkit-animation: title-loaderd 3s ease-in-out infinite;
+    animation: title-loaderd 2s ease-in-out infinite;
+  }
 }
 
 @-webkit-keyframes title-loaderg {
@@ -828,8 +824,6 @@ a.MoreFromSection span {
     background-color: rgba(0, 0, 0, .2)
   }
 }
-
-
 
 
 /*--------------------------------------------------
@@ -1170,16 +1164,6 @@ i.v-icon.notranslate.mdi.mdi-record-circle-outline {
   }
 }
 
-
-
-.theme--dark .nav-menu::before {
-  border-bottom: 13px solid rgb(0 30 38 / 72%) !important;
-}
-
-.v-overlay:hover {
-  cursor: url(../static/images/cross.png), auto;
-}
-
 header.v-sheet.v-app-bar.v-toolbar.v-app-bar--is-scrolled {
   animation: 1000ms ease-in-out 0s normal none 1 running fadeInDown;
   background-color: rgba(12, 15, 33, 0.7) !important;
@@ -1188,10 +1172,8 @@ header.v-sheet.v-app-bar.v-toolbar.v-app-bar--is-scrolled {
   ;
 }
 
-
 .v-card {
   overflow: hidden;
-
   .blog-description {
     margin-top: 0;
     margin-bottom: 0;
@@ -1204,7 +1186,6 @@ header.v-sheet.v-app-bar.v-toolbar.v-app-bar--is-scrolled {
     -webkit-box-orient: vertical;
   }
 }
-
 
 .blog-link {
   text-decoration: none;
@@ -1287,6 +1268,7 @@ header.v-sheet.v-app-bar.v-toolbar.v-app-bar--is-scrolled {
 .carousel {
   .item article ul li {
     display: inline-block
+    
   }
 
   .item article ul li p {
@@ -1296,7 +1278,6 @@ header.v-sheet.v-app-bar.v-toolbar.v-app-bar--is-scrolled {
     padding: 1.5vw 0;
   }
 }
-
 
 .carousel .item article {
   width: 32vw;
@@ -1311,7 +1292,6 @@ header.v-sheet.v-app-bar.v-toolbar.v-app-bar--is-scrolled {
   height: 55.781vw;
   direction: rtl;
 }
-
 
 .BlockItem .BlockImageItem:after {
   width: 5px;
@@ -1629,6 +1609,74 @@ ul.RestInformation>li:last-child {
 }
 
 
+
+
+/*--------------------------------------------------
+  [2. carousel ]
+--------------------------------------------------*/
+
+
 .carousel-3d-slide{
   border-style: none !important;
 }
+
+.carousel-3d-slide.item {
+  background: transparent;
+}
+
+.HomeCarousel
+{
+  padding-top: 65px;
+}
+.carousel-3d-controls{
+  .prev:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    z-index: 99;
+    height: 100vh;
+    top: 50px;
+    background: linear-gradient(to right, #071131 8%, rgba(32, 38, 47, 0));
+    padding: 0 145px 0px 20px;
+    transition: 0.4s all ease;
+  }
+  .prev:before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    z-index: 99;
+    height: 100vh;
+    background: linear-gradient(to right, #071131 8%, rgba(32, 38, 47, 0));
+    padding: 0 145px 0px 20px;
+    transition: 0.4s all ease;
+  }
+.next:after{
+  content: "";
+  position: absolute;
+  right: -10px;
+  z-index: 99;
+  height: 100vh;
+  top: 50px;
+  background: linear-gradient(to left, #071131 0%, rgba(31,37,46,0));
+  padding: 0 145px 0px 20px;
+  cursor: pointer;
+  font-size: 60px;
+  transition: 0.4s all ease;
+}
+  .next:before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    z-index: 99;
+    height: 100vh;
+    background: linear-gradient(to left, #071131 0%, rgba(31,37,46,0));
+    padding: 0 145px 0px 20px;
+    cursor: pointer;
+    font-size: 60px;
+    transition: 0.4s all ease;
+  }
+}
+

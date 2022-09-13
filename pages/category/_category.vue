@@ -19,29 +19,10 @@
       class="relative"
     >
 
+    
+    <HomeCard :articles="articles"/>
+      
 
-      <ul>
-        <li
-          v-for="article in articles"
-          :key="article.slug"
-          class="w-full px-2 xs:mb-6 md:mb-12 article-card"
-        >
-          <NuxtLink
-            :to="`/${article.slug}`"
-            class="flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md xxlmax:flex-col"
-          >
-
-
-            <div
-              class="p-6 flex flex-col justify-between xxlmin:w-1/2 xxlmax:w-full"
-            >
-              <h2 class="font-bold">{{ article.title }}</h2>
-              <p>{{ article.description }}</p>
-
-            </div>
-          </NuxtLink>
-        </li>
-      </ul>
     </div>
   </div>
 </template>

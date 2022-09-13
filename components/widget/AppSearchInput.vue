@@ -6,11 +6,10 @@
         autocomplete="on"
         :loading="loading"
         placeholder=" ابحث بأسم الفيلم او المسلسل"
-        solo-inverted
-        flat
-        clearable
-        color="primary"
         hide-details
+          hide-no-data
+          hide-selected
+          outlined
       >
        <v-icon
          slot="append"
@@ -27,12 +26,9 @@
         color="primary">
           <v-list-item v-for="article of articles" :key="article.slug">
             <v-list-item-content  >
-                      <NuxtLink
-                        :to="`/${article.slug}`"
-          class="flex px-4 py-2 items-center leading-5 transition ease-in-out duration-150 text-green-500 hover:text-black"
-        >
-              <v-list-item-title>{{ article.title }}</v-list-item-title>
-                </NuxtLink>
+                      <NuxtLink :to="`/${article.slug}`" class="white--text">
+            {{ article.title }}
+              </NuxtLink>
             </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
