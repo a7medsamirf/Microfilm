@@ -511,7 +511,6 @@ header .v-btn:not(.v-btn--round).v-size--default {
 }
 
 .v-toolbar {
-
   .v-btn,
   .v-btn.v-btn--icon {
     color: #fff;
@@ -542,7 +541,6 @@ header .v-btn:not(.v-btn--round).v-size--default {
 }
 
 .v-toolbar.v-app-bar--is-scrolled {
-
   .v-btn,
   .v-btn.v-btn--icon {
     color: #0000008a;
@@ -590,7 +588,6 @@ header .v-btn:not(.v-btn--round).v-size--default {
   margin: 0 auto 20px;
   transition: .3s all ease;
   padding: 10px 10px 10px;
-  border-radius: 11px;
   background: #57769212;
 
   .right-Title-Section {
@@ -598,15 +595,10 @@ header .v-btn:not(.v-btn--round).v-size--default {
   }
   i.title-icon {
     width: 44px;
-    border-radius: 30%;
     text-align: center;
     line-height: 44px;
-  }
-
 }
-.left-Title-Section {
-  float: left;
-  border-radius: 50%;
+
 }
 
 a.MoreFromSection {
@@ -620,7 +612,6 @@ a.MoreFromSection {
   width: 150px;
   height: 44px;
   text-align: center;
-  border-radius: 25px;
   overflow: hidden;
   float: left;
   background: #484985;
@@ -918,23 +909,6 @@ a.MoreFromSection span {
 /*--------------------------------------------------
   [2. Blog Post Page ]
 --------------------------------------------------*/
-.sb-badge {
-  position: absolute;
-  z-index: 2;
-  top: 20px;
-  border-radius: 3px;
-  left: 10px;
-  color: $palette-text-white !important;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-}
-
-.sidebar-wrap {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 100px;
-}
 
 nav.v-navigation-drawer.v-navigation-drawer--fixed {
   height: 100% !important;
@@ -1115,7 +1089,6 @@ i.v-icon.notranslate.mdi.mdi-record-circle-outline {
 }
 
 .v-toolbar.v-app-bar--is-scrolled {
-
   .v-btn,
   .v-btn.v-btn--icon {
     color: #0000008a;
@@ -1132,7 +1105,6 @@ i.v-icon.notranslate.mdi.mdi-record-circle-outline {
 
 .theme--dark {
   .v-toolbar.v-app-bar--is-scrolled {
-
     .v-btn,
     .v-btn.v-btn--icon {
       color: #fff;

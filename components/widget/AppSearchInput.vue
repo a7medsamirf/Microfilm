@@ -17,10 +17,9 @@
        >
          mdi-magnify
        </v-icon>
-     </v-text-field>
 
-
-   <v-list  v-if="articles.length">
+       <template v-slot:item="{ articles }">
+        <v-list  v-if="articles.length">
         <v-list-item-group
           v-model="selectedItem"
         color="primary">
@@ -33,6 +32,11 @@
           </v-list-item>
         </v-list-item-group>
       </v-list>
+       </template>
+     </v-text-field>
+
+
+
 
 
 

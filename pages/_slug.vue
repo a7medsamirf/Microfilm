@@ -140,20 +140,23 @@
     <v-container fluid>
       <v-row>
         <v-col cols="12">
-          <div dense class="title-Section">
+          <div class="title-Section rounded-lg">
             <v-toolbar-title class="right-Title-Section">
-              <i class="fa-solid fa-tv  default title-icon"></i>
-         
+              <i class="fa-solid fa-tv  default title-icon rounded-lg"></i>
               <span>  عروض ذات صلة </span>
             </v-toolbar-title>
             <v-spacer></v-spacer>
             <div class="left-Title-Section">
-              <a href="" class="MoreFromSection HoverAfter"><span>المزيد</span><div class="title-loader"></div></a>
+              <a href="" class="MoreFromSection HoverAfter rounded-xl"><span>المزيد</span><div class="title-loader"></div></a>
             </div>
           </div>
 
         </v-col>
       </v-row>
+
+
+    <HomeCard :articles="articles"/>
+
     </v-container>
 
 
@@ -170,10 +173,10 @@ import "@fancyapps/ui/dist/fancybox.css";
   export default {
 
     components: {
-      HomeCard,
-      TagBox,
-      Fancybox
-    },
+    HomeCard,
+    TagBox,
+    Fancybox,
+},
     data() {
 
       return {
@@ -365,7 +368,7 @@ import "@fancyapps/ui/dist/fancybox.css";
       color: #251f36;
     }
     span.imdb-ra {
-      background: #fdcd20;
+      background: linear-gradient(#f5c518, #d08906) !important;
       padding: 18px;
       border-radius: 50%;
       position: relative;

@@ -6,9 +6,10 @@
 
 <div class="Search-box">
 
-
+<v-container fluid>
+  
   <v-card
-      class="d-flex justify-center mb-6"
+      class="d-flex justify-center mb-6 rounded-lg"
       :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
       flat
       tile
@@ -32,6 +33,7 @@
   </v-row>
       </v-card>
     </v-card>
+</v-container>
 
 
 </div>

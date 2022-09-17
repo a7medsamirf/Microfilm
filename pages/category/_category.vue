@@ -21,44 +21,45 @@
 
     
     <HomeCard :articles="articles"/>
-      
 
     </div>
   </div>
 </template>
 
 <script>
+import HomeCard from '~/components/card/HomeCard.vue'
 export default {
-  async asyncData({ $content, params }) {
-    const categories = await $content('categories')
-      .where({ slug: { $contains: params.category } })
-      .limit(1)
-      .fetch()
-    const category = categories.length > 0 ? categories[0] : {}
-    const articles = await $content('articles')
-      .where({ categories: { $contains: category.name } })
-      .sortBy('createdAt', 'asc')
-      .fetch()
-    return {
-      articles,
-      category
-    }
-  },
-  methods: {
-    formatDate(date) {
-      const options = { year: 'numeric', month: 'long', day: 'numeric' }
-      return new Date(date).toLocaleDateString('ar', options)
-    }
-  },
-  head() {
-    return {
-      title: this.category.title,
-      link: [
-        {
-          href: `${this.$config.baseUrl}/${this.$route.params.slug}`,
-        },
-      ],
-    };
-  },
+    async asyncData({ $content, params }) {
+        const categories = await $content("categories")
+            .where({ slug: { $contains: params.category } })
+            .limit(1)
+            .fetch();
+        const category = categories.length > 0 ? categories[0] : {};
+        const articles = await $content("articles")
+            .where({ categories: { $contains: category.name } })
+            .sortBy("createdAt", "asc")
+            .fetch();
+        return {
+            articles,
+            category
+        };
+    },
+    methods: {
+        formatDate(date) {
+            const options = { year: "numeric", month: "long", day: "numeric" };
+            return new Date(date).toLocaleDateString("ar", options);
+        }
+    },
+    head() {
+        return {
+            title: this.category.title,
+            link: [
+                {
+                    href: `${this.$config.baseUrl}/${this.$route.params.slug}`,
+                },
+            ],
+        };
+    },
+    components: { HomeCard }
 }
 </script>
