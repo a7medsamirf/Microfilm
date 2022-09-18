@@ -41,9 +41,9 @@
 
 
 
-       <v-menu
-          transition="slide-x-transition"
-          content-class="nav-menu"
+       <v-menu open-on-hover :close-on-content-click="false"
+          transition="slide-y-transition"
+          content-class="nav-menu rounded-0"
           min-width="200"
           v-else
           :key="item.title"
