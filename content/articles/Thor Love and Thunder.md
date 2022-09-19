@@ -6,7 +6,7 @@ quality: WEB-DL - 1080p
 youtube: https://www.youtube.com/watch?v=tgB1wUcmb
 year: 2022
 time: 118
-Produce: الولايات المتحدة الأمريكية
+Producers: الولايات المتحدة الأمريكية
 imdb:
   rating: 6.7
   Votes: 216,662

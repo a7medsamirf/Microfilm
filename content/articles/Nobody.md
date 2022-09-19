@@ -6,7 +6,7 @@ quality: BluRay - 1080p
 youtube: https://www.youtube.com/watch?v=wZti8QKBWPo
 year: 2021
 time: 92
-Produce: الولايات المتحدة الأمريكية
+Producers: الولايات المتحدة الأمريكية
 imdb:
   rating: 7.4
   Votes: 241,347

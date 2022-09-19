@@ -6,7 +6,7 @@ quality: WEB-DL - 1080p
 youtube: https://www.youtube.com/watch?v=zhN0QmeBJn0&t=1s
 year: 2022
 time: 122
-Produce: الهند
+Producers: الهند
 imdb:
   rating: 7.1
   Votes: 228

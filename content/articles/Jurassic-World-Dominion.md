@@ -6,7 +6,7 @@ quality: BluRay - 1080p
 youtube: https://www.youtube.com/watch?v=fb5ELWi-ekk
 year: 2022
 time: 146
-Produce: الولايات المتحدة الأمريكية
+Producers: الولايات المتحدة الأمريكية
 imdb:
   rating: 5.7
   Votes: 130,393
