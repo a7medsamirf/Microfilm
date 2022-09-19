@@ -32,10 +32,17 @@ export default {
       .sortBy('createdAt', 'asc')
       .fetch()
 
+ ///// get all Producers
+    const Producers = await $content('Producers')
+    .only(['name', 'slug'])
+    .sortBy('createdAt', 'asc')
+    .fetch()
+
     return {
       articles,
       tags,
       categories,
+      Producers,
       Movies,
       Series
     }
