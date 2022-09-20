@@ -55,6 +55,7 @@
 
             <template v-slot:activator="{ on, attrs }">
               <v-btn  :to="items.to" :ripple="false" text v-bind="attrs" v-on="on">
+                <v-icon dense class="ml-3">{{ item.icon }}</v-icon>
                {{ item.title }}
                   <v-icon right>mdi-chevron-down</v-icon>
               </v-btn>
@@ -112,8 +113,13 @@ export default {
               {title: 'أفلام هندي', to: '/category/Indian-Movies'},
             ]
           },
-          {title: 'أفلام', to: '/movies'},
-          {title: 'المسلسلات', to: '/Series'},
+          { icon: 'fa-light fa-tv-retro', title: 'المسلسلات', to: '/Series',
+            subitems: [
+              {title: 'مسلسلات عربى', to: '/category/Arabic-Series'},
+              {title: 'مسلسلات اجنبى', to: '/category/English-Series'},
+              {title: 'مسلسلات هندي', to: '/category/Indian-Series'},
+            ]
+          },
 
         {title: 'قريبا', to: '/coming-soon'},
       ],

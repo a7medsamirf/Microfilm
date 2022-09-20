@@ -3,7 +3,6 @@
 
 <home-carousel :articles="articles" />
 
-
 <div class="Search-box">
 
 <v-container fluid>
@@ -47,10 +46,6 @@
 
 
   <home-card :articles="articles" />
-
-
-
-
 
     <movies :Movies="Movies"/>
 
