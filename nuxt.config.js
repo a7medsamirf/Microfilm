@@ -110,7 +110,6 @@ target: 'static',
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     optionsPath: './config/vuetify.options.js'
-
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
