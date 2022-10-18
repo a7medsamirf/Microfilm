@@ -1,9 +1,7 @@
 <template>
   <div>
     <v-bottom-navigation class="hidden-lg-and-up" shift fixed :background-color="color" >
-      <v-btn v-for="(item, i) in items"
-      :key="i" :to="item.to" router>
-
+      <v-btn v-for="(item, i) in items" :key="i" :to="item.to" router>
        <span>{{ item.title }}</span>
         <v-icon dense>{{ item.icon }}</v-icon>
       </v-btn>
