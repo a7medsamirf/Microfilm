@@ -1,8 +1,7 @@
 import { theme } from './config/vuetify.options'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-/* ssr: false,
-target: 'static', */
+ ssr: false,
 target: 'static',
   head: {
     htmlAttrs: {
@@ -23,19 +22,19 @@ target: 'static',
 
     ]
   },
-  router: {
+
+/*   router: {
     base: '/Microfilm/'
-  },
+  }, */
 
   transition: 'slide-bottom',
-  loading: {
-    height: '5px',
-    duration: 1000,
-    rtl: true,
-    continuous: true,
+
+  loadingIndicator: {
+    name: 'chasing-dots',
     color: '#e62d2d',
-    name: 'circle'
+    background: '#fff'
   },
+
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [

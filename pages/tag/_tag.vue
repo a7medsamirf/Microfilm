@@ -1,5 +1,19 @@
 <template>
-  <div
+<div>
+  <div class="breadcrumb1">
+      <div class="breadcrumb-bg">
+        <v-img class="breadcrumb-img ml-auto" max-height="320px" max-width="100%" alt=""
+          :src="require(`~/static/images/banner/55.jpg`)"></v-img>
+      </div>
+
+
+
+    </div>
+
+
+
+
+    <div
     class="flex lg:h-screen w-screen lg:overflow-hidden xs:flex-col lg:flex-row"
   >
     <div class="absolute top-32 left-32 right-32 text-white">
@@ -23,6 +37,11 @@
 
     </div>
   </div>
+
+
+</div>
+
+
 </template>
 
 <script>
@@ -52,3 +71,23 @@ export default {
     components: { HomeCard }
 }
 </script>
+
+<style>
+.breadcrumb1 {
+  padding: 120px 0px 50px 0;
+  position: relative;
+  width: 100%;
+}
+
+.breadcrumb1 .breadcrumb-bg {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    opacity: 0.6;
+    left: 0;
+    right: 0;
+    background-size: cover;
+    background-position: center center;
+}
+
+</style>

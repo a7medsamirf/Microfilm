@@ -21,6 +21,7 @@ import TheHeader from "~/components//Header/TheHeader";
 import OnScroll from "~/components/onScroll";
 import MobileBar from '~/components/Header/MobileBar.vue';
 export default {
+  name: 'DefaultLayout',
   components: { OnScroll, TheHeader, TheFooter,MobileBar},
   transition: 'slide-bottom'
 }

@@ -13,7 +13,7 @@
 
 <script>
   export default {
-    name: "Tab-bar",
+    name: "MobileBar",
     data() {
       return {
         items: [{
