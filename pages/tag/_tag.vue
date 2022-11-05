@@ -8,13 +8,13 @@
       <div class="">
           <h1 class=" font-bold uppercase">
           بحث الأقسام :       {{ tag.name }}
-     
+
           </h1>
 
           <nuxt-content :document="tag" />
         </div>
     </div>
-  
+
 
 
 
