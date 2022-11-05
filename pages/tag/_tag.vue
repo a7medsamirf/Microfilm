@@ -1,42 +1,30 @@
 <template>
 <div>
-  <div class="breadcrumb1">
+  <div class="tag breadcrumb">
       <div class="breadcrumb-bg">
         <v-img class="breadcrumb-img ml-auto" max-height="320px" max-width="100%" alt=""
           :src="require(`~/static/images/banner/55.jpg`)"></v-img>
       </div>
-
-
-
-    </div>
-
-
-
-
-    <div
-    class="flex lg:h-screen w-screen lg:overflow-hidden xs:flex-col lg:flex-row"
-  >
-    <div class="absolute top-32 left-32 right-32 text-white">
-
-      <div class="mt-16 -mb-3 flex flex-col text-sm">
-        <div class="relative lg:w-1/2 xs:w-full xs:h-84 lg:h-full post-left">
-          <h1 class="text-4xl font-bold uppercase">
-            {{ tag.name }}
+      <div class="">
+          <h1 class=" font-bold uppercase">
+          بحث الأقسام :       {{ tag.name }}
+     
           </h1>
 
           <nuxt-content :document="tag" />
         </div>
-      </div>
     </div>
-    <div
-      class="relative xs:py-8 xs:px-8 lg:py-32 lg:px-16 lg:w-1/2 xs:w-full h-full overflow-y-scroll markdown-body post-right custom-scroll"
-    >
+  
 
 
-    <HomeCard :articles="articles"/>
 
-    </div>
-  </div>
+      <v-container fluid>
+        <div class="">
+          <HomeCard :articles="articles"/>
+
+        </div>
+      </v-container>
+
 
 
 </div>
@@ -71,23 +59,3 @@ export default {
     components: { HomeCard }
 }
 </script>
-
-<style>
-.breadcrumb1 {
-  padding: 120px 0px 50px 0;
-  position: relative;
-  width: 100%;
-}
-
-.breadcrumb1 .breadcrumb-bg {
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    opacity: 0.6;
-    left: 0;
-    right: 0;
-    background-size: cover;
-    background-position: center center;
-}
-
-</style>

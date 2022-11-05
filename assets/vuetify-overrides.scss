@@ -608,7 +608,7 @@ a.MoreFromSection {
   display: block;
   font-size: 16px;
   font-weight: bold;
-  color: #fff;
+  color: #fff !important;
   -webkit-transition: .4s all ease;
   -o-transition: .4s all ease;
   transition: .4s all ease;
@@ -821,11 +821,10 @@ a.MoreFromSection span {
   }
 }
 
-
 /*--------------------------------------------------
   [3. Breadcrumb widget ]
 --------------------------------------------------*/
-.breadcrumb {
+.post.breadcrumb {
   padding: 120px 0px 50px 0;
   position: relative;
   width: 100%;
@@ -873,6 +872,24 @@ a.MoreFromSection span {
   }
 
 }
+
+.tag.breadcrumb {
+  padding: 120px 0px 50px 0;
+  position: relative;
+  width: 100%;
+  .breadcrumb-bg {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    opacity: 0.6;
+    left: 0;
+    right: 0;
+    background-size: cover;
+    background-position: center center;
+}
+}
+
+
 
 /*====================
   widget

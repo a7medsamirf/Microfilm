@@ -29,7 +29,7 @@
       {
             icon: 'fa-light fa-tv-retro',
             title: 'مسلسلات',
-            to: '/'
+            to: '/Series'
           },
                 {
             icon: 'fa-thin fa-camcorder',

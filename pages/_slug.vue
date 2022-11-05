@@ -1,6 +1,6 @@
 <template>
   <article class="slug-wrap">
-    <div class="breadcrumb">
+    <div class="post breadcrumb">
       <v-container>
         <div class="col-full">
           <div class="d-flex justify-center mb-6">
@@ -44,6 +44,7 @@
 
 
     </div>
+
 
     <div class="inner-content">
       <v-container>
@@ -162,19 +163,19 @@
 <script>
   import { Fancybox } from "@fancyapps/ui";
   import "@fancyapps/ui/dist/fancybox.css";
-  
+
     import TagBox from '~/components/widget/Tag-box.vue';
     import imgAPI from '~/static/images/imgAPI'
     import HomeCard from "~/components/card/HomeCard";
     export default {
-  
+
       components: {
       HomeCard,
       TagBox,
       Fancybox,
   },
       data() {
-  
+
         return {
           imgAPI: imgAPI,
           SocialIcon: [{
@@ -220,11 +221,11 @@
           article,
           tags,
           categories,
-  
+
         }
       },
       methods: {
-  
+
         formatDate(date) {
           const options = {
             year: 'numeric',
@@ -233,14 +234,14 @@
           }
           return new Date(date).toLocaleDateString('en', options)
         },
-  
+
       },
       head() {
         return {
           title: this.article.title,
-  
+
         };
       },
     }
-  
+
   </script>
