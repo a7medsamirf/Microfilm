@@ -1,31 +1,49 @@
 <template>
+
 <div>
-  <div class="tag breadcrumb">
-      <div class="breadcrumb-bg">
-        <v-img class="breadcrumb-img ml-auto" max-height="320px" max-width="100%" alt=""
-          :src="require(`~/static/images/banner/55.jpg`)"></v-img>
-      </div>
-      <div class="">
-          <h1 class=" font-bold uppercase">
-          بحث الأقسام :       {{ tag.name }}
+  <div class="tag breadcrumb d-flex align-center">
+      <v-container class="pa-0">
+        <div class="col-full">
+        <v-row align="center" >
+          <v-col cols="12" md="3" class="px-0">
+            <h2 class="use-text-title2 white--text mb-3"> بحث الأقسام :     </h2>
+          </v-col>
+          <v-col cols="12" md="6" class="px-0">
+            <v-divider
+  vertical
+></v-divider>
+            أنت هنا
+            /
+            قسم   {{ tag.name }} 
+          
+      
+          <nav class="woocommerce-breadcrumb ">
 
-          </h1>
-
-          <nuxt-content :document="tag" />
-        </div>
-    </div>
-
-
-
-
-      <v-container fluid>
-        <div class="">
-          <HomeCard :articles="articles"/>
-
+            <span class="breadcrumb-separator white--text"> / hjjgh</span>
+          </nav>
+          </v-col>
+        </v-row>
+       
+        
+  
         </div>
       </v-container>
 
+      <div class="breadcrumb-bg"></div>
 
+
+    </div>
+    
+
+
+    <div class="tag-content">
+      <v-container fluid>
+
+          <HomeCard :articles="articles"/>
+
+ 
+      </v-container>
+    </div>
 
 </div>
 

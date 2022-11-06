@@ -132,7 +132,7 @@
 
     </div>
 
-    <v-container fluid>
+<!--     <v-container fluid>
       <v-row>
         <v-col cols="12">
           <div class="title-Section rounded-lg">
@@ -156,7 +156,7 @@
 
     </v-container>
 
-
+ -->
 
   </article>
 </template>
