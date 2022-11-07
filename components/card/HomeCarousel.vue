@@ -14,6 +14,7 @@
              class="item BlockItem">
         <nuxt-link :to="`/${article.slug}`">
           <v-card
+          class="rounded-lg"
             outlined
             elevation-0
           >

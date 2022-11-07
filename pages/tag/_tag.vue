@@ -4,26 +4,29 @@
   <div class="tag breadcrumb d-flex align-center">
       <v-container class="pa-0">
         <div class="col-full">
-        <v-row align="center" >
-          <v-col cols="12" md="3" class="px-0">
-            <h2 class="use-text-title2 white--text mb-3"> بحث الأقسام :     </h2>
-          </v-col>
-          <v-col cols="12" md="6" class="px-0">
-            <v-divider
-  vertical
-></v-divider>
-            أنت هنا
-            /
-            قسم   {{ tag.name }} 
-          
-      
-          <nav class="woocommerce-breadcrumb ">
+          <v-Card class="tag-card rounded-0">
+        <div class="d-flex  flex-wrap flex-md-nowrap flex-column flex-md-row">
+          <div class="pa-10">
+            <v-CardTitle class="use-text-title2">بحث الأقسام :</v-CardTitle>
+          </div>
 
-            <span class="breadcrumb-separator white--text"> / hjjgh</span>
-          </nav>
-          </v-col>
-        </v-row>
-       
+          <v-Divider vertical/>
+
+          <div class="pa-5">
+            <v-CardItem><v-CardTitle> أنت هنا / قسم   {{ tag.name }} </v-CardTitle> </v-CardItem>
+
+            <nav class="woocommerce-breadcrumb px-3">
+                <nuxt-link class="white--text " to="/">الرئيسية</nuxt-link>
+                <span class="breadcrumb-separator ml-3 mr-3"> /</span>
+                <span class="breadcrumb-separator active"> {{ tag.name }} </span>
+              </nav>
+
+
+    
+          </div>
+        </div>
+      </v-Card>
+      
         
   
         </div>

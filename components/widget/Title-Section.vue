@@ -6,7 +6,7 @@
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <div class="left-Title-Section">
-      <nuxt-link :to="link" class="MoreFromSection HoverAfter rounded-xl"><span>المزيد</span><div class="title-loader"></div></nuxt-link>
+      <nuxt-link :to="link" class="MoreFromSection HoverAfter rounded-lg"><span>المزيد</span><div class="title-loader"></div></nuxt-link>
     </div>
   </div>
 </template>

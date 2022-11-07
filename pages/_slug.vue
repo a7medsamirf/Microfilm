@@ -36,8 +36,8 @@
 
         </div>
       </v-container>
-      <div class="breadcrumb-bg">
-        <v-img class="breadcrumb-img ml-auto" max-height="320px" max-width="100%" alt=""
+      <div class="breadcrumb-bg ">
+        <v-img class="breadcrumb-img ml-auto " max-height="320px" max-width="100%" alt=""
           :src="require(`~/static/images/poster/${article.img}`)"></v-img>
       </div>
 
@@ -52,7 +52,7 @@
           <v-row>
             <v-col cols="12" lg="3" md="4" sm="6">
               <div class="blog-poster">
-                <v-card>
+                <v-card >
                   <v-img :src="require(`~/static/images/poster/${article.img}`)" height="400" alt="article.img">
                     <template>
                       <v-row class="fill-height" justify="center" align="center">
@@ -142,7 +142,7 @@
             </v-toolbar-title>
             <v-spacer></v-spacer>
             <div class="left-Title-Section">
-              <a href="" class="MoreFromSection HoverAfter rounded-xl"><span>المزيد</span>
+              <a href="" class="MoreFromSection HoverAfter rounded-lg"><span>المزيد</span>
                 <div class="title-loader"></div>
               </a>
             </div>

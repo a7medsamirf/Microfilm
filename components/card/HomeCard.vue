@@ -18,6 +18,7 @@
               <v-card
                 outlined
                 elevation-0
+                class="rounded-lg"
               >
                 <div class="blog-img BlockImageItem">
 

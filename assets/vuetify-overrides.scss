@@ -334,13 +334,8 @@ header a.v-btn--active {
 .v-application {
   scroll-behavior: smooth;
   text-transform: capitalize;
-
   .main-wrap .title {
     font-family: $body-font-family !important;
-  }
-
-  .v-card:not(.v-sheet--tile):not(.v-card--shaped) {
-    border-radius: $spacing1;
   }
 
   .slick-dots {
@@ -888,13 +883,21 @@ a.MoreFromSection span {
     background-image: url(#{$breadcrumbPath}/banner.jpg);
   }
 
-  .col-full {
-    position: relative;
-    z-index: 2;
-    padding: 30px;
-    background: rgb(7,20,52);
-    background: linear-gradient(90deg, rgb(7 20 52 / 8%) 0%, #071434 52%);
+  .col-full{
+    .tag-card{
+      position: relative;
+      z-index: 2;
+      background-color: transparent !important;
+      backdrop-filter: blur(0px) !important;
+      background: rgb(7,20,52);
+      background: linear-gradient(90deg, rgb(7 20 52 / 8%) 0%, #071434 52%);
+    }
   }
+  .breadcrumb-separator.active
+  {
+    color: #e62d2d;
+  }
+
 
 }
 
@@ -1714,7 +1717,6 @@ ul.RestInformation>li:last-child {
         left: 35px;
         text-align: center;
         border-radius: 5px 0px 5px 5px;
-
         &::before {
           position: absolute;
           content: "";

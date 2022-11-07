@@ -19,6 +19,9 @@
         tile
       >
       <v-row>
+        <v-col cols="12" lg="3" md="3" sm="3" xs="6" col="5">
+        <AppSearchInput />
+    </v-col>
       <v-col cols="12" lg="3" md="3" sm="3" xs="6" col="5">
           <TagSearch :tags="tags"/>
       </v-col>
@@ -30,9 +33,7 @@
       <ProducersSearch  :Producers="Producers"/>
     </v-col>
 
-    <v-col cols="12" lg="3" md="3" sm="3" xs="6" col="5">
-        <AppSearchInput />
-    </v-col>
+
 
   </v-row>
       </v-card>
