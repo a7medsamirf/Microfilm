@@ -7,16 +7,13 @@
       <v-row>
         <v-col class="pb-0" lg="12">
           <v-card
-            class="flex"
+            class="flex default use-text-subtitle"
             flat
             tile
           >
-            <v-card-title class="microfilm-color use-text-subtitle">
+            <v-card-title class="use-text-subtitle">
 
-
-              <nuxt-link class="py-2 ml-3 white--text" to="">شرح استخدام الموقع</nuxt-link>
-              <nuxt-link class="py-2 ml-3 white--text" to="">سياسة الخصوصية</nuxt-link>
-              <nuxt-link class="py-2 ml-3 white--text" to="">شروط الاستخدام</nuxt-link>
+              <strong > جميع الحقوق محفوظة</strong> <strong>© {{ new Date().getFullYear() }} <nuxt-link to="/">ميكروفيلم — MicroFilm</nuxt-link></strong>
               <v-spacer></v-spacer>
 
               <v-btn
@@ -32,26 +29,13 @@
               </v-btn>
             </v-card-title>
           </v-card>
-          <v-card
-            class="flex"
-            flat
-            tile
-          >
-            <v-card-title class="copyright use-text-subtitle">
-
-              <strong> جميع الحقوق محفوظة</strong> <strong>© {{ new Date().getFullYear() }} <nuxt-link to="/">ميكروفيلم — MicroFilm</nuxt-link></strong>
-              <v-spacer></v-spacer>
-              <strong> جميع الحقوق محفوظة</strong> <strong>© {{ new Date().getFullYear() }} <nuxt-link to="/">ميكروفيلم — MicroFilm</nuxt-link></strong>
-
-            </v-card-title>
-
-          </v-card>
+   
         </v-col>
+
+
       </v-row>
 
-
-
-
+      
     </v-footer>
 
 

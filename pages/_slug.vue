@@ -101,7 +101,7 @@
                   <li class="pa-3"><i class="fa-light fa-clock ml-3"></i><span> مدة العرض :
                       {{ article.time }}دقيقة</span></li>
                   <li class="pa-3"><i class="fa-solid fa-earth-americas ml-3"></i><span> انتاج :
-                      {{ article.Produce }}</span></li>
+                      {{ article.Producers }}</span></li>
 
                   <li class="pa-1 mt-5 imdb-box">
                     <a class="imdb-link" target="_blank" :href="article.imdb.link">
