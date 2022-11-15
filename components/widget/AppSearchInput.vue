@@ -1,39 +1,35 @@
 <template>
   <div class="">
-     <v-text-field
+    <v-text-field
         class="pa-0 ma-0"
         v-model="searchQuery"
         autocomplete="on"
         :loading="loading"
+        :items="articles"
+        :item-text="article => `${article.slug}`"
         placeholder=" ابحث بأسم الفيلم او المسلسل"
+        prepend-inner-icon="mdi-magnify"
         hide-details
-          hide-no-data
-          hide-selected
-          outlined
+      
+        hide-selected
+        outlined
       >
-       <v-icon
-         slot="append"
-         color="primary"
-       >
-         mdi-magnify
-       </v-icon>
 
-       <template v-slot:item="{ articles }">
-        <v-list  v-if="articles.length">
-        <v-list-item-group
-          v-model="selectedItem"
+      </v-text-field>
+
+      <v-list dense v-if="articles.length">
+        <v-list-item-group v-model="selectedItem"
         color="primary">
           <v-list-item v-for="article of articles" :key="article.slug">
             <v-list-item-content  >
-                      <NuxtLink :to="`/${article.slug}`" class="white--text">
+              <NuxtLink :to="`/${article.slug}`" class="white--text">
             {{ article.title }}
               </NuxtLink>
+
             </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
       </v-list>
-       </template>
-     </v-text-field>
 
 
 

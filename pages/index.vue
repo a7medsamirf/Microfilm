@@ -71,15 +71,15 @@
 import fetchPostsMixin from '@/utils/fetchPostsMixin';
 import HomeCarousel from "~/components/card/HomeCarousel";
 import HomeCard from "~/components/card/HomeCard";
-import Movies from '~/components/sections/Movies.vue';
+import Movies from '~/components/sections/Movies';
 import Series from '~/components/sections/Series';
 import SearchBox from '~/components/widget/Search-Box';
-import TitleSection from '~/components/widget/Title-Section.vue';
+import TitleSection from '~/components/widget/Title-Section';
 import AdvancedSearch from "~/components/widget/advanced-search";
-import TagSearch from '~/components/widget/TagSearch.vue';
-import CategorySearch from '~/components/widget/CategorySearch.vue';
-import AppSearchInput from '~/components/widget/AppSearchInput.vue';
-import ProducersSearch from '~/components/widget/ProducersSearch.vue';
+import TagSearch from '~/components/widget/TagSearch';
+import CategorySearch from '~/components/widget/CategorySearch';
+import AppSearchInput from '~/components/widget/AppSearchInput';
+import ProducersSearch from '~/components/widget/ProducersSearch';
 export default {
     name: "IndexPage",
     components: { AdvancedSearch, HomeCard, HomeCarousel, Movies, Series, SearchBox, TitleSection, TagSearch, CategorySearch, AppSearchInput, ProducersSearch },

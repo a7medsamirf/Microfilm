@@ -7,13 +7,13 @@
           <v-Card class="tag-card rounded-0">
         <div class="d-flex  flex-wrap flex-md-nowrap flex-column flex-md-row">
           <div class="pa-10">
-            <v-CardTitle class="use-text-title2">بحث الأقسام :</v-CardTitle>
+            <v-card-title class="use-text-title2">بحث الأقسام :</v-card-title>
           </div>
 
           <v-Divider vertical/>
 
           <div class="pa-5">
-            <v-CardItem><v-CardTitle> أنت هنا / قسم   {{ tag.name }} </v-CardTitle> </v-CardItem>
+        <v-card-title> أنت هنا / قسم   {{ tag.name }} </v-card-title> 
 
             <nav class="woocommerce-breadcrumb px-3">
                 <nuxt-link class="white--text " to="/">الرئيسية</nuxt-link>
