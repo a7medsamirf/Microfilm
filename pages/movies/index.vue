@@ -34,7 +34,7 @@ export default {
     components: { TitleSection, HomeCard, HomeCarousel, AppSearchInput, Tags },
   async asyncData({ $content, params }) {
     const articles = await $content('articles', params.slug)
-       .where({ sections: { $containsAny: ['Movies'] } }) 
+       .where({ sections: { $containsAny: ['Movies'] } })
       .sortBy('createdAt', 'desc')
       .fetch()
 

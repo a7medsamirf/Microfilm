@@ -1,5 +1,5 @@
 <template>
-  <div id="footer">
+  <div id="footer" >
     <v-footer
       dark
       padless
@@ -7,7 +7,7 @@
       <v-row>
         <v-col class="pb-0" lg="12">
           <v-card
-            class="flex default use-text-subtitle"
+            class="flex use-text-subtitle copyright "
             flat
             tile
           >
@@ -29,13 +29,13 @@
               </v-btn>
             </v-card-title>
           </v-card>
-   
+
         </v-col>
 
 
       </v-row>
 
-      
+
     </v-footer>
 
 
